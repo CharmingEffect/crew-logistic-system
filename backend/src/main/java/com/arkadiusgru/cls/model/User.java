@@ -31,6 +31,7 @@ import lombok.Setter;
 @Data
 @NoArgsConstructor
 @Table(name = "user")
+@EqualsAndHashCode(callSuper = false)
 public class User extends AbstractEntity implements UserDetails {
 
     private String email;
@@ -53,6 +54,7 @@ public class User extends AbstractEntity implements UserDetails {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.address = address;
     }
 
     @Override

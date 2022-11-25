@@ -1,5 +1,7 @@
 package com.arkadiusgru.cls.registration;
 
+import com.arkadiusgru.cls.model.Address;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,5 +19,7 @@ public class RegistrationRequest {
     private String lastName;
     private String email;
     private String password;
+    private String street;
+    private Address address;
 
 }
