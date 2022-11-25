@@ -28,7 +28,7 @@ public class RegistrationService {
                 request.getLastName(),
                 request.getEmail(),
                 request.getPassword(),
-                Role.CREW_MEMBER,
+                request.getRole(),
                 request.getAddress()));
     }
 

@@ -1,5 +1,7 @@
 package com.arkadiusgru.cls.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -13,8 +15,10 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
-    private final UserRepository userRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+    private final UserRepository userRepository;
     private final static String USER_NOT_FOUND_MSG = "User with email %s not found";
 
     @Override
@@ -27,6 +31,7 @@ public class UserService implements UserDetailsService {
 
     public String signUpUser(User user) {
         userRepository.save(user);
+        logger.info("User with email {} saved ", user.getEmail());
         return "user created";
 
     }

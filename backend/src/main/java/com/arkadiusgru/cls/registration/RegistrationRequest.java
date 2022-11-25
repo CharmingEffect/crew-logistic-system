@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.registration;
 
 import com.arkadiusgru.cls.model.Address;
+import com.arkadiusgru.cls.model.Role;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class RegistrationRequest {
     private String email;
     private String password;
     private String street;
+    private Role role;
     private Address address;
 
 }
