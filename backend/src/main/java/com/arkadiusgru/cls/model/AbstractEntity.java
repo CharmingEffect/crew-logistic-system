@@ -1,7 +1,9 @@
 package com.arkadiusgru.cls.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +22,7 @@ public class AbstractEntity {
     private Long id;
 
     @CreationTimestamp
-    private Date createdDate;
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
 
 }

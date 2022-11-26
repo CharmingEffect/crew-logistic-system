@@ -45,7 +45,7 @@ public class User extends AbstractEntity implements UserDetails {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     private Boolean locked = false;
-    private Boolean enabled = false;
+    private Boolean enabled = false; // default values
 
     public User(String firstName, String lastName, String email, String password, Role role, Address address) {
 

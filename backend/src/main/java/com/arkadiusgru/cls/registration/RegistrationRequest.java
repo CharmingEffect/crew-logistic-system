@@ -14,6 +14,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
+
+// it was the problem that the class have not have a default constructor
+// (Creator)
 @NoArgsConstructor
 public class RegistrationRequest {
     private String firstName;
