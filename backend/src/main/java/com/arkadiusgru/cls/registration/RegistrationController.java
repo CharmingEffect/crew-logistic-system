@@ -17,13 +17,13 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
-    @PostMapping(value = "/admin/registration")
+    @PostMapping(path = "/admin/registration")
     public String register(@RequestBody RegistrationRequest request) {
 
         return registrationService.register(request);
     }
 
-    @GetMapping(path = "/register-confirm")
+    @GetMapping(path = "/confirm-registration")
     public String confirm(@RequestParam("token") String token) {
 
         return registrationService.confirmToken(token);

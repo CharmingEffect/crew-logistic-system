@@ -116,9 +116,34 @@
 				</executions>
 				<configuration>
 					<nodeVersion>v16.17.1</nodeVersion>
-					<workingDirectory>frontend</workingDirectory>
+					<workingDirectory>../frontend</workingDirectory>
 				</configuration>
 			</plugin>
+			<!-- copy react build to spring boot-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>Copy React App to Spring Boot</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>src/main/webapp/WEB-INF/view/react</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../frontend/build</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+				</executions>
+
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

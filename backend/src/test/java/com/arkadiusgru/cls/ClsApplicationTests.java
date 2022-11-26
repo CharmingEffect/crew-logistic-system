@@ -17,6 +17,7 @@ class ClsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		logger.info("asdasdsad");
 
 	}
 

@@ -21,14 +21,15 @@ public class WebSecurityConfig {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    // admin site has to be disabled for people from outside anyone how does not
+    // have status as ADMIN
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/")
-                .permitAll()
-                .antMatchers("/api/admin/**").permitAll()
+                .antMatchers("/api/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
