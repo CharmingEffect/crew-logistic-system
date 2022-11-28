@@ -131,7 +131,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>src/main/webapp/WEB-INF/view/react</outputDirectory>
+							<outputDirectory>src/main/resources/public</outputDirectory>
 							<resources>
 								<resource>
 									<directory>../frontend/build</directory>
