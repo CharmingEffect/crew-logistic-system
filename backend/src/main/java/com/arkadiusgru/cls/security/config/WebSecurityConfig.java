@@ -36,7 +36,7 @@ public class WebSecurityConfig {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
-                .and()
+                .and() 
                 .logout()
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");

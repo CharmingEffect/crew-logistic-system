@@ -11,4 +11,10 @@ public class ViewController {
         return "/login.html";
     }
 
+    @RequestMapping("/error")
+    public String errorHandler() {
+
+        return "/error.html";
+    }
+
 }
