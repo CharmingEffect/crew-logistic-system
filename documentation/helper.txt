@@ -1,0 +1,65 @@
+
+This project requires the development of a web-application system 
+for the event company Pinnacle Crew. Pinnacle have been specializing 
+in providing crew for corporate events. They have systems and tools 
+in place for maintaining their business but are missing valuable 
+features meaning they don’t currently have a system that can 
+efficiently maintain organisation of the employed crew within 
+their company. The system currently in use is a simple SMS system, 
+which is not convenient from the crew's perspective. 
+The current system functions in the following way: 
+The admin (officer) sends an SMS to each crew member 
+detailing: Job Number, Date, Time, Required Amount of 
+Crew, Shift Duration, Client’s Company Name, Contact Number on site, 
+Additional Notes. When the crew receive the message, the user must reply with 
+'YES' or 'NO' and supply the job number ID. The confirmation, if the crew member 
+is assigned to the job, is called 'CREW LIST'. 
+This is sent usually 24h before starting the job. 
+The crew list consists of all the information about 
+the job, phone numbers and names of all the members 
+which they have been assigned to the specific job. The idea 
+for the new system is to substitute the current inconvenient 
+system to web-application where crew members can effectively 
+communicate with the office about the jobs. The employers also 
+will see the details about the jobs, their details etc. 
+
+The system will be developed using the following technologies:
+ - Spring Boot (Java) 
+- MySQL
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- React JS
+
+
+1.1 Project topic and rationale
+Provide an overview of the project topic you are working on, explain the project’s motivation, why 
+it is interesting, useful and what the problem in hands and challenges are.
+1.2 Project Aims and Objectives
+List the project aims and objectives, and a concise description where appropriate.
+1.3 Methodology
+Outline how you carried out the project (e.g., by using a Unified Process for system development).
+1.4 The report structure
+Give a description of how the remaining part of the report is organised and what each chapter is about.
+
+
+
+Project topic and rationale
+
+The project topic is a web aplication called Crew Logsistic System. 
+The projects motivation is that I am acctually working for the Pinnacle Crew. 
+During work at the company I have reallized what are the problems. 
+I have decided to develop a web application to solve the problems.
+
+
+The software is designed to help the company Pinnacle Crew to manage their crew members and jobs.
+The project is interesting because it is a real life project 
+and it is a good opportunity to learn how to develop a web application.
+The problem in hands is that the company Pinnacle Crew is using a SMS system to manage their crew members and jobs.
+The jobs are events that the company is organizing and the crew members are the people that are working on the events.
+The admin sends jobs to specific crew members. 
+The crew members have to confirm or reject by doing speciifc action in the app.
+
+
+The usufulness of the app is that it will help the company to manage their crew members and jobs more efficiently.

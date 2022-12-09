@@ -29,17 +29,12 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.cors();
         http
-                .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS).and()
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**", "/static/css/**", "/static/js/**", "/static/media/**", "/custom/**")
                 .permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().loginPage("/login").permitAll()
-                .and() 
-                .logout()
-                .and()
-                .exceptionHandling().accessDeniedPage("/access-denied");
+                .anyRequest().authenticated();
+      
 
         return http.build();
     }
