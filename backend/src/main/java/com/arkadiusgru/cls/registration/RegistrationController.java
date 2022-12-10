@@ -1,5 +1,7 @@
 package com.arkadiusgru.cls.registration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +17,13 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class RegistrationController {
 
+    static Logger logger = LoggerFactory.getLogger(RegistrationController.class);
+
     private final RegistrationService registrationService;
 
     @PostMapping(path = "/admin/registration")
     public String register(@RequestBody RegistrationRequest request) {
-
+        // logger.info(request.toString());
         return registrationService.register(request);
     }
 

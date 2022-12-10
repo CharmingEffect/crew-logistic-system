@@ -43,8 +43,7 @@ public class JwtFilter extends OncePerRequestFilter {
         // [sjdkofgsdkjfnkjsdfnkjsdfnsdfasfsadjfnsdajkfnkjsdf])
         final String token = authorizationHeader.split("")[1].trim();
 
-        UserDetails userDetails = userRepository
-                .findByEmail(jwtUtil
+        UserDetails userDetails = userRepository.findByEmail(jwtUtil
                         .getUsernameFromToken(token))
                 .orElse(null);
 

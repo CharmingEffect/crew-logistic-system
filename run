@@ -10,3 +10,4 @@ echo "Running Spring Boot "
 
 cd ../backend
 mvn clean compile exec:java
+
