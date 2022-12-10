@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
+import { useLocalState } from "./util/useLocalStorage";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Login from "./Login";
+import Homepage from "./Homepage";
+import PrivateRoute from "./PrivateRoute";
 
-import { Container, Row, Col } from "react-bootstrap";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+function App() {
+  const [jwt, setJwt] = useLocalState("", "jwt");
 
-import Login from "./components/Login";
+  // useEffect(() => {
+  //   console.log("JWT Value is: " + jwt);
+  // }, [jwt]);
 
-const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      ></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/" element={<Homepage />}></Route>
+    </Routes>
   );
-};
+}
 
 export default App;

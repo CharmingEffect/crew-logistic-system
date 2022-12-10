@@ -1,14 +1,23 @@
 package com.arkadiusgru.cls.security.config;
 
+import javax.servlet.Filter;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.naming.factory.BeanFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.BeanIds;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configurers.userdetails.DaoAuthenticationConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.arkadiusgru.cls.service.UserService;
 
@@ -22,19 +31,31 @@ public class WebSecurityConfig {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    private final Filter jwtFilter;
+
     // admin site has to be disabled for people from outside anyone how does not
     // have status as ADMIN
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.cors();
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/**", "/static/css/**", "/static/js/**", "/static/media/**", "/custom/**")
+
+        http = http.csrf().disable().cors().disable();
+        http = http.sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and();
+
+        http = http.exceptionHandling().authenticationEntryPoint((request, response, exception) -> {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, exception.getMessage());
+        }).and();
+
+        http.headers().frameOptions().disable();
+
+        http.authorizeRequests()
+                .antMatchers("/api/auth/**", "/api/admin/registration", "/h2-console/**", "/api/confirm-registration")
                 .permitAll()
                 .anyRequest().authenticated();
-      
+
+        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

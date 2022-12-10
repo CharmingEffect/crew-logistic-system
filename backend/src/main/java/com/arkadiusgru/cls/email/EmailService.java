@@ -4,15 +4,13 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Value;
 
-import org.springframework.data.jpa.domain.QAbstractAuditable;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import com.arkadiusgru.cls.custom_config.CustomConfigProperties;
+import com.arkadiusgru.cls.custom.CustomConfigProperties;
 
 import lombok.AllArgsConstructor;
 
