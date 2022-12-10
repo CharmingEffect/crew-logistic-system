@@ -1,0 +1,12 @@
+#!/bin/bash
+# Run script for the CLS project
+echo "Running the CLS project"
+echo "Running the frontend"
+
+cd frontend
+start cmd.exe "/K npm install && npm start"
+
+echo "Running Spring Boot "
+
+cd ../backend
+mvn clean compile exec:java
