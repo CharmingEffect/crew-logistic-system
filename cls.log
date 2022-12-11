@@ -4177,3 +4177,6 @@ java.lang.IllegalStateException: email already taken
 2022-12-11 01:23:33.419  INFO 31216 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-12-11 01:23:33.423  INFO 31216 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 0.58 seconds (JVM running for 603.139)
 2022-12-11 01:23:33.425  INFO 31216 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-11 01:23:45.750  INFO 31216 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-11 01:23:45.750  INFO 31216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-11 01:23:45.751  INFO 31216 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
