@@ -1,0 +1,31 @@
+https://json-generator.com/
+
+{
+  email: '{{email()}}',
+  firstName: '{{firstName()}}',
+  lastName: '{{surname()}}',
+  password: "1234",
+  role: "CREW_MEMBER",
+  address: {
+    street: '{{integer(100, 999)}} {{street()}}',
+    city: '{{city()}}',
+    country: '{{country()}}',
+    "zipCode": "N22 5NE"
+  }
+}
+
+{
+  "email": "gaineslangley@ceprene.com",
+  "firstName": "Janna",
+  "lastName": "Taylor",
+  "password": 1234,
+  "role": "CREW_MEMBER",
+  "address": {
+    "street": "640 Dennett Place",
+    "city": "Savage",
+    "country": "Colombia",
+    "zipCode": "N22 5NE"
+  }
+}
+
+

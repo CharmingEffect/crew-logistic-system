@@ -6,7 +6,7 @@ import Dashboard from "./Dashboard";
 import Login from "./Login";
 import Homepage from "./Homepage";
 import PrivateRoute from "./PrivateRoute";
-
+import Admin from "./Admin";
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
 
@@ -25,6 +25,7 @@ function App() {
         }
       ></Route>
       <Route path="/login" element={<Login />}></Route>
+      <Route path="/admin" element={<Admin />}></Route>
       <Route path="/" element={<Homepage />}></Route>
     </Routes>
   );

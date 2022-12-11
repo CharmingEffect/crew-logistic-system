@@ -29,6 +29,7 @@ public class AuthController {
 
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody AuthCredentialRequest authCredentialRequest) {
+
         try {
             Authentication auth = authenticationProvider.authenticate(
                     new UsernamePasswordAuthenticationToken(authCredentialRequest.getEmail(),

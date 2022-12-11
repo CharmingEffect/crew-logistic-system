@@ -44,7 +44,7 @@ public class JwtFilter extends OncePerRequestFilter {
         final String token = authorizationHeader.split("")[1].trim();
 
         UserDetails userDetails = userRepository.findByEmail(jwtUtil
-                        .getUsernameFromToken(token))
+                .getUsernameFromToken(token))
                 .orElse(null);
 
         // Get jwt token and validate
@@ -58,7 +58,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-        // adding token to the context of the application
+        // adding token to the context of the application 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         filterChain.doFilter(request, response);
     }
