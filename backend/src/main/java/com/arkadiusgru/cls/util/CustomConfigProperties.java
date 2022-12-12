@@ -1,4 +1,4 @@
-package com.arkadiusgru.cls.custom;
+package com.arkadiusgru.cls.util;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

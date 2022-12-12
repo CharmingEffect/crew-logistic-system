@@ -14,7 +14,9 @@ const Admin = () => {
 
   const toggleNavbar = (e) => {
     console.log("toggleNavbar: " + e);
-    setToggleNavbarState(false);
+    toggleNavbarState === true
+      ? setToggleNavbarState(false)
+      : setToggleNavbarState(true);
   };
 
   return (

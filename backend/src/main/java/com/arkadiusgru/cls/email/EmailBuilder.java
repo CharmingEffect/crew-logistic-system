@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailBuilder {
 
-    public String confirmationEmail(String name, String link) {
+    public String confirmationEmail(String name, String link, String tempPass) {
 
         String myvar = "<!DOCTYPE html>" +
                 "<html" +
@@ -131,9 +131,15 @@ public class EmailBuilder {
                 "                          \"" +
                 "                        >" +
                 "                         Thank you for joinning to Pinnacle Crew" +
-                "                          " +
                 "                        </p>" +
                 "                        <p style=\"margin: 0; margin-bottom: 24px\" id=\"message\">" +
+
+                "                          This is your temporary password: " + "<strong>" + tempPass + "</strong>"
+                + "<br></br>" +
+                "                          Ones you log in please change it to your own" +
+                "                        </p>" +
+                "                        <p style=\"margin: 0; margin-bottom: 24px\" id=\"message\">" +
+
                 "                          Please active your account by clicking the" +
                 "                          button below" +
                 "                        </p>" +

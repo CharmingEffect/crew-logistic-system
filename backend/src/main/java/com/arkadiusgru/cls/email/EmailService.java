@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import com.arkadiusgru.cls.custom.CustomConfigProperties;
+import com.arkadiusgru.cls.util.CustomConfigProperties;
 
 import lombok.AllArgsConstructor;
 

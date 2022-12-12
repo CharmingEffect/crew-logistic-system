@@ -1,5 +1,8 @@
 package com.arkadiusgru.cls.registration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.email.EmailBuilder;
@@ -9,6 +12,7 @@ import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.registration.token.ConfirmationToken;
 import com.arkadiusgru.cls.registration.token.ConfirmationTokenService;
 import com.arkadiusgru.cls.service.UserService;
+import com.arkadiusgru.cls.util.PassGenerator;
 
 import lombok.AllArgsConstructor;
 
@@ -21,6 +25,14 @@ public class RegistrationService {
     private final EmailSender emailSender;
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailBuilder emailBuilder;
+    private static Logger logger = LoggerFactory.getLogger(RegistrationService.class);
+
+    // private final String TEMPORARY_PASSWORD = new
+    // PassGenerator().generateStandardPassword();
+
+    // This is only for developemnt needs to be changed at the end of the project
+
+    private final String TEMPORARY_PASSWORD = "1234";
 
     public String register(RegistrationRequest request) {
 
@@ -34,14 +46,16 @@ public class RegistrationService {
                 request.getFirstName(),
                 request.getLastName(),
                 request.getEmail(),
-                request.getPassword(),
+                TEMPORARY_PASSWORD,
                 request.getRole(),
                 request.getAddress()));
 
         String link = "http://localhost:8080/api/confirm-registration?token=" + token;
         emailSender.send(request.getEmail(),
-                emailBuilder.confirmationEmail(request.getFirstName() + " " + request.getLastName(), link));
-
+                emailBuilder.confirmationEmail(request.getFirstName() + " " + request.getLastName(), link,
+                        TEMPORARY_PASSWORD));
+                        
+        logger.warn("Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): " + TEMPORARY_PASSWORD);
         return token;
 
     }
