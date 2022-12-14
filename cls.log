@@ -18147,3 +18147,25 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2022-12-11 21:44:59.609  INFO 28676 --- [Thread-564] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-12-11 21:44:59.610  INFO 28676 --- [Thread-564] com.zaxxer.hikari.HikariDataSource       : HikariPool-146 - Shutdown initiated...
 2022-12-11 21:44:59.612  INFO 28676 --- [Thread-564] com.zaxxer.hikari.HikariDataSource       : HikariPool-146 - Shutdown completed.
+2022-12-11 21:44:59.817  INFO 28676 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 28676 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system)
+2022-12-11 21:44:59.817  INFO 28676 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-11 21:44:59.980  INFO 28676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-11 21:44:59.988  INFO 28676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JPA repository interfaces.
+2022-12-11 21:45:00.031  INFO 28676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-11 21:45:00.032  INFO 28676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-11 21:45:00.032  INFO 28676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-11 21:45:00.049  INFO 28676 --- [restartedMain] o.a.c.c.C.[Tomcat-19].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2022-12-11 21:45:00.049  INFO 28676 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 230 ms
+2022-12-11 21:45:00.081  INFO 28676 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-11 21:45:00.084  INFO 28676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-147 - Starting...
+2022-12-11 21:45:00.087  INFO 28676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-147 - Start completed.
+2022-12-11 21:45:00.088  INFO 28676 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-12-11 21:45:00.131  INFO 28676 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-11 21:45:00.131  INFO 28676 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-11 21:45:00.209  INFO 28676 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@460927e7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21117931, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c02d5aa, org.springframework.security.web.header.HeaderWriterFilter@280091a6, org.springframework.security.web.authentication.logout.LogoutFilter@20a1eb98, com.arkadiusgru.cls.security.config.JwtFilter@7dd09046, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@725650c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ef7628b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e9dc1a1, org.springframework.security.web.session.SessionManagementFilter@4fd77a18, org.springframework.security.web.access.ExceptionTranslationFilter@b5cbcd0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ce5f916]
+2022-12-11 21:45:00.216  WARN 28676 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-11 21:45:00.291  INFO 28676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-11 21:45:00.293  INFO 28676 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-11 21:45:00.305  INFO 28676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-11 21:45:00.310  INFO 28676 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 0.511 seconds (JVM running for 1984.933)
+2022-12-11 21:45:00.312  INFO 28676 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
