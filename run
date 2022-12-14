@@ -1,14 +1,13 @@
 #!/bin/bash
-# Run all required tools to start the CLS project.
-
+# Run script for the CLS project
 echo "Running the CLS project"
-
-#Running the frontend
+echo "Running the frontend"
 
 cd frontend
 start cmd.exe "/K npm install && npm start"
 
-#Running Spring Boot
+echo "Running Spring Boot "
 
 cd ../backend
 mvn clean compile exec:java
+
