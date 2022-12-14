@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.beans.factory.annotation.Value;
 
 import lombok.Data;
 

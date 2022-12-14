@@ -12,11 +12,17 @@ import com.arkadiusgru.cls.model.User;
 
 @Repository
 @Transactional(readOnly = true)
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
     @Transactional
     @Modifying
     @Query("UPDATE User a " + "SET a.enabled = TRUE WHERE a.email = ?1")
     int enableUser(String email);
+
+    // delete user by id
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM User a WHERE a.id = ?1")
+    int deleteUser(Long id);
 }

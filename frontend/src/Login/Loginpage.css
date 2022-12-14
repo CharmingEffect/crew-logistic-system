@@ -19,6 +19,9 @@
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
   }
 
+  swal-icon--success__hide-corners {
+    display:none;
+  }
 
   .swal-modal {
     background-color:#1e2833 !important;

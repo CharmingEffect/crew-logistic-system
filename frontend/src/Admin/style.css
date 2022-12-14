@@ -297,6 +297,14 @@ summary {
 template {
   display: none; }
 
+  .swal-icon--success__hide-corners, .swal-icon--success:after, .swal-icon--success:before  {
+
+    background: content-box;
+
+  }
+
+
+
 [hidden] {
   display: none !important; }
 
@@ -434,26 +442,26 @@ mark,
     border: 1px solid rgba(0, 0, 0, 0.274);
   }
 
-  .tabs{
+  .nav-items{
 
     cursor:pointer;
   }
   
-  .bloc-tabs {
+  .bloc-nav-items {
     display: flex;
-  }tabs
-  .tabs {
+  }nav-items
+  .nav-items {
   
     cursor: pointer;
 
   }
 
-  .active-tabs  {
+  .active-nav-items  {
     background: #214a80;
     border-bottom: 1px solid transparent;
   }
   
-  .active-tabs::before {
+  .active-nav-items::before {
     content: "";
     display: block;
     position: absolute;
@@ -463,7 +471,7 @@ mark,
   
   
 
-  .content-tabs {
+  .content-nav-items {
     flex-grow : 1;
   }
   .content {
@@ -3344,26 +3352,26 @@ input[type="button"].btn-block {
     pointer-events: none;
     cursor: default; }
 
-.nav-tabs {
+.nav-nav-items {
   border-bottom: 1px solid #dee2e6; }
-  .nav-tabs .nav-item {
+  .nav-nav-items .nav-item {
     margin-bottom: -1px; }
-  .nav-tabs .nav-link {
+  .nav-nav-items .nav-link {
     border: 1px solid transparent;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
-    .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    .nav-nav-items .nav-link:hover, .nav-nav-items .nav-link:focus {
       border-color: #e9ecef #e9ecef #dee2e6; }
-    .nav-tabs .nav-link.disabled {
+    .nav-nav-items .nav-link.disabled {
       color: #6c757d;
       background-color: transparent;
       border-color: transparent; }
-  .nav-tabs .nav-link.active,
-  .nav-tabs .nav-item.show .nav-link {
+  .nav-nav-items .nav-link.active,
+  .nav-nav-items .nav-item.show .nav-link {
     color: #495057;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff; }
-  .nav-tabs .dropdown-menu {
+  .nav-nav-items .dropdown-menu {
     margin-top: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
@@ -3802,7 +3810,7 @@ input[type="button"].btn-block {
   .card-footer:last-child {
     border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
 
-.card-header-tabs {
+.card-header-nav-items {
   margin-right: -0.625rem;
   margin-bottom: -0.75rem;
   margin-left: -0.625rem;

@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -40,10 +41,6 @@ public class UserService implements UserDetailsService {
 
         boolean isExists = userRepository.findByEmail(user.getEmail()).isPresent();
 
-        if (isExists) {
-            throw new IllegalStateException("email already taken");
-
-        }
         String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 
         user.setPassword(encryptedPassword);
@@ -61,13 +58,26 @@ public class UserService implements UserDetailsService {
         logger.info("User with email {} has been registered", user.getEmail());
 
         // instead of returning token, we can return some message to frontend
+        if (isExists) {
+            throw new IllegalStateException("email already taken");
 
-        return token;
+        } else {
+            return token;
+        }
 
     }
 
     public int enableUser(String email) {
         return userRepository.enableUser(email);
+
+    }
+
+    public List<User> getAll() {
+        return userRepository.findAll();
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
 
     }
 

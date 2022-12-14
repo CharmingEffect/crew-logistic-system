@@ -1,14 +1,17 @@
-{
-  "properties": [
-    {
-      "name": "application.title",
-      "type": "java.lang.String",
-      "description": "A description for 'application.title'"
-    },
-    {
-      "name": "application.creator",
-      "type": "java.lang.String",
-      "description": "A description for 'application.creator'"
-    }
-  ]
-}
+{"properties": [
+  {
+    "name": "application.title",
+    "type": "java.lang.String",
+    "description": "A description for 'application.title'"
+  },
+  {
+    "name": "application.creator",
+    "type": "java.lang.String",
+    "description": "A description for 'application.creator'"
+  },
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  }
+]}

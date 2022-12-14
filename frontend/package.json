@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "cls-frontend",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8080/",
@@ -21,6 +21,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-tabs": "^6.0.0",
     "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },

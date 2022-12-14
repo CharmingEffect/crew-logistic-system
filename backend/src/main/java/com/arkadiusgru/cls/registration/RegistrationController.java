@@ -23,8 +23,9 @@ public class RegistrationController {
 
     @PostMapping(path = "/admin/registration")
     public String register(@RequestBody RegistrationRequest request) {
-        // logger.info(request.toString());
+
         return registrationService.register(request);
+
     }
 
     @GetMapping(path = "/confirm-registration")

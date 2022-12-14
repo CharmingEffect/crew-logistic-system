@@ -1,9 +1,16 @@
 import React from "react";
-import "./style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import AddUser from "./AddUser";
 import { FileLock2Fill } from "react-bootstrap-icons";
-import { PersonPlusFill } from "react-bootstrap-icons";
+import {
+  Tools,
+  DoorClosedFill,
+  ListUl,
+  PersonFill,
+} from "react-bootstrap-icons";
+import UsersMngmt from "./UsersMngmt";
+import "./style.css";
 
 const Admin = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -13,10 +20,14 @@ const Admin = () => {
   };
 
   const toggleNavbar = (e) => {
-    console.log("toggleNavbar: " + e);
     toggleNavbarState === true
       ? setToggleNavbarState(false)
       : setToggleNavbarState(true);
+  };
+
+  const logoutUser = () => {
+    localStorage.removeItem("jwt");
+    window.location.href = "/";
   };
 
   return (
@@ -28,54 +39,65 @@ const Admin = () => {
         >
           <div className="custom-menu"></div>
           <h1>
-            <a href="index.html" className="logo">
-              CLS
-            </a>
+            <a className="logo">CLS</a>
           </h1>
           <ul className="list-unstyled components mb-5">
             <li>
               <a
-                className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                className={
+                  toggleState === 1 ? "nav-items active-nav-items" : "nav-items"
+                }
                 onClick={() => toggleTab(1)}
               >
                 {" "}
-                <PersonPlusFill></PersonPlusFill>
-                <span className="fa fa-home mr-3"></span> Users Management
+                <PersonFill size={25}></PersonFill>
+                <span className="mr-3"></span> Users Management
               </a>
             </li>
             <li>
               <a
-                className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                className={
+                  toggleState === 2 ? "nav-items active-nav-items" : "nav-items"
+                }
                 onClick={() => toggleTab(2)}
               >
+                {" "}
+                <Tools size={25}></Tools>
                 <span className="mr-3"></span> Jobs Management
               </a>
             </li>
             <li>
               <a href="#">
-                <span className="fa fa-sticky-note mr-3"></span> Friends
+                <span className="mr-3"></span> Friends
               </a>
             </li>
             <li>
               <a href="#">
-                <span className="fa fa-sticky-note mr-3"></span> Subcription
+                <span className="mr-3"></span> Subcription
               </a>
             </li>
             <li>
               <a href="#">
-                <span className="fa fa-paper-plane mr-3"></span> Settings
+                <span className="mr-3"></span> Settings
               </a>
             </li>
             <li>
-              <a href="#">
-                <span className="fa fa-paper-plane mr-3"></span> Information
+              <a className="nav-items" onClick={() => logoutUser()}>
+                <DoorClosedFill size={25}></DoorClosedFill>
+                <span className="mr-3"></span> Logout
               </a>
             </li>
           </ul>
         </nav>
 
         <div className="content-tabs">
-          <button onClick={() => toggleNavbar()}>Toggle Navbar</button>
+          <ListUl
+            role={"button"}
+            onClick={() => toggleNavbar()}
+            size={35}
+            className="m-2"
+          />
+
           <div
             id="content"
             className={
@@ -84,7 +106,7 @@ const Admin = () => {
                 : "content"
             }
           >
-            <AddUser></AddUser>
+            <UsersMngmt></UsersMngmt>
             {/* tutaj add user */}
           </div>
 

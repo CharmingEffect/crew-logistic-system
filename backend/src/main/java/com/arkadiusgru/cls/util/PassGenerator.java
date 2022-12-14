@@ -1,9 +1,6 @@
 package com.arkadiusgru.cls.util;
 
 import org.passay.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
