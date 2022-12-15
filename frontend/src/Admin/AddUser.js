@@ -33,7 +33,18 @@ const AddUser = () => {
         "Content-Type": "application/json",
       },
 
-      body: JSON.stringify(user),
+      body: JSON.stringify({
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        role: role,
+        address: {
+          street: street,
+          city: city,
+          country: country,
+          zipCode: zipCode,
+        },
+      }),
     })
       .then((response) => {
         // console.log(response.status);

@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class Address extends AbstractEntity {
     private String zipCode;
 
     @OneToOne(mappedBy = "address")
+    @JoinColumn(name = "user_id")
     private User user;
 
 }
