@@ -3927,3 +3927,28 @@ Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: unexpected token
 	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748) ~[hibernate-core-5.6.12.Final.jar:5.6.12.Final]
 	... 105 common frames omitted
 
+2022-12-15 00:40:32.267  INFO 25956 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 25956 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system)
+2022-12-15 00:40:32.267  INFO 25956 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-15 00:40:32.455  INFO 25956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-15 00:40:32.466  INFO 25956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2022-12-15 00:40:32.531  INFO 25956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-15 00:40:32.531  INFO 25956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-15 00:40:32.532  INFO 25956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-15 00:40:32.551  INFO 25956 --- [restartedMain] o.a.c.c.C.[Tomcat-16].[localhost].[/]    : Initializing Spring embedded WebApplicationContext
+2022-12-15 00:40:32.552  INFO 25956 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2022-12-15 00:40:32.605  INFO 25956 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-15 00:40:32.611  INFO 25956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2022-12-15 00:40:32.616  INFO 25956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2022-12-15 00:40:32.616  INFO 25956 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-12-15 00:40:32.682  INFO 25956 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-15 00:40:32.682  INFO 25956 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-15 00:40:32.802  INFO 25956 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@360185db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13ac66ed, org.springframework.security.web.context.SecurityContextPersistenceFilter@3ef6b9a3, org.springframework.security.web.header.HeaderWriterFilter@37ec5669, org.springframework.security.web.authentication.logout.LogoutFilter@68b76dd3, com.arkadiusgru.cls.security.config.JwtFilter@54b30aa1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@349c7560, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61963284, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3adef423, org.springframework.security.web.session.SessionManagementFilter@2ce5dec1, org.springframework.security.web.access.ExceptionTranslationFilter@42b90b26, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22fa6233]
+2022-12-15 00:40:32.814  WARN 25956 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-15 00:40:32.926  INFO 25956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-15 00:40:32.931  INFO 25956 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-15 00:40:32.950  INFO 25956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-15 00:40:32.955  INFO 25956 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 0.704 seconds (JVM running for 4984.597)
+2022-12-15 00:40:32.957  INFO 25956 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-15 00:43:29.780  INFO 25956 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-16].[localhost].[/]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-15 00:43:29.780  INFO 25956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-15 00:43:29.781  INFO 25956 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
