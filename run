@@ -1,13 +1,16 @@
 #!/bin/bash
 # Run script for the CLS project
 echo "Running the CLS project"
-echo "Running the frontend"
+
+#Running the frontend
 
 cd frontend
 start cmd.exe "/K npm install && npm start"
 
-echo "Running Spring Boot "
+#Running the docker container for the mail development server
+start cmd.exe "/K docker start -ai magical_jennings"
+
+#Running Spring Boot
 
 cd ../backend
 mvn clean compile exec:java
-

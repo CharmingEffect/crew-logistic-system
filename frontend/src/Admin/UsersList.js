@@ -2,6 +2,7 @@ import "./style.css";
 import swal from "sweetalert";
 import React, { Component } from "react";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
+import { useLocalState } from "../util/useLocalStorage";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -28,6 +29,8 @@ class UsersList extends Component {
     }).then(() => {
       let updatedUsers = [...this.state.users].filter((i) => i.id !== id);
       this.setState({ clients: updatedUsers });
+      swal("Deleted!", "User has been deleted.", "success");
+      this.componentDidMount();
     });
   }
 

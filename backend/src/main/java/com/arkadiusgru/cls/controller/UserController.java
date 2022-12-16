@@ -31,12 +31,11 @@ public class UserController {
     }
 
     @DeleteMapping("/admin/deleteUser/{id}")
-    public ResponseEntity deleteUser(@PathVariable Long id) {
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         Long addressIdFromUser = userRepository.getAddressIdByUserId(id);
         userService.deleteUserById(id);
         userRepository.deleteAddressById(addressIdFromUser);
         return ResponseEntity.ok().build();
-
 
     }
 

@@ -27,6 +27,15 @@ const AddUser = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    // loading swal alert
+    swal({
+      title: "Loading...",
+      text: "Please wait",
+      icon: "info",
+      button: false,
+      timer: 4000,
+    });
+
     await fetch("/api/admin/registration", {
       method: "POST",
       headers: {
