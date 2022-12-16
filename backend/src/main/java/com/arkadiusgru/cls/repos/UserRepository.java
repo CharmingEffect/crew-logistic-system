@@ -1,5 +1,6 @@
 package com.arkadiusgru.cls.repos;
 
+import java.io.Console;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,9 +21,26 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("UPDATE User a " + "SET a.enabled = TRUE WHERE a.email = ?1")
     int enableUser(String email);
 
+    // delete confirmation token by user id
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM ConfirmationToken a WHERE a.user.id = ?1")
+    int deleteConfirmationTokenByUserId(Long id);
+
+    // select address id from user
+    @Query("SELECT a.address.id FROM User a WHERE a.id = ?1")
+    Long getAddressIdByUserId(Long id);
+
     // delete user by id
     @Transactional
     @Modifying
     @Query("DELETE FROM User a WHERE a.id = ?1")
     int deleteUserById(Long id);
+
+    // deleye adress by adress id
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM Address a WHERE a.id = ?1")
+    int deleteAddressById(Long id);
+
 }

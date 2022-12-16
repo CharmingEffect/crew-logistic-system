@@ -77,7 +77,12 @@ public class UserService implements UserDetailsService {
     }
 
     public void deleteUserById(Long id) {
+
+        // Long addressIdFromUser = userRepository.getAddressIdByUserId(id);
+        // System.out.println(addressIdFromUser);
+        userRepository.deleteConfirmationTokenByUserId(id);
         userRepository.deleteUserById(id);
+       
 
     }
 

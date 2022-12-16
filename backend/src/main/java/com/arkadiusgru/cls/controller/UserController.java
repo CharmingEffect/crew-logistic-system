@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.arkadiusgru.cls.model.User;
+import com.arkadiusgru.cls.repos.UserRepository;
 import com.arkadiusgru.cls.service.UserService;
 
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 public class UserController {
 
     private final UserService userService;
+    private final UserRepository userRepository;
 
     @RequestMapping(value = "/admin/getAllUsers", method = RequestMethod.GET)
     public List<User> showAll() {
@@ -29,11 +31,12 @@ public class UserController {
     }
 
     @DeleteMapping("/admin/deleteUser/{id}")
-
     public ResponseEntity deleteUser(@PathVariable Long id) {
+        Long addressIdFromUser = userRepository.getAddressIdByUserId(id);
         userService.deleteUserById(id);
-
+        userRepository.deleteAddressById(addressIdFromUser);
         return ResponseEntity.ok().build();
+
 
     }
 
