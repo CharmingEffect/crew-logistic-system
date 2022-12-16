@@ -23,7 +23,6 @@ public class RegistrationRequest {
     private String lastName;
     private String email;
     private String password;
-    private String street;
     private Role role;
     private Address address;
 

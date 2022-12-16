@@ -21250,3 +21250,395 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 2022-12-15 18:56:32.194  INFO 6932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2022-12-15 18:56:32.201  INFO 6932 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 0.533 seconds (JVM running for 5084.112)
 2022-12-15 18:56:32.202  INFO 6932 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-16 03:27:49.423  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on FEATHER with PID 3000 (C:\Projects\crew-logistic-system\backend\target\classes started by grudz in C:\Projects\crew-logistic-system)
+2022-12-16 03:27:49.425  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-16 03:27:49.503  INFO 3000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-16 03:27:50.733  INFO 3000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-16 03:27:50.817  INFO 3000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2022-12-16 03:27:51.758  INFO 3000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-16 03:27:51.773  INFO 3000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-16 03:27:51.775  INFO 3000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-16 03:27:51.886  INFO 3000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-16 03:27:51.887  INFO 3000 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2383 ms
+2022-12-16 03:27:52.719  INFO 3000 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-16 03:27:52.883  INFO 3000 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-16 03:27:53.040  INFO 3000 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-16 03:27:53.157  INFO 3000 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-16 03:27:53.320  INFO 3000 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-16 03:27:53.367  INFO 3000 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-12-16 03:27:54.538  INFO 3000 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-16 03:27:54.551  INFO 3000 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-16 03:27:55.186 DEBUG 3000 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, springSecurityFilterChain urls=[/*] order=10, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtFilter urls=[/*] order=2147483647
+2022-12-16 03:27:55.187 DEBUG 3000 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2022-12-16 03:27:55.616  INFO 3000 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b5a80eb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ac6f7a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@35e5f577, org.springframework.security.web.header.HeaderWriterFilter@518f2a26, org.springframework.security.web.authentication.logout.LogoutFilter@672b811d, com.arkadiusgru.cls.security.config.JwtFilter@3c1d3a06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2011d0c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43e48dda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53ec39bc, org.springframework.security.web.session.SessionManagementFilter@103b5ca6, org.springframework.security.web.access.ExceptionTranslationFilter@42bebb09, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b5d029]
+2022-12-16 03:27:55.695  WARN 3000 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-16 03:27:55.860 DEBUG 3000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-16 03:27:55.965 DEBUG 3000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-12-16 03:27:56.029 DEBUG 3000 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-16 03:27:56.047 DEBUG 3000 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-16 03:27:56.498  INFO 3000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-16 03:27:56.508  INFO 3000 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-16 03:27:56.596  INFO 3000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-16 03:27:56.613  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 7.75 seconds (JVM running for 8.403)
+2022-12-16 03:27:58.505  INFO 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-16 03:27:58.506  INFO 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-16 03:27:58.506 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-16 03:27:58.507 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-12-16 03:27:58.508 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-12-16 03:27:58.509 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@136455ea
+2022-12-16 03:27:58.510 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6c4472ca
+2022-12-16 03:27:58.511 DEBUG 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-16 03:27:58.511  INFO 3000 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2022-12-16 03:28:15.327  INFO 3000 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-16 03:28:15.338  INFO 3000 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-16 03:28:15.340  INFO 3000 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-16 03:28:15.343  WARN 3000 --- [Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.5/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.5/java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.base@17.0.5/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ java.base@17.0.5/java.lang.Thread.run(Unknown Source)
+2022-12-16 03:28:15.350  INFO 3000 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-16 03:28:15.355  INFO 3000 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-16 03:28:15.365  INFO 3000 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-16 03:28:15.442  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on FEATHER with PID 3000 (C:\Projects\crew-logistic-system\backend\target\classes started by grudz in C:\Projects\crew-logistic-system)
+2022-12-16 03:28:15.443  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-12-16 03:28:15.708  INFO 3000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-16 03:28:15.724  INFO 3000 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
+2022-12-16 03:28:15.838  INFO 3000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-16 03:28:15.839  INFO 3000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-16 03:28:15.840  INFO 3000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-16 03:28:15.857  INFO 3000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-16 03:28:15.857  INFO 3000 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 410 ms
+2022-12-16 03:28:15.932  INFO 3000 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-16 03:28:15.940  INFO 3000 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-16 03:28:15.945  INFO 3000 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-16 03:28:15.946  INFO 3000 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-12-16 03:28:16.065  INFO 3000 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-16 03:28:16.065  INFO 3000 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-16 03:28:16.166 DEBUG 3000 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, springSecurityFilterChain urls=[/*] order=10, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtFilter urls=[/*] order=2147483647
+2022-12-16 03:28:16.167 DEBUG 3000 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2022-12-16 03:28:16.247  INFO 3000 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@43f23a49, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e24c325, org.springframework.security.web.context.SecurityContextPersistenceFilter@34c49f77, org.springframework.security.web.header.HeaderWriterFilter@655142e7, org.springframework.security.web.authentication.logout.LogoutFilter@73156dd5, com.arkadiusgru.cls.security.config.JwtFilter@5cb99e1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6eb43737, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19d167c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b8d2363, org.springframework.security.web.session.SessionManagementFilter@4ed58207, org.springframework.security.web.access.ExceptionTranslationFilter@1d88f44c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f6db7fb]
+2022-12-16 03:28:16.261  WARN 3000 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-16 03:28:16.301 DEBUG 3000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-12-16 03:28:16.318 DEBUG 3000 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-12-16 03:28:16.323 DEBUG 3000 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-12-16 03:28:16.328 DEBUG 3000 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-12-16 03:28:16.420  INFO 3000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-16 03:28:16.423  INFO 3000 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-12-16 03:28:16.436  INFO 3000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-16 03:28:16.443  INFO 3000 --- [restartedMain] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 1.027 seconds (JVM running for 28.233)
+2022-12-16 03:28:16.446  INFO 3000 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-16 03:28:46.686  INFO 3000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-16 03:28:46.688  INFO 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-16 03:28:46.689 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-12-16 03:28:46.690 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-12-16 03:28:46.691 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-12-16 03:28:46.693 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@f3800f6
+2022-12-16 03:28:46.696 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@8c7f7ad
+2022-12-16 03:28:46.696 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-12-16 03:28:46.698  INFO 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-12-16 03:29:48.990 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:29:49.002 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:29:49.148 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:29:49.180 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:29:49.224 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:29:49.238 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:29:49.239 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:29:49.251 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:29:49.257 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:29:49.259 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:31:14.960 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:31:14.962 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:31:14.974 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:31:14.981 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:31:14.983 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:31:15.218 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:31:15.218 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:31:15.225 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:31:15.228 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:31:15.229 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:31:19.558 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:31:19.560 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:31:19.570 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:31:19.574 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:31:19.576 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:31:19.828 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:31:19.830 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:31:19.842 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:31:19.847 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:31:19.851 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:18.287 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:18.290 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:18.303 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:18.307 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:18.309 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:18.318 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:18.319 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:18.327 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:18.330 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:18.332 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:24.861 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:24.864 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:24.876 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:24.880 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:24.883 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:25.126 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:25.128 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:25.140 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:25.149 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:25.152 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:32.182 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:32.184 DEBUG 3000 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:32.195 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:32.205 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:32.208 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:32.435 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:32.437 DEBUG 3000 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:32.447 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:32.457 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:32.460 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:37.933 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:37.936 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:37.947 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:37.955 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:37.957 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:33:38.286 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:33:38.286 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:33:38.297 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:33:38.303 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:33:38.306 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:53.760 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:53.762 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:53.776 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:53.785 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:53.788 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:54.003 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:54.004 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:54.019 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:54.028 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:54.038 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:55.004 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:55.006 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:55.018 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:55.028 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:55.032 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:55.346 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:55.347 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:55.359 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:55.367 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:55.371 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:56.545 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:56.546 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:56.554 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:56.562 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:56.565 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:56.809 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:56.810 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:56.819 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:56.825 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:56.826 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:57.482 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:57.484 DEBUG 3000 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:57.495 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:57.504 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:57.505 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:57.732 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:57.734 DEBUG 3000 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:57.744 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:57.754 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:57.756 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:59.413 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:59.415 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:59.426 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:59.436 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:59.439 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:34:59.758 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:34:59.760 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:34:59.771 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:34:59.778 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:34:59.781 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:00.869 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:00.871 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:00.882 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:00.891 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:00.894 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:01.222 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:01.223 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:01.235 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:01.243 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:01.245 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:08.255 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:08.256 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:08.263 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:08.267 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:08.269 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:08.454 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:08.455 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:08.462 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:08.467 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:08.468 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:22.268 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:22.271 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:22.279 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:22.283 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:22.285 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:22.291 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:22.292 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:22.303 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:22.308 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:22.309 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:32.268 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:32.280 DEBUG 3000 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:32.290 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:32.294 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:32.295 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:32.305 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:32.306 DEBUG 3000 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:32.313 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:32.319 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:32.320 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:38.413 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:38.423 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:38.436 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:38.442 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:38.444 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:38.658 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:38.660 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:38.666 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:38.671 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:38.672 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:44.260 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:44.262 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:44.272 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:44.280 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:44.281 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:44.749 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:44.751 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:44.764 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:44.768 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:44.770 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:52.464 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:52.470 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:52.484 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:52.491 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:52.493 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:52.714 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:52.716 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:52.727 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:52.734 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:52.735 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:53.374 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:53.375 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:53.388 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:53.395 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:53.397 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:53.724 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:53.732 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:53.743 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:53.750 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:53.752 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:54.776 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:54.777 DEBUG 3000 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:54.786 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:54.795 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:54.797 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:55.020 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:55.021 DEBUG 3000 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:55.033 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:55.048 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:55.055 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:55.548 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:55.550 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:55.565 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:55.574 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:55.576 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:35:55.914 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:35:55.915 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:35:55.925 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:35:55.933 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:35:55.936 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:11.256 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:11.258 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:11.267 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:11.275 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:11.277 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:11.285 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:11.286 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:11.293 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:11.296 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:11.298 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:15.266 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:15.266 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:15.272 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:15.276 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:15.277 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:15.282 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:15.283 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:15.291 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:15.296 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:15.297 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:32.263 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:32.265 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:32.274 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:32.280 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:32.283 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:32.291 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:32.292 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:32.299 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:32.309 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:32.310 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:39.151 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:39.152 DEBUG 3000 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:39.162 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:39.170 DEBUG 3000 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:39.172 DEBUG 3000 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:39.403 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:39.404 DEBUG 3000 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:39.414 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:39.420 DEBUG 3000 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:39.423 DEBUG 3000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:39.958 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:39.960 DEBUG 3000 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:39.969 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:39.975 DEBUG 3000 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:39.977 DEBUG 3000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:40.300 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:40.301 DEBUG 3000 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:40.311 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:40.323 DEBUG 3000 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:40.326 DEBUG 3000 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:42.950 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:42.951 DEBUG 3000 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:42.962 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:42.970 DEBUG 3000 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:42.972 DEBUG 3000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:43.202 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:43.203 DEBUG 3000 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:43.223 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:43.231 DEBUG 3000 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:43.233 DEBUG 3000 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:44.010 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:44.013 DEBUG 3000 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:44.022 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:44.029 DEBUG 3000 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:44.033 DEBUG 3000 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:36:44.353 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:36:44.355 DEBUG 3000 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:36:44.382 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:36:44.389 DEBUG 3000 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:36:44.392 DEBUG 3000 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:37:35.257 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:37:35.258 DEBUG 3000 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:37:35.265 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:37:35.270 DEBUG 3000 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:37:35.272 DEBUG 3000 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-12-16 03:37:35.279 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
+2022-12-16 03:37:35.280 DEBUG 3000 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
+2022-12-16 03:37:35.286 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2022-12-16 03:37:35.291 DEBUG 3000 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2022-12-16 03:37:35.292 DEBUG 3000 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

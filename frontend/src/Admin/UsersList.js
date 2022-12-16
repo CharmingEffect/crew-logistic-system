@@ -30,6 +30,8 @@ class UsersList extends Component {
       let updatedUsers = [...this.state.users].filter((i) => i.id !== id);
       this.setState({ clients: updatedUsers });
       swal("Deleted!", "User has been deleted.", "success");
+      const [jwt, setJwt] = useLocalState("", "jwt");
+    
       this.componentDidMount();
     });
   }

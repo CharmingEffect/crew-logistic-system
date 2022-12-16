@@ -54,7 +54,7 @@ public class RegistrationService {
         emailSender.send(request.getEmail(),
                 emailBuilder.confirmationEmail(request.getFirstName() + " " + request.getLastName(), link,
                         TEMPORARY_PASSWORD));
-                        
+
         logger.warn("Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): " + TEMPORARY_PASSWORD);
         return token;
 
