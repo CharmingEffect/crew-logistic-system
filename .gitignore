@@ -36,5 +36,4 @@ build/
 ### VS Code ###
 .vscode/
 
-### cant be added to github cuz this is file wich runs during push
 push_on_shutdown.bat
