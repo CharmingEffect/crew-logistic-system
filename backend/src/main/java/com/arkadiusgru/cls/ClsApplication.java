@@ -11,7 +11,7 @@ import com.arkadiusgru.cls.util.CustomConfigProperties;
 public class ClsApplication {
 
 	// what this functuion does is that it starts the application
-
+	// change to test
 	public static void main(String[] args) {
 		SpringApplication.run(ClsApplication.class, args);
 	}
