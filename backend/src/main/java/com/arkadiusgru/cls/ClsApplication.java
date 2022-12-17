@@ -12,6 +12,7 @@ public class ClsApplication {
 
 	// what this functuion does is that it starts the application
 	// change to test
+	// what is this
 
 	// what this functuion does is that it starts the application
 	public static void main(String[] args) {
