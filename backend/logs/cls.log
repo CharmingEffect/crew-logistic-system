@@ -199,3 +199,4 @@ java.lang.IllegalStateException: email already taken
 2022-12-30 18:57:22.747 DEBUG 13788 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=admin@wp.pl, password=1234)]
 2022-12-30 18:57:22.901 DEBUG 13788 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2022-12-30 18:57:22.914 DEBUG 13788 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2022-12-30 18:57:22.916 DEBUG 13788 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
