@@ -10,7 +10,7 @@ import {
   PersonFill,
 } from "react-bootstrap-icons";
 import UsersMngmt from "./UsersMngmt";
-import "./style.css";
+import Sidebar from "../common/Sidebar";
 
 const Admin = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -32,98 +32,7 @@ const Admin = () => {
 
   return (
     <div>
-      <div className="wrapper d-flex align-items-stretch">
-        <nav
-          id="sidebar"
-          className={toggleNavbarState === true ? "navbar-on" : "navbar-off"}
-        >
-          <div className="custom-menu"></div>
-          <h1>
-            <a className="logo">CLS</a>
-          </h1>
-          <ul className="list-unstyled components mb-5">
-            <li>
-              <a
-                className={
-                  toggleState === 1 ? "nav-items active-nav-items" : "nav-items"
-                }
-                onClick={() => toggleTab(1)}
-              >
-                {" "}
-                <PersonFill size={25}></PersonFill>
-                <span className="mr-3"></span> Users Management
-              </a>
-            </li>
-            <li>
-              <a
-                className={
-                  toggleState === 2 ? "nav-items active-nav-items" : "nav-items"
-                }
-                onClick={() => toggleTab(2)}
-              >
-                {" "}
-                <Tools size={25}></Tools>
-                <span className="mr-3"></span> Jobs Management
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span className="mr-3"></span> Friends
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span className="mr-3"></span> Subcription
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span className="mr-3"></span> Settings
-              </a>
-            </li>
-            <li>
-              <a className="nav-items" onClick={() => logoutUser()}>
-                <DoorClosedFill size={25}></DoorClosedFill>
-                <span className="mr-3"></span> Logout
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="content-tabs">
-          <ListUl
-            role={"button"}
-            onClick={() => toggleNavbar()}
-            size={35}
-            className="m-2"
-          />
-
-          <div
-            id="content"
-            className={
-              toggleState === 1
-                ? "content p-4 p-md-5 pt-5  active-content"
-                : "content"
-            }
-          >
-            <UsersMngmt></UsersMngmt>
-            {/* tutaj add user */}
-          </div>
-
-          {/* TEMPLATE DO TOWRZENIA NAWIGACJI */}
-          <div
-            id="content"
-            className={
-              toggleState === 2
-                ? "content p-4 p-md-5 pt-5  active-content"
-                : "content"
-            }
-          >
-            <h2 className="mb-4">Option 2</h2>
-            <p>To nie jest to samo</p>
-          </div>
-        </div>
-      </div>
+      <Sidebar></Sidebar>
     </div>
   );
 };
