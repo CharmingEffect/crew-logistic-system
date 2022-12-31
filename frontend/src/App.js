@@ -6,6 +6,7 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import Admin from "./Admin";
 import Crew from "./Crew";
+import UsersMngmt from "./Admin/UsersMngmt";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -26,6 +27,7 @@ function App() {
       ></Route>
       <Route path="/" element={<Login />}></Route>
       <Route path="/admin" element={<Admin />}></Route>
+      <Route path="/userMngmt" element={<UsersMngmt />}></Route>
     </Routes>
   );
 }

@@ -10,6 +10,7 @@ import Documents from "../../assets/draft.svg";
 import PowerOff from "../../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import Dashboard from "../../Admin/Dashboard";
 
 const Container = styled.div`
   position: fixed;
@@ -241,7 +242,7 @@ const Sidebar = () => {
             activeClassName="active"
             to="/"
           >
-            <img src={Home} alt="Home" />
+            <img src={Dashboard} alt="Dashboard" />
             <Text clicked={click}>Home</Text>
           </Item>
           <Item
