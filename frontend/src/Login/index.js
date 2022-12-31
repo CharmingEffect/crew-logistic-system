@@ -38,7 +38,7 @@ const Login = () => {
         if (body.role === "ADMIN") {
           window.location.href = "/admin";
         } else {
-          window.location.href = "/dashboard";
+          window.location.href = "/crew";
         }
       })
       .catch((message) => {
