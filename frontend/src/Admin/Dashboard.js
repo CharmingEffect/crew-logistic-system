@@ -7,4 +7,3 @@ const DashboardAdmin = () => {
 const Dashboard = MotionHoc(DashboardAdmin);
 
 export default Dashboard;
-mvn
