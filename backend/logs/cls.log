@@ -1,107 +1,26 @@
-2022-12-17 18:44:25.444  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 11384 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
-2022-12-17 18:44:25.457  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
-2022-12-17 18:44:26.686  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-17 18:44:26.784  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
-2022-12-17 18:44:27.728  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2022-12-17 18:44:27.741  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-17 18:44:27.742  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-17 18:44:27.849  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-17 18:44:27.849  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2306 ms
-2022-12-17 18:44:28.502  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-17 18:44:28.614  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-12-17 18:44:29.039  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-12-17 18:44:29.186  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-17 18:44:29.392  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-12-17 18:44:29.427  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-12-17 18:44:30.749  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-12-17 18:44:30.773  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-12-17 18:44:31.811 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, springSecurityFilterChain urls=[/*] order=10, filterRegistrationBean urls=[/*] order=2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtFilter urls=[/*] order=2147483647
-2022-12-17 18:44:31.812 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2022-12-17 18:44:32.273  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@209bfee3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b7a71e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@5df198d5, org.springframework.security.web.header.HeaderWriterFilter@76cab71a, org.springframework.security.web.authentication.logout.LogoutFilter@511e44f2, com.arkadiusgru.cls.security.config.JwtFilter@1e9d703e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52f5a564, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61e2c874, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67a922ed, org.springframework.security.web.session.SessionManagementFilter@1048af12, org.springframework.security.web.access.ExceptionTranslationFilter@2e92b4d0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6cdaa438]
-2022-12-17 18:44:32.354  WARN 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-12-17 18:44:32.602 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2022-12-17 18:44:32.753 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
-2022-12-17 18:44:32.800 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2022-12-17 18:44:32.816 DEBUG 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2022-12-17 18:44:33.152  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2022-12-17 18:44:33.254  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2022-12-17 18:44:33.278  INFO 11384 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 8.41 seconds (JVM running for 19.86)
-2022-12-17 18:45:45.567  INFO 11384 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-17 18:45:45.567  INFO 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-17 18:45:45.567 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2022-12-17 18:45:45.567 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2022-12-17 18:45:45.581 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2022-12-17 18:45:45.581 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@70c77638
-2022-12-17 18:45:45.582 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@61025ff7
-2022-12-17 18:45:45.582 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2022-12-17 18:45:45.582  INFO 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
-2022-12-17 18:45:45.609 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2022-12-17 18:45:45.614 DEBUG 11384 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
-2022-12-17 18:45:45.683 DEBUG 11384 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=admin, password=1234)]
-2022-12-17 18:45:45.879 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/octet-stream', given [*/*] and supported [*/*]
-2022-12-17 18:45:45.885 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 401 UNAUTHORIZED
-2022-12-17 18:45:58.304 DEBUG 11384 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2022-12-17 18:45:58.305 DEBUG 11384 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
-2022-12-17 18:45:58.306 DEBUG 11384 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=admin, password=1234)]
-2022-12-17 18:45:58.383 DEBUG 11384 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/octet-stream', given [*/*] and supported [*/*]
-2022-12-17 18:45:58.384 DEBUG 11384 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 401 UNAUTHORIZED
-2022-12-17 19:07:52.778 DEBUG 11384 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2022-12-17 19:07:52.779 DEBUG 11384 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
-2022-12-17 19:07:52.781 DEBUG 11384 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=admin@wp.pl, password=1234)]
-2022-12-17 19:07:52.807 DEBUG 11384 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.security.authentication.DisabledException: User is disabled
-2022-12-17 19:08:15.037 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
-2022-12-17 19:08:15.037 DEBUG 11384 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
-2022-12-17 19:08:15.043 DEBUG 11384 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=admin@wp.pl, password=1234)]
-2022-12-17 19:08:15.153 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:15.184 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:15.192 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:16.727 DEBUG 11384 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:16.728 DEBUG 11384 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:16.755 DEBUG 11384 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:16.758 DEBUG 11384 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:16.761 DEBUG 11384 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:16.766 DEBUG 11384 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:16.767 DEBUG 11384 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:16.787 DEBUG 11384 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:16.790 DEBUG 11384 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:16.792 DEBUG 11384 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:17.936 DEBUG 11384 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:17.936 DEBUG 11384 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:17.958 DEBUG 11384 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:17.960 DEBUG 11384 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:17.964 DEBUG 11384 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:18.178 DEBUG 11384 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:18.178 DEBUG 11384 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:18.199 DEBUG 11384 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:18.202 DEBUG 11384 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:18.203 DEBUG 11384 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:18.402 DEBUG 11384 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:18.402 DEBUG 11384 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:18.419 DEBUG 11384 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:18.422 DEBUG 11384 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:18.424 DEBUG 11384 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:18.735 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:18.735 DEBUG 11384 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:18.749 DEBUG 11384 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:18.751 DEBUG 11384 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:18.753 DEBUG 11384 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:19.675 DEBUG 11384 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:19.676 DEBUG 11384 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:19.692 DEBUG 11384 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:19.699 DEBUG 11384 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:19.701 DEBUG 11384 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:20.010 DEBUG 11384 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:20.010 DEBUG 11384 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:20.029 DEBUG 11384 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:20.035 DEBUG 11384 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:20.036 DEBUG 11384 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:24.269 DEBUG 11384 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:24.269 DEBUG 11384 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:24.277 DEBUG 11384 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:24.289 DEBUG 11384 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:24.295 DEBUG 11384 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2022-12-17 19:08:24.526 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllUsers", parameters={}
-2022-12-17 19:08:24.527 DEBUG 11384 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#showAll()
-2022-12-17 19:08:24.540 DEBUG 11384 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2022-12-17 19:08:24.546 DEBUG 11384 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
-2022-12-17 19:08:24.548 DEBUG 11384 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-01-26 18:33:02.936  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 15764 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
+2023-01-26 18:33:02.950  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-26 18:33:03.054  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-26 18:33:04.045  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-26 18:33:04.135  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2023-01-26 18:33:05.147  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-26 18:33:05.162  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-26 18:33:05.163  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-01-26 18:33:05.257  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-26 18:33:05.257  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2203 ms
+2023-01-26 18:33:05.935  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-26 18:33:06.121  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-26 18:33:06.464  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-26 18:33:06.600  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-26 18:33:06.798  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-26 18:33:06.827  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-01-26 18:33:07.815  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-26 18:33:07.825  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-26 18:33:09.058  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61e0c112, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186cdfe9, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cce4f8f, org.springframework.security.web.header.HeaderWriterFilter@4d2853b5, org.springframework.security.web.authentication.logout.LogoutFilter@2d52134d, com.arkadiusgru.cls.security.config.JwtFilter@2754a054, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e30572, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c67b18b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d357d1d, org.springframework.security.web.session.SessionManagementFilter@ff3b90d, org.springframework.security.web.access.ExceptionTranslationFilter@46e86fc4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56655b7f]
+2023-01-26 18:33:09.156  WARN 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-26 18:33:09.819  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-26 18:33:09.908  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-26 18:33:09.929  INFO 15764 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 7.598 seconds (JVM running for 17.079)
+2023-01-26 18:33:19.235  INFO 15764 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-26 18:33:19.235  INFO 15764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-26 18:33:19.248  INFO 15764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
