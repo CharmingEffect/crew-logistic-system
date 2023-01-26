@@ -66,16 +66,7 @@ const Admin = () => {
                 <span className="mr-3"></span> Jobs Management
               </a>
             </li>
-            <li>
-              <a href="#">
-                <span className="mr-3"></span> Friends
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span className="mr-3"></span> Subcription
-              </a>
-            </li>
+
             <li>
               <a href="#">
                 <span className="mr-3"></span> Settings
@@ -95,7 +86,7 @@ const Admin = () => {
             role={"button"}
             onClick={() => toggleNavbar()}
             size={35}
-            className="m-2"
+            className="m-2 navbar-toggler-fixed"
           />
 
           <div

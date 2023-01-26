@@ -8179,7 +8179,21 @@ h1, h2, h3, h4, h5,
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  position: relative; }
+  position: absolute;
+  z-index: 1;
+  min-height: -webkit-fill-available;
+
+}
+
+.navbar-toggler-fixed {
+
+  z-index: 99;
+  position: relative;
+}
+
+
+
+
   #sidebar .h6 {
     color: #fff; }
   #sidebar.active {
@@ -8190,6 +8204,8 @@ h1, h2, h3, h4, h5,
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 20px; }
+
+
     #sidebar h1 .logo {
       color: #fff;
       display: block;
@@ -8219,8 +8235,13 @@ h1, h2, h3, h4, h5,
         background: #2f89fc;
         border-bottom: 1px solid #2f89fc; }
   @media (max-width: 991.98px) {
-    #sidebar {
-      margin-left: -250px; }
+    .fix-button-mobile {
+
+      z-index: 99;
+      position: absolute;
+
+    }
+
       #sidebar.active {
         margin-left: 0; }
       #sidebar .custom-menu {
