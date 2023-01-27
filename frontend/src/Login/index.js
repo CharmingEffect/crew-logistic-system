@@ -36,7 +36,7 @@ const Login = () => {
         setJwt(headers.get("authorization"));
         //console.log("gdzue to jest" + headers.get("authorization"));
         if (body.role === "ADMIN") {
-          window.location.href = "/admin";
+          window.location.href = "/dashboard";
         } else {
           window.location.href = "/crew";
         }

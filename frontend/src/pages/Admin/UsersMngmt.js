@@ -4,9 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AddUser from "./AddUser";
 import { PersonPlusFill, PersonLinesFill } from "react-bootstrap-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
 import UsersList from "./UsersList";
-import "./style.css";
 
 const UsersMngmt = () => {
   const [tabIndex, setTabIndex] = useState(0);

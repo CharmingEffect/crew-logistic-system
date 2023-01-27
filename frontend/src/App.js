@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import "./App.css";
+//import "./App.css";
 import { useLocalState } from "./util/useLocalStorage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
-import Admin from "./Admin";
-import Crew from "./Crew";
+import Dashboard from "./pages/Admin";
+
+import "./styles/Style.css";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -17,15 +18,15 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/crew"
+        path="/dashboard"
         element={
           <PrivateRoute>
-            <Crew />
+            <Dashboard />
           </PrivateRoute>
         }
       ></Route>
       <Route path="/" element={<Login />}></Route>
-      <Route path="/admin" element={<Admin />}></Route>
+      <Route path="/dashboard" element={<Dashboard />}></Route>
     </Routes>
   );
 }
