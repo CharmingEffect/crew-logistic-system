@@ -55,6 +55,14 @@ class UsersList extends Component {
               >
                 Delete
               </Button>
+              <Button
+                size="sm"
+                color="success"
+                onClick={() => this.remove(user.id)}
+                className="mx-2"
+              >
+                Edit
+              </Button>
             </ButtonGroup>
           </td>
         </tr>
@@ -64,14 +72,14 @@ class UsersList extends Component {
     return (
       <Container fluid>
         <Table className="mt-4">
-          <thead>
+          <thead className="thead">
             <tr>
-              <th width="30%">First Name</th>
-              <th width="30%">Last Name</th>
-              <th width="30%">Email</th>
-              <th width="30%">Activated</th>
-              <th width="30%">Joined</th>
-              <th width="40%">Actions</th>
+              <th width="5%">First Name</th>
+              <th width="5%">Last Name</th>
+              <th width="5%">Email</th>
+              <th width="5%">Activated</th>
+              <th width="5%">Joined</th>
+              <th width="10%">Actions</th>
             </tr>
           </thead>
           <tbody>{userList}</tbody>

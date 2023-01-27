@@ -20,6 +20,35 @@ body {
 
 }
 
+.button-color{
+  background-color: #214A80;
+  color: white;
+  font-size: large;
+}
+
+.thead {
+background-color: #1E2833;
+color: #fff;
+
+}
+
+swal-icon--success__hide-corners {
+  display:none;
+}
+
+.swal-modal {
+  background-color:#1e2833 !important;
+}
+
+.swal-title {
+  color:#fff !important;
+} 
+
+.swal-text {
+  color:#fff !important;
+}
+
+
 a:link 
 { text-decoration: none; }
 

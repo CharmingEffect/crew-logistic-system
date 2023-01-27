@@ -7,11 +7,12 @@ import { PersonPlusFill, PersonLinesFill } from "react-bootstrap-icons";
 import UsersList from "./UsersList";
 import Nav from "../../components/Nav";
 
+import { useEffect } from "react";
+import SwalForm from "./AddUser";
+
 import Header from "../../components/Header";
 
 const UsersMngmt = () => {
-  const [tabIndex, setTabIndex] = useState(0);
-
   return (
     <>
       <div className="nav_bg_color" id="wrapper">
@@ -21,29 +22,20 @@ const UsersMngmt = () => {
             <Header />
           </div>
           <div className="wrapper wrapper-content animated fadeInRight"></div>
-          <Tabs
-            selectedIndex={tabIndex}
-            onSelect={(index) => setTabIndex(index)}
-          >
-            <TabList>
-              <Tab>
-                <PersonPlusFill size={25} className="m-2" />
-                Add new user
-              </Tab>
-              <Tab>
-                <PersonLinesFill size={25} className="m-2" />
-                List of users
-              </Tab>
-            </TabList>
+          <div className="">
+            {" "}
+            <i
+              class="fa fa-user fa-3x text-black d-inline-block m-3"
+              aria-hidden="true"
+            ></i>
+            <h1 class="display-5 text-black d-inline-block">User Management</h1>
+            <div className="d-flex justify-content-end">
+              <AddUser></AddUser>
+            </div>
+          </div>
 
-            <TabPanel>
-              <AddUser />
-            </TabPanel>
-            <TabPanel>
-              <UsersList></UsersList>
-            </TabPanel>
-          </Tabs>
-          ;
+          <br />
+          <UsersList></UsersList>
         </div>
       </div>
     </>
