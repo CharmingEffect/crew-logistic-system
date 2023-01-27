@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "./pages/Admin";
+import UsersMngmt from "./pages/Admin/UsersMngmt";
 
 import "./styles/Style.css";
 
@@ -27,6 +28,9 @@ function App() {
       ></Route>
       <Route path="/" element={<Login />}></Route>
       <Route path="/dashboard" element={<Dashboard />}></Route>
+      <Route path="/user-mngmnt" element={<UsersMngmt />}></Route>
+      <Route path="/job-mgmnt" element={<Dashboard />}></Route>
+      <Route path="/settings" element={<Dashboard />}></Route>
     </Routes>
   );
 }
