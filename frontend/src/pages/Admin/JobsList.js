@@ -5,7 +5,7 @@ import { useLocalState } from "../../util/useLocalStorage";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
-class UsersList extends Component {
+class JobsList extends Component {
   constructor(props) {
     super(props);
     this.state = { users: [] };
@@ -40,7 +40,7 @@ class UsersList extends Component {
 
     const userList = users.map((user) => {
       return (
-        <tr className="table-odd" key={user.id}>
+        <tr key={user.id}>
           <td style={{ whiteSpace: "nowrap" }}>{user.firstName}</td>
           <td style={{ whiteSpace: "nowrap" }}>{user.lastName}</td>
           <td>{user.email}</td>
@@ -74,11 +74,11 @@ class UsersList extends Component {
         <Table className="mt-4">
           <thead className="thead">
             <tr>
-              <th width="5%">First Name</th>
-              <th width="5%">Last Name</th>
-              <th width="5%">Email</th>
-              <th width="5%">Activated</th>
-              <th width="5%">Joined</th>
+              <th width="5%">Job Number</th>
+              <th width="5%">Duration</th>
+              <th width="5%">Number of crew</th>
+              <th width="5%">Address</th>
+              <th width="5%">Date</th>
               <th width="10%">Actions</th>
             </tr>
           </thead>
@@ -89,4 +89,4 @@ class UsersList extends Component {
   }
 }
 
-export default UsersList;
+export default JobsList;

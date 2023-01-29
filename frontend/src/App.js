@@ -8,6 +8,7 @@ import Dashboard from "./pages/Admin";
 import UsersMngmt from "./pages/Admin/UsersMngmt";
 
 import "./styles/Style.css";
+import JobsMngmt from "./pages/Admin/JobsMngmt";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -28,8 +29,8 @@ function App() {
       ></Route>
       <Route path="/" element={<Login />}></Route>
       <Route path="/dashboard" element={<Dashboard />}></Route>
-      <Route path="/user-mngmnt" element={<UsersMngmt />}></Route>
-      <Route path="/job-mgmnt" element={<Dashboard />}></Route>
+      <Route path="/user-mngmt" element={<UsersMngmt />}></Route>
+      <Route path="/job-mngmt" element={<JobsMngmt />}></Route>
       <Route path="/settings" element={<Dashboard />}></Route>
     </Routes>
   );

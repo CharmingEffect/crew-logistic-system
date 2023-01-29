@@ -12,44 +12,37 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: "30rem",
   },
 
   overlay: {
+    //position: "none",
     background: "rgb(0 0 0 / 75%)",
   },
 };
 
-function AddUser() {
+function AddJob() {
   const [formData, setFormData] = useState({});
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [user, setUser] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    role: "",
+    jobNumber: "",
+    dateTime: "",
+    jobDuration: "",
+    numberOfCrew: "",
     address: {
-      addressLine1: "",
-      addressLine2: "",
+      street: "",
       city: "",
-      stateProvince: "",
-      postalCode: "",
       country: "",
+      zipCode: "",
     },
+    clientCompanyName: "",
+    contactOnSite: "",
+    driverRequired: "",
+    remarks: "",
+    comment: "",
   });
 
-  const {
-    email,
-    firstName,
-    lastName,
-    role,
-    addressLine1,
-    addressLine2,
-    city,
-    stateProvince,
-    postalCode,
-    country,
-  } = user;
+  const { email, firstName, lastName, role, street, city, country, zipCode } =
+    user;
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -78,12 +71,10 @@ function AddUser() {
         lastName: lastName,
         role: role,
         address: {
-          addressLine1: addressLine1,
-          addressLine2: addressLine2,
+          street: street,
           city: city,
-          stateProvince: stateProvince,
-          postalCode: postalCode,
           country: country,
+          zipCode: zipCode,
         },
       }),
     })
@@ -105,7 +96,6 @@ function AddUser() {
             button: false,
             timer: 1000,
           });
-          setModalIsOpen(false);
         }
       })
       .catch((message) => {
@@ -123,10 +113,11 @@ function AddUser() {
     <div>
       <Button
         className="button-color"
+        col-sm-7
         size="sm"
         onClick={() => setModalIsOpen(true)}
       >
-        Create New User
+        Create New Job
       </Button>
       <Modal
         isOpen={modalIsOpen}
@@ -134,14 +125,14 @@ function AddUser() {
         style={customStyles}
       >
         <i
-          class="fa fa-user-plus fa-3x text-black d-inline-block m-3"
+          class="fa fa-plus-circle fa-3x text-black d-inline-block m-3"
           aria-hidden="true"
         ></i>
-        <h2 className="text-black d-inline-block">Create New User</h2>
+        <h2 className="text-black d-inline-block">Create New Job</h2>
         <form onSubmit={(e) => onSubmit(e)}>
           <div class="form-group row mt-2">
             <label for="inputEmail" class="col-sm-5 col-form-label form-box">
-              Email
+              Job Number
             </label>
             <div class="col-sm-7 form-field">
               <input
@@ -160,7 +151,7 @@ function AddUser() {
               for="inputPassword"
               class="col-sm-5 col-form-label form-box-light"
             >
-              First Name
+              Date & Time
             </label>
             <div class="col-sm-7 form-field-light">
               <input
@@ -176,7 +167,7 @@ function AddUser() {
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-5 col-form-label form-box">
-              Last Name
+              Job Duration
             </label>
             <div class="col-sm-7 form-field">
               <input
@@ -195,38 +186,15 @@ function AddUser() {
               for="inputPassword"
               class="col-sm-5 col-form-label form-box-light"
             >
-              Role
-            </label>
-            <select
-              value={role}
-              name="role"
-              onChange={(e) => onInputChange(e)}
-              id="inputState"
-              className="col-sm-7 form-field-light"
-              required
-            >
-              {" "}
-              <option></option>
-              <option>ADMIN</option>
-              <option>CREW_MEMBER</option>
-            </select>
-          </div>
-          {/* up to here is ok */}
-
-          <div class="form-group row">
-            <label
-              for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
-            >
-              Address Line 1
+              Number of Crew
             </label>
             <div class="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"
                 id="inputAddress"
-                value={addressLine1}
-                name="addressLine1"
+                value={street}
+                name="street"
                 onChange={(e) => onInputChange(e)}
                 required
               />
@@ -234,15 +202,15 @@ function AddUser() {
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-5 col-form-label form-box">
-              Address Line 2
+              Street
             </label>
             <div class="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
                 id="inputAddress2"
-                value={addressLine2}
-                name="addressLine2"
+                value={city}
+                name="city"
                 onChange={(e) => onInputChange(e)}
                 required
               />
@@ -260,8 +228,8 @@ function AddUser() {
                 type="text"
                 className="cls-form-control form-field-light"
                 id="inputCity"
-                value={city}
-                name="city"
+                value={country}
+                name="country"
                 onChange={(e) => onInputChange(e)}
                 required
               />
@@ -269,15 +237,15 @@ function AddUser() {
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-5 col-form-label form-box">
-              State/Province
+              Country
             </label>
             <div class="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
                 id="inputZip"
-                value={stateProvince}
-                name="stateProvince"
+                value={zipCode}
+                name="zipCode"
                 onChange={(e) => onInputChange(e)}
                 required
               />
@@ -295,22 +263,6 @@ function AddUser() {
                 type="text"
                 className="cls-form-control form-field-light"
                 id="inputCity"
-                value={postalCode}
-                name="postalCode"
-                onChange={(e) => onInputChange(e)}
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
-              Country
-            </label>
-            <div class="col-sm-7 form-field">
-              <input
-                type="text"
-                className="cls-form-control form-field"
-                id="inputZip"
                 value={country}
                 name="country"
                 onChange={(e) => onInputChange(e)}
@@ -318,7 +270,6 @@ function AddUser() {
               />
             </div>
           </div>
-
           <div className="d-flex justify-content-end mt-3">
             <br></br>
             <Button type="submit" className="button-color">
@@ -338,4 +289,4 @@ function AddUser() {
   );
 }
 
-export default AddUser;
+export default AddJob;

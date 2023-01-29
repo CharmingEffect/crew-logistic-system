@@ -15,10 +15,12 @@ import lombok.NoArgsConstructor;
 @Table(name = "address")
 public class Address extends AbstractEntity {
 
-    private String street;
+    private String addressLine1;
+    private String addressLine2;
     private String city;
+    private String stateProvince;
+    private String postalCode;
     private String country;
-    private String zipCode;
 
     @OneToOne(mappedBy = "address")
     @JoinColumn(name = "user_id")
