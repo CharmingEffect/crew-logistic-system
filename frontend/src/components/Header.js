@@ -3,6 +3,10 @@ import React, { Component } from "react";
 class Header extends Component {
   state = {};
   render() {
+    const logoutUser = () => {
+      localStorage.removeItem("jwt");
+      window.location.href = "/";
+    };
     return (
       <>
         <nav className="navbar navbar-static-top white-bg" role="navigation">
@@ -32,7 +36,7 @@ class Header extends Component {
           </div>
           <ul className="nav navbar-top-links navbar-right">
             <li>
-              <a href="/">
+              <a onClick={() => logoutUser()}>
                 <i className="fa fa-sign-out"></i> Log out
               </a>
             </li>

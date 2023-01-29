@@ -29,6 +29,7 @@ public class Job {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+    private LocalDateTime dateTime;
     private Integer jobDuration;
     private Integer numberOfCrew;
     @JsonIgnore
@@ -38,7 +39,11 @@ public class Job {
     private String clientCompanyName;
     private String contactOnSite;
     private Boolean driverRequired;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "driver_user_id", referencedColumnName = "id", nullable = true)
     private User driverUserId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cc_user_id", referencedColumnName = "id", nullable = true)
     private User crewChiefUserId;
     private String remarks;
     private String comment;

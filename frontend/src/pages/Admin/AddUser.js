@@ -134,10 +134,14 @@ function AddUser() {
         style={customStyles}
       >
         <i
-          class="fa fa-user-plus fa-3x text-black d-inline-block m-3"
+          class="fa fa-user-plus fa-2x text-black d-inline-block m-3"
           aria-hidden="true"
         ></i>
-        <h2 className="text-black d-inline-block">Create New User</h2>
+        <h3 className="text-black d-inline-block">Create New User</h3>
+        <p>
+          Ones the user is created the system send a confirmation link. The user
+          needs to click on it to activate his/her account.
+        </p>
         <form onSubmit={(e) => onSubmit(e)}>
           <div class="form-group row mt-2">
             <label for="inputEmail" class="col-sm-5 col-form-label form-box">
@@ -164,7 +168,7 @@ function AddUser() {
             </label>
             <div class="col-sm-7 form-field-light">
               <input
-                type="firstName"
+                type="text"
                 className="cls-form-control form-field-light"
                 id="inputEmail4"
                 value={firstName}
@@ -214,16 +218,13 @@ function AddUser() {
           {/* up to here is ok */}
 
           <div class="form-group row">
-            <label
-              for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
-            >
+            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
               Address Line 1
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div class="col-sm-7 form-field">
               <input
                 type="text"
-                className="cls-form-control form-field-light"
+                className="cls-form-control form-field"
                 id="inputAddress"
                 value={addressLine1}
                 name="addressLine1"
@@ -233,13 +234,16 @@ function AddUser() {
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+            <label
+              for="inputPassword"
+              class="col-sm-5 col-form-label form-box-light"
+            >
               Address Line 2
             </label>
-            <div class="col-sm-7 form-field">
+            <div class="col-sm-7 form-field-light">
               <input
                 type="text"
-                className="cls-form-control form-field"
+                className="cls-form-control form-field-light"
                 id="inputAddress2"
                 value={addressLine2}
                 name="addressLine2"
@@ -249,16 +253,13 @@ function AddUser() {
             </div>
           </div>
           <div class="form-group row">
-            <label
-              for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
-            >
+            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
               City
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div class="col-sm-7 form-field">
               <input
                 type="text"
-                className="cls-form-control form-field-light"
+                className="cls-form-control form-field"
                 id="inputCity"
                 value={city}
                 name="city"
@@ -268,16 +269,35 @@ function AddUser() {
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+            <label
+              for="inputPassword"
+              class="col-sm-5 col-form-label form-box-light"
+            >
               State/Province
+            </label>
+            <div class="col-sm-7 form-field-light">
+              <input
+                type="text"
+                className="cls-form-control form-field-light"
+                id="inputZip"
+                value={stateProvince}
+                name="stateProvince"
+                onChange={(e) => onInputChange(e)}
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+              Postal Code
             </label>
             <div class="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
-                id="inputZip"
-                value={stateProvince}
-                name="stateProvince"
+                id="inputCity"
+                value={postalCode}
+                name="postalCode"
                 onChange={(e) => onInputChange(e)}
                 required
               />
@@ -288,28 +308,12 @@ function AddUser() {
               for="inputPassword"
               class="col-sm-5 col-form-label form-box-light"
             >
-              Postal Code
+              Country
             </label>
             <div class="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"
-                id="inputCity"
-                value={postalCode}
-                name="postalCode"
-                onChange={(e) => onInputChange(e)}
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
-              Country
-            </label>
-            <div class="col-sm-7 form-field">
-              <input
-                type="text"
-                className="cls-form-control form-field"
                 id="inputZip"
                 value={country}
                 name="country"
