@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import swal from "sweetalert";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
@@ -23,6 +23,7 @@ const customStyles = {
 
 function AddJob() {
   const [formData, setFormData] = useState({});
+  const [users, setUsers] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [job, setJob] = useState({
     jobNumber: "",
@@ -71,6 +72,12 @@ function AddJob() {
   const onInputChange = (e) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    fetch("/api/admin/getAllUsers")
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -422,15 +429,13 @@ function AddJob() {
                   Driver
                 </label>
                 <div className="col-sm-7 form-field">
-                  <input
-                    type="text"
-                    className="cls-form-control form-field"
-                    id="inputCity"
-                    value={driverUserId}
-                    name="driverUserId"
-                    onChange={(e) => onInputChange(e)}
-                    required
-                  />
+                  <select className="cls-form-control form-field">
+                    {users.map((user) => (
+                      <option value={user.id}>
+                        {user.firstName} {user.lastName}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
               <div className="form-group row">
