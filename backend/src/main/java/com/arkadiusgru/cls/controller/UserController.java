@@ -1,5 +1,6 @@
 package com.arkadiusgru.cls.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,23 @@ public class UserController {
     @RequestMapping(value = "/admin/getAllUsers", method = RequestMethod.GET)
     public List<User> showAll() {
         return userService.getAll();
+
+    }
+
+    // mapping for getting only crew members
+    @RequestMapping(value = "/admin/getAllCrewMembers", method = RequestMethod.GET)
+    public List<User> getAllCrewMembers() {
+        List<User> crewMembers = new ArrayList<>();
+        userRepository.findAll().iterator().forEachRemaining(user -> {
+            // System.out.println(user.getRole());
+
+            if (user.getRole().toString() == "CREW_MEMBER") {
+                user.setPassword("");
+                crewMembers.add(user);
+            }
+        });
+
+        return crewMembers;
 
     }
 

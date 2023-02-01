@@ -1,178 +1,52 @@
-2023-01-29 11:29:06.024  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 13792 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
-2023-01-29 11:29:06.039  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-01-29 11:29:06.133  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-01-29 11:29:07.376  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-29 11:29:07.514  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 2 JPA repository interfaces.
-2023-01-29 11:29:08.728  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-01-29 11:29:08.745  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-29 11:29:08.746  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-01-29 11:29:08.876  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-29 11:29:08.876  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2734 ms
-2023-01-29 11:29:09.533  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-29 11:29:09.685  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
-2023-01-29 11:29:10.099  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-29 11:29:10.280  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-29 11:29:10.493  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-29 11:29:10.532  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2023-01-29 11:29:11.730  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-29 11:29:11.742  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-29 11:29:13.040  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a4bb8b6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d52f5c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@73f0899b, org.springframework.security.web.header.HeaderWriterFilter@42243765, org.springframework.security.web.authentication.logout.LogoutFilter@4882f2cc, com.arkadiusgru.cls.security.config.JwtFilter@32d0980d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39f62026, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29b933, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1693e1d, org.springframework.security.web.session.SessionManagementFilter@ba4e1f7, org.springframework.security.web.access.ExceptionTranslationFilter@15c948fa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ada89be]
-2023-01-29 11:29:13.139  WARN 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-29 11:29:14.133  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-01-29 11:29:14.241  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-01-29 11:29:14.269  INFO 13792 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 8.876 seconds (JVM running for 22.507)
-2023-01-29 11:29:26.872  INFO 13792 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-29 11:29:26.873  INFO 13792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-29 11:29:26.874  INFO 13792 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-29 11:56:23.837  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 16696 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
-2023-01-29 11:56:23.842  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
-2023-01-29 11:56:23.959  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-01-29 11:56:25.432  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-29 11:56:25.545  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 2 JPA repository interfaces.
-2023-01-29 11:56:27.059  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-01-29 11:56:27.077  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-29 11:56:27.078  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2023-01-29 11:56:27.206  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-29 11:56:27.207  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3246 ms
-2023-01-29 11:56:27.929  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-29 11:56:28.146  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
-2023-01-29 11:56:28.466  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-29 11:56:28.628  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-29 11:56:28.904  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-29 11:56:28.948  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2023-01-29 11:56:30.399  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-29 11:56:30.412  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-29 11:56:31.900  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ea0706c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ea958a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@14d39d64, org.springframework.security.web.header.HeaderWriterFilter@3a251ab9, org.springframework.security.web.authentication.logout.LogoutFilter@2936d185, com.arkadiusgru.cls.security.config.JwtFilter@2c391a57, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@114ab8ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@566e6c32, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@632257c1, org.springframework.security.web.session.SessionManagementFilter@1d022441, org.springframework.security.web.access.ExceptionTranslationFilter@5d25da4c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@137c832e]
-2023-01-29 11:56:31.977  WARN 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-29 11:56:32.981  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-01-29 11:56:33.124  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-01-29 11:56:33.146  INFO 16696 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 10.076 seconds (JVM running for 26.952)
-2023-01-29 11:56:42.599  INFO 16696 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-29 11:56:42.599  INFO 16696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-29 11:56:42.601  INFO 16696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-01-29 12:32:44.551  INFO 16696 --- [http-nio-8080-exec-10] com.arkadiusgru.cls.service.UserService  : User with email arkadiuszgrudzien@yahoo.com has been registered
-2023-01-29 12:32:49.771  WARN 16696 --- [http-nio-8080-exec-10] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:36:47.056  INFO 16696 --- [http-nio-8080-exec-1] com.arkadiusgru.cls.service.UserService  : User with email arkagrudzien@yahoo.com has been registered
-2023-01-29 12:36:52.159  WARN 16696 --- [http-nio-8080-exec-1] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:38:56.814  INFO 16696 --- [http-nio-8080-exec-2] com.arkadiusgru.cls.service.UserService  : User with email arkagruien@yahoo.com has been registered
-2023-01-29 12:39:01.946  WARN 16696 --- [http-nio-8080-exec-2] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:40:08.379  INFO 16696 --- [http-nio-8080-exec-5] com.arkadiusgru.cls.service.UserService  : User with email arkadiuszien@yahoo.com has been registered
-2023-01-29 12:40:13.502  WARN 16696 --- [http-nio-8080-exec-5] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:41:50.288  INFO 16696 --- [http-nio-8080-exec-6] com.arkadiusgru.cls.service.UserService  : User with email arkadiuszien@yahoo.com has been registered
-2023-01-29 12:41:50.297 ERROR 16696 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: email already taken] with root cause
-
-java.lang.IllegalStateException: email already taken
-	at com.arkadiusgru.cls.service.UserService.signUpUser(UserService.java:62) ~[classes/:na]
-	at com.arkadiusgru.cls.registration.RegistrationService.register(RegistrationService.java:45) ~[classes/:na]
-	at com.arkadiusgru.cls.registration.RegistrationController.register(RegistrationController.java:27) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at com.arkadiusgru.cls.security.config.JwtFilter.doFilterInternal(JwtFilter.java:38) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.4.jar:5.7.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.7.5.jar:2.7.5]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-01-29 12:41:54.194  INFO 16696 --- [http-nio-8080-exec-7] com.arkadiusgru.cls.service.UserService  : User with email arkadiuzien@yahoo.com has been registered
-2023-01-29 12:41:59.321  WARN 16696 --- [http-nio-8080-exec-7] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:45:13.578  INFO 16696 --- [http-nio-8080-exec-10] com.arkadiusgru.cls.service.UserService  : User with email arkadiuszgrudien@yahoo.com has been registered
-2023-01-29 12:45:18.689  WARN 16696 --- [http-nio-8080-exec-10] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:50:43.711  INFO 16696 --- [http-nio-8080-exec-3] com.arkadiusgru.cls.service.UserService  : User with email arkadiuszgudzien@yahoo.com has been registered
-2023-01-29 12:50:48.847  WARN 16696 --- [http-nio-8080-exec-3] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:51:48.719  INFO 16696 --- [http-nio-8080-exec-6] com.arkadiusgru.cls.service.UserService  : User with email arkadiusrudzien@yahoo.com has been registered
-2023-01-29 12:51:53.838  WARN 16696 --- [http-nio-8080-exec-6] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:55:26.863  INFO 16696 --- [http-nio-8080-exec-7] com.arkadiusgru.cls.service.UserService  : User with email arkadiusruzien@yahoo.com has been registered
-2023-01-29 12:55:31.997  WARN 16696 --- [http-nio-8080-exec-7] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
-2023-01-29 12:56:09.683  INFO 16696 --- [http-nio-8080-exec-8] com.arkadiusgru.cls.service.UserService  : User with email arkadiusrn@yahoo.com has been registered
-2023-01-29 12:56:14.801  WARN 16696 --- [http-nio-8080-exec-8] c.a.c.registration.RegistrationService   : Temporary password (NEEDS TO BE CHANGED FOR PRODUCTION MODE): 1234
+2023-01-31 15:13:57.502  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 26200 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
+2023-01-31 15:13:57.535  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 15:13:57.607  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-31 15:13:58.595  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 15:13:58.749  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 3 JPA repository interfaces.
+2023-01-31 15:14:00.107  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-31 15:14:00.122  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 15:14:00.123  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-01-31 15:14:00.234  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 15:14:00.234  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2626 ms
+2023-01-31 15:14:00.959  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-31 15:14:01.048  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-31 15:14:01.236  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 15:14:01.350  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 15:14:01.573  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 15:14:01.603  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-01-31 15:14:02.560  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 15:14:02.573  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 15:14:03.919  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f3aa0ba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@108301a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@69a60dce, org.springframework.security.web.header.HeaderWriterFilter@76f005f6, org.springframework.security.web.authentication.logout.LogoutFilter@6b202e56, com.arkadiusgru.cls.security.config.JwtFilter@112624e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a450013, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@727bbf9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b086f7c, org.springframework.security.web.session.SessionManagementFilter@603de621, org.springframework.security.web.access.ExceptionTranslationFilter@5321322b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@623a2562]
+2023-01-31 15:14:04.008  WARN 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-31 15:14:04.827  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-31 15:14:04.938  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-31 15:14:04.975  INFO 26200 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 8.09 seconds (JVM running for 18.159)
+2023-01-31 15:14:23.497  INFO 26200 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-31 15:14:23.497  INFO 26200 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-31 15:14:23.499  INFO 26200 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-31 19:42:06.186  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Starting ClsApplication using Java 17.0.5 on STORM936 with PID 12736 (E:\new-projects-2022-2023\crew-logistic-system\backend\target\classes started by Arek in E:\new-projects-2022-2023\crew-logistic-system\backend)
+2023-01-31 19:42:06.194  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-01-31 19:42:06.321  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-31 19:42:07.407  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-31 19:42:07.567  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 3 JPA repository interfaces.
+2023-01-31 19:42:08.729  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-31 19:42:08.749  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-31 19:42:08.750  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2023-01-31 19:42:08.898  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-31 19:42:08.899  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2575 ms
+2023-01-31 19:42:09.564  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-31 19:42:09.733  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-31 19:42:10.217  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-31 19:42:10.407  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-31 19:42:10.747  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-31 19:42:10.804  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-01-31 19:42:11.937  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-31 19:42:11.950  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-31 19:42:13.810  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7b2ec68, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69c970b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@335556e3, org.springframework.security.web.header.HeaderWriterFilter@4947a38, org.springframework.security.web.authentication.logout.LogoutFilter@7bec92db, com.arkadiusgru.cls.security.config.JwtFilter@7cbcbd1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a94b9dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54b65243, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f5558e5, org.springframework.security.web.session.SessionManagementFilter@54b22dfd, org.springframework.security.web.access.ExceptionTranslationFilter@d1ab413, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@215f4d5c]
+2023-01-31 19:42:13.886  WARN 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-31 19:42:14.635  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-31 19:42:14.751  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-31 19:42:14.778  INFO 12736 --- [com.arkadiusgru.cls.ClsApplication.main()] com.arkadiusgru.cls.ClsApplication       : Started ClsApplication in 9.266 seconds (JVM running for 22.484)
+2023-01-31 19:42:24.876  INFO 12736 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-31 19:42:24.876  INFO 12736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-31 19:42:24.887  INFO 12736 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

@@ -134,7 +134,7 @@ function AddUser() {
         style={customStyles}
       >
         <i
-          class="fa fa-user-plus fa-2x text-black d-inline-block m-3"
+          className="fa fa-user-plus fa-2x text-black d-inline-block m-3"
           aria-hidden="true"
         ></i>
         <h3 className="text-black d-inline-block">Create New User</h3>
@@ -143,11 +143,14 @@ function AddUser() {
           needs to click on it to activate his/her account.
         </p>
         <form onSubmit={(e) => onSubmit(e)}>
-          <div class="form-group row mt-2">
-            <label for="inputEmail" class="col-sm-5 col-form-label form-box">
+          <div className="form-group row mt-2">
+            <label
+              for="inputEmail"
+              className="col-sm-5 col-form-label form-box"
+            >
               Email
             </label>
-            <div class="col-sm-7 form-field">
+            <div className="col-sm-7 form-field">
               <input
                 type="email"
                 className="cls-form-control form-field"
@@ -159,14 +162,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
+          <div className="form-group row">
             <label
               for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
+              className="col-sm-5 col-form-label form-box-light"
             >
               First Name
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div className="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"
@@ -178,11 +181,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+          <div className="form-group row">
+            <label
+              for="inputPassword"
+              className="col-sm-5 col-form-label form-box"
+            >
               Last Name
             </label>
-            <div class="col-sm-7 form-field">
+            <div className="col-sm-7 form-field">
               <input
                 type="lastName"
                 className="cls-form-control form-field"
@@ -194,10 +200,10 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
+          <div className="form-group row">
             <label
               for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
+              className="col-sm-5 col-form-label form-box-light"
             >
               Role
             </label>
@@ -217,11 +223,14 @@ function AddUser() {
           </div>
           {/* up to here is ok */}
 
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+          <div className="form-group row">
+            <label
+              for="inputPassword"
+              className="col-sm-5 col-form-label form-box"
+            >
               Address Line 1
             </label>
-            <div class="col-sm-7 form-field">
+            <div className="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
@@ -233,14 +242,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
+          <div className="form-group row">
             <label
               for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
+              className="col-sm-5 col-form-label form-box-light"
             >
               Address Line 2
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div className="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"
@@ -252,11 +261,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+          <div className="form-group row">
+            <label
+              for="inputPassword"
+              className="col-sm-5 col-form-label form-box"
+            >
               City
             </label>
-            <div class="col-sm-7 form-field">
+            <div className="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
@@ -268,14 +280,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
+          <div className="form-group row">
             <label
               for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
+              className="col-sm-5 col-form-label form-box-light"
             >
               State/Province
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div className="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"
@@ -287,11 +299,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label form-box">
+          <div className="form-group row">
+            <label
+              for="inputPassword"
+              className="col-sm-5 col-form-label form-box"
+            >
               Postal Code
             </label>
-            <div class="col-sm-7 form-field">
+            <div className="col-sm-7 form-field">
               <input
                 type="text"
                 className="cls-form-control form-field"
@@ -303,14 +318,14 @@ function AddUser() {
               />
             </div>
           </div>
-          <div class="form-group row">
+          <div className="form-group row">
             <label
               for="inputPassword"
-              class="col-sm-5 col-form-label form-box-light"
+              className="col-sm-5 col-form-label form-box-light"
             >
               Country
             </label>
-            <div class="col-sm-7 form-field-light">
+            <div className="col-sm-7 form-field-light">
               <input
                 type="text"
                 className="cls-form-control form-field-light"

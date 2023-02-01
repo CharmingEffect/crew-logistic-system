@@ -12,18 +12,11 @@ import com.arkadiusgru.cls.util.CustomConfigProperties;
 @EnableConfigurationProperties(CustomConfigProperties.class)
 public class ClsApplication {
 
-	// what this functuion does is that it starts the application
-	// change to test
-	// what is this
-	//jakis change
-
-	// what this functuion does is that it starts the application
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(ClsApplication.class, args);
 		// openHomePage();
 	}
 
-	
 	// private static void openHomePage() throws IOException {
 	// Runtime rt = Runtime.getRuntime();
 	// rt.exec("rundll32 url.dll,FileProtocolHandler " + "http://localhost:8080");

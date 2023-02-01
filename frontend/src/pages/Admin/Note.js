@@ -3,11 +3,11 @@
     Ones the user is created he will recive confirmation email. Needs to click
     on a link to activate account.
   </p>
-  <div class="form-group">
+  <div className="form-group">
     <label for="name">Name</label>
     <input
       type="name"
-      class="form-control"
+      className="form-control"
       id="name"
       placeholder="Enter name"
     ></input>

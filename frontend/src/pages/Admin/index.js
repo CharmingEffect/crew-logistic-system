@@ -1,18 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import AddUser from "./AddUser";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import Widget from "../Widget";
-
-import { FileLock2Fill } from "react-bootstrap-icons";
-import {
-  Tools,
-  DoorClosedFill,
-  ListUl,
-  PersonFill,
-} from "react-bootstrap-icons";
-import UsersMngmt from "./UsersMngmt";
 
 const Admin = () => {
   const [toggleState, setToggleState] = useState(1);

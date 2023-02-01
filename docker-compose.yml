@@ -1,16 +1,39 @@
-
-version: '3.3'
+version: '3'
 services:
-  api:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/app
-      - ./.m2:/root/.m2
-    working_dir: /app
-    command: sh run.sh
+  mail-server:
+    image: maildev/maildev
     ports:
-      - 8080:8080
-      - 35729:35729
-      - 5005:5005
+      - "1080:1080"
+      - "1025:1025"
+  database:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=cls
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    networks:
+      - myapp_network
+  spring-app:
+    build:
+      context: ./backend
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/cls
+    ports:
+      - "8080:8080"
+    networks:
+      - myapp_network
+  react-app:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - myapp_network
+networks:
+  myapp_network:
+    name: myapp_network
+volumes:
+  mysql:
+    driver: local

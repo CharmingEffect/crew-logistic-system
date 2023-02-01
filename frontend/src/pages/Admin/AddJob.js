@@ -40,7 +40,9 @@ function AddJob() {
     clientCompanyName: "",
     contactOnSite: "",
     driverRequired: "",
-    driverUserId: "",
+    user: {
+      driverUserId: "",
+    },
     remarks: "",
     comment: "",
     ccUserId: "",
@@ -81,7 +83,7 @@ function AddJob() {
       timer: 4000,
     });
 
-    await fetch("/api/admin/addJob", {
+    await fetch("/api/admin/newJob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +105,10 @@ function AddJob() {
         clientCompanyName: clientCompanyName,
         contactOnSite: contactOnSite,
         driverRequired: driverRequired,
-        driverUserId: driverUserId,
+        user: {
+          driverUserId: driverUserId,
+        },
+
         remarks: remarks,
         comment: comment,
         ccUserId: ccUserId,
@@ -114,7 +119,7 @@ function AddJob() {
         if (response.status == 500) {
           swal({
             title: "Error!",
-            text: "Email alreay exists",
+            text: "Job with this number already exists",
             icon: "error",
             button: false,
             timer: 1000,
@@ -144,7 +149,6 @@ function AddJob() {
     <div>
       <Button
         className="button-color"
-        col-sm-7
         size="sm"
         onClick={() => setModalIsOpen(true)}
       >
@@ -156,21 +160,21 @@ function AddJob() {
         style={customStyles}
       >
         <i
-          class="fa fa-plus-circle fa-2x text-black d-inline-block m-3"
+          className="fa fa-plus-circle fa-2x text-black d-inline-block m-3"
           aria-hidden="true"
         ></i>
         <h3 className="text-black d-inline-block">Create New Job</h3>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="row">
             <div className="col-sm mx-2">
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputEmail"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Job Number
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -182,14 +186,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Date & Time
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="datetime-local"
                     className="cls-form-control form-field-light"
@@ -201,14 +205,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Job Duration
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="number"
                     className="cls-form-control form-field"
@@ -220,14 +224,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Number of Crew
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="number"
                     className="cls-form-control form-field-light"
@@ -239,14 +243,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Address Line 1
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -258,14 +262,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Address Line 2
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="text"
                     className="cls-form-control form-field-light"
@@ -277,14 +281,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   City
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -296,14 +300,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   State/Province
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="text"
                     className="cls-form-control form-field-light"
@@ -315,14 +319,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Postal Code
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -334,14 +338,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Country
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="text"
                     className="cls-form-control form-field-light"
@@ -355,14 +359,33 @@ function AddJob() {
               </div>
             </div>
             <div className="col-sm">
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box-light"
+                >
+                  Client's Company
+                </label>
+                <div className="col-sm-7 form-field-light">
+                  <input
+                    type="text"
+                    className="cls-form-control form-field-light"
+                    id="inputZip"
+                    value={clientCompanyName}
+                    name="clientCompanyName"
+                    onChange={(e) => onInputChange(e)}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-group row">
+                <label
+                  for="inputPassword"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Contact on site
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -374,33 +397,31 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Driver Required
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="checkbox"
-                    className="form-check-input form-field-light"
                     id="inputZip"
                     value={driverRequired}
                     name="driverRequired"
                     onChange={(e) => onInputChange(e)}
-                    required
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Driver
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"
@@ -412,14 +433,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box-light"
+                  className="col-sm-5 col-form-label form-box-light"
                 >
                   Remarks
                 </label>
-                <div class="col-sm-7 form-field-light">
+                <div className="col-sm-7 form-field-light">
                   <input
                     type="text"
                     className="cls-form-control form-field-light"
@@ -431,14 +452,14 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div class="form-group row">
+              <div className="form-group row">
                 <label
                   for="inputPassword"
-                  class="col-sm-5 col-form-label form-box"
+                  className="col-sm-5 col-form-label form-box"
                 >
                   Comment
                 </label>
-                <div class="col-sm-7 form-field">
+                <div className="col-sm-7 form-field">
                   <input
                     type="text"
                     className="cls-form-control form-field"

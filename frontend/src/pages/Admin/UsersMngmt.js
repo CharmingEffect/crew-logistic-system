@@ -25,10 +25,12 @@ const UsersMngmt = () => {
           <div className="">
             {" "}
             <i
-              class="fa fa-user fa-3x text-black d-inline-block m-3"
+              className="fa fa-user fa-3x text-black d-inline-block m-3"
               aria-hidden="true"
             ></i>
-            <h1 class="display-5 text-black d-inline-block">User Management</h1>
+            <h1 className="display-5 text-black d-inline-block">
+              User Management
+            </h1>
             <div className="d-flex justify-content-end d-inline-block">
               <AddUser></AddUser>
             </div>

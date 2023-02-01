@@ -12,6 +12,7 @@ import SwalForm from "./AddUser";
 
 import Header from "../../components/Header";
 import AddJob from "./AddJob";
+import JobsList from "./JobsList";
 
 const JobsMngmt = () => {
   return (
@@ -26,17 +27,19 @@ const JobsMngmt = () => {
           <div className="">
             {" "}
             <i
-              class="fa fa-wrench fa-3x text-black d-inline-block m-3"
+              className="fa fa-wrench fa-3x text-black d-inline-block m-3"
               aria-hidden="true"
             ></i>
-            <h1 class="display-5 text-black d-inline-block">Job Management</h1>
+            <h1 className="display-5 text-black d-inline-block">
+              Job Management
+            </h1>
             <div className="d-flex justify-content-end">
               <AddJob></AddJob>
             </div>
           </div>
 
           <br />
-          <p>tutaj lista</p>
+          <JobsList></JobsList>
         </div>
       </div>
     </>
