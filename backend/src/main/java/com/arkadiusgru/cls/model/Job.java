@@ -42,12 +42,28 @@ public class Job {
     private String contactOnSite;
     private Boolean driverRequired;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driver_user_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "driver_user_id", referencedColumnName = "id")
     private User driverUserId;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cc_user_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
     private User crewChiefUserId;
     private String remarks;
     private String comment;
+
+    public Job(String jobNumber, LocalDateTime dateTime, Integer jobDuration, Integer numberOfCrew,
+            Address address) {
+        this.jobNumber = jobNumber;
+        this.dateTime = dateTime;
+        this.jobDuration = jobDuration;
+        this.numberOfCrew = numberOfCrew;
+        this.address = address;
+        // this.clientCompanyName = clientCompanyName;
+        // this.contactOnSite = contactOnSite;
+        // this.driverRequired = driverRequired;
+        // this.driverUserId = driverUserId;
+        // this.crewChiefUserId = crewChiefUserId;
+        // this.remarks = remarks;
+        // this.comment = comment;
+    }
 
 }

@@ -15,13 +15,23 @@ public class JobService {
     JobRepository jobRepository;
 
     public void createNewJob(Job job) {
-
+        // System.out.println("job " + job.toString());
         boolean jobExists = jobRepository.findByJobNumber(job.getJobNumber()).isPresent();
 
         if (jobExists) {
             throw new IllegalStateException("Job with number " + job.getJobNumber() + " already exists");
         } else {
-            jobRepository.save(job);
+            jobRepository.save(
+                    new Job(
+                            job.getJobNumber(),
+                            job.getDateTime(),
+                            job.getJobDuration(),
+                            job.getNumberOfCrew(),
+                            job.getAddress()
+
+                    )
+
+            );
 
         }
 

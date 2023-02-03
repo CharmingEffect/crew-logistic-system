@@ -112,9 +112,7 @@ function AddJob() {
         clientCompanyName: clientCompanyName,
         contactOnSite: contactOnSite,
         driverRequired: driverRequired,
-        user: {
-          driverUserId: driverUserId,
-        },
+        driverUserId: driverUserId,
 
         remarks: remarks,
         comment: comment,

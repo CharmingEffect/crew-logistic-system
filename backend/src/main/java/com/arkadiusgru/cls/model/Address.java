@@ -26,4 +26,8 @@ public class Address extends AbstractEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToOne(mappedBy = "address")
+    @JoinColumn(name = "job_number")
+    private Job job;
+
 }

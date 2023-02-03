@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.arkadiusgru.cls.model.Job;
+import com.arkadiusgru.cls.model.JobRequest;
 import com.arkadiusgru.cls.service.JobService;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +23,8 @@ public class JobController {
 
     @PostMapping(path = "/admin/newJob")
     public String register(@RequestBody Job job) {
-        System.out.println(job);
+        System.out.println("Job con:" + job.toString());
+
         jobService.createNewJob(job);
         return "created";
 

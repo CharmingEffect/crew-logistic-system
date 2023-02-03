@@ -44,7 +44,7 @@ public class UserService implements UserDetailsService {
         String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 
         user.setPassword(encryptedPassword);
-
+        
         userRepository.save(user);
         String token = UUID.randomUUID().toString();
         // here is created token which is valid for 15 minutes. User has to clikc on
