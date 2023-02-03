@@ -22,9 +22,7 @@ public class JobController {
     private final JobService jobService;
 
     @PostMapping(path = "/admin/newJob")
-    public String register(@RequestBody Job job) {
-        System.out.println("Job con:" + job.toString());
-
+    public String register(@RequestBody JobRequest job) {
         jobService.createNewJob(job);
         return "created";
 

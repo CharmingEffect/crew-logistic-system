@@ -19,5 +19,12 @@ public class JobRequest {
     private Integer jobDuration;
     private Integer numberOfCrew;
     private Address address;
+    private String clientCompanyName;
+    private String contactOnSite;
+    private Boolean driverRequired;
+    private User driverUserId;
+    private User crewChiefUserId;
+    private String remarks;
+    private String comment;
 
 }

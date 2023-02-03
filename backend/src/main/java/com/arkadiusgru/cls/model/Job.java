@@ -50,20 +50,32 @@ public class Job {
     private String remarks;
     private String comment;
 
-    public Job(String jobNumber, LocalDateTime dateTime, Integer jobDuration, Integer numberOfCrew,
-            Address address) {
+    public Job(String jobNumber, 
+            LocalDateTime dateTime, 
+            Integer jobDuration, 
+            Integer numberOfCrew,
+            Address address,
+            String clientCompanyName, 
+            String contactOnSite, 
+            Boolean driverRequired, 
+            User driverUserId,
+            User crewChiefUserId, 
+            String remarks,
+             String comment) {
+                
         this.jobNumber = jobNumber;
         this.dateTime = dateTime;
         this.jobDuration = jobDuration;
         this.numberOfCrew = numberOfCrew;
         this.address = address;
-        // this.clientCompanyName = clientCompanyName;
-        // this.contactOnSite = contactOnSite;
-        // this.driverRequired = driverRequired;
-        // this.driverUserId = driverUserId;
-        // this.crewChiefUserId = crewChiefUserId;
-        // this.remarks = remarks;
-        // this.comment = comment;
+
+        this.clientCompanyName = clientCompanyName;
+        this.contactOnSite = contactOnSite;
+        this.driverRequired = driverRequired;
+        this.driverUserId = driverUserId;
+        this.crewChiefUserId = crewChiefUserId;
+        this.remarks = remarks;
+        this.comment = comment;
     }
 
 }
