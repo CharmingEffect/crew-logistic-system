@@ -4,16 +4,19 @@ import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.repos.JobRepository;
+import com.arkadiusgru.cls.repos.UserRepository;
 
 import ch.qos.logback.core.joran.conditional.ElseAction;
 import lombok.AllArgsConstructor;
 import com.arkadiusgru.cls.model.JobRequest;
+import com.arkadiusgru.cls.model.User;
 
 @Service
 @AllArgsConstructor
 public class JobService {
 
     JobRepository jobRepository;
+    UserRepository userRepository;
 
     public void createNewJob(JobRequest jobRequest) {
         // System.out.println("job " + job.toString());
@@ -23,24 +26,26 @@ public class JobService {
         if (jobExists) {
             throw new IllegalStateException("Job with number " + jobRequest.getJobNumber() + " already exists");
         } else {
-            jobRepository.save(
-                    new Job(
-                            jobRequest.getJobNumber(),
-                            jobRequest.getDateTime(),
-                            jobRequest.getJobDuration(),
-                            jobRequest.getNumberOfCrew(),
-                            jobRequest.getAddress(),
-                            jobRequest.getClientCompanyName(),
-                            jobRequest.getContactOnSite(),
-                            jobRequest.getDriverRequired(),
-                            jobRequest.getDriverUserId(),
-                            jobRequest.getCrewChiefUserId(),
-                            jobRequest.getRemarks(),
-                            jobRequest.getComment()
 
-                    )
+            User user = userRepository.findById(jobRequest.getDriverId()).orElse(null);
+            if (user == null) {
+                throw new IllegalStateException("User with id " + jobRequest.getDriverId() + " not found");
+            }
 
-            );
+            Job job = new Job();
+            job.setJobNumber(jobRequest.getJobNumber());
+            job.setDateTime(jobRequest.getDateTime());
+            job.setJobDuration(jobRequest.getJobDuration());
+            job.setNumberOfCrew(jobRequest.getNumberOfCrew());
+            job.setAddress(jobRequest.getAddress());
+            job.setClientCompanyName(jobRequest.getClientCompanyName());
+            job.setContactOnSite(jobRequest.getContactOnSite());
+            job.setDriverRequired(jobRequest.getDriverRequired());
+            job.setDriver(user);
+            job.setCrewChiefUserId(jobRequest.getCrewChiefUserId());
+            job.setRemarks(jobRequest.getRemarks());
+            job.setComment(jobRequest.getComment());
+            jobRepository.save(job);
 
         }
 

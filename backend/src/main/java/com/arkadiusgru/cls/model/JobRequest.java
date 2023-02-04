@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -13,6 +14,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
+// to jest aby przetlumaczyc cokolwiek wpada do jacy na jave rozimesz bocie
+
 public class JobRequest {
     private String jobNumber;
     private LocalDateTime dateTime;
@@ -22,7 +25,7 @@ public class JobRequest {
     private String clientCompanyName;
     private String contactOnSite;
     private Boolean driverRequired;
-    private User driverUserId;
+    private Long driverId;
     private User crewChiefUserId;
     private String remarks;
     private String comment;

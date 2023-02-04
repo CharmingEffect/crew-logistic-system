@@ -25,6 +25,8 @@ function AddJob() {
   const [formData, setFormData] = useState({});
   const [users, setUsers] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedDriverId, setSelectedDriverId] = useState(null);
+
   const [job, setJob] = useState({
     jobNumber: "",
     dateTime: "",
@@ -41,9 +43,7 @@ function AddJob() {
     clientCompanyName: "",
     contactOnSite: "",
     driverRequired: "",
-    user: {
-      driverUserId: "",
-    },
+    driverId: "",
     remarks: "",
     comment: "",
     ccUserId: "",
@@ -63,13 +63,14 @@ function AddJob() {
     clientCompanyName,
     contactOnSite,
     driverRequired,
-    driverUserId,
+    driverId,
     remarks,
     comment,
     ccUserId,
   } = job;
 
   const onInputChange = (e) => {
+    console.log(selectedDriverId);
     setJob({ ...job, [e.target.name]: e.target.value });
   };
 
@@ -112,8 +113,7 @@ function AddJob() {
         clientCompanyName: clientCompanyName,
         contactOnSite: contactOnSite,
         driverRequired: driverRequired,
-        driverUserId: driverUserId,
-
+        driverId: selectedDriverId,
         remarks: remarks,
         comment: comment,
         ccUserId: ccUserId,
@@ -427,10 +427,15 @@ function AddJob() {
                   Driver
                 </label>
                 <div className="col-sm-7 form-field">
-                  <select className="cls-form-control form-field">
+                  <select
+                    value={selectedDriverId}
+                    className="cls-form-control form-field"
+                    onChange={(e) => setSelectedDriverId(e.target.value)}
+                  >
+                    <option value={null}>Select Driver</option>
                     {users.map((user) => (
-                      <option value={user.id}>
-                        {user.firstName} {user.lastName}
+                      <option key={user.id} value={user.id}>
+                        {user.id} {user.firstName} {user.lastName}
                       </option>
                     ))}
                   </select>
