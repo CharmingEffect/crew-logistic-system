@@ -32,11 +32,11 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @Table(name = "job")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "jobNumber", scope = String.class)
 public class Job {
 
     @Id
     String jobNumber;
-
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -44,7 +44,7 @@ public class Job {
     private LocalDateTime dateTime;
     private Integer jobDuration;
     private Integer numberOfCrew;
-    @JsonIgnore
+    @JsonManagedReference
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
@@ -52,12 +52,13 @@ public class Job {
     private String contactOnSite;
     private Boolean driverRequired;
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "driver_id")
+    @JoinColumn(name = "driver_id", referencedColumnName = "id")
     @JsonIgnore
     private User driver;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(optional = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
-    private User crewChiefUserId;
+    @JsonIgnore
+    private User crewChief;
     private String remarks;
     private String comment;
 
@@ -70,7 +71,7 @@ public class Job {
             String contactOnSite,
             Boolean driverRequired,
             User driver,
-            User crewChiefUserId,
+            User crewChief,
             String remarks,
             String comment) {
 
@@ -84,7 +85,7 @@ public class Job {
         this.contactOnSite = contactOnSite;
         this.driverRequired = driverRequired;
         this.driver = driver;
-        this.crewChiefUserId = crewChiefUserId;
+        this.crewChief = crewChief;
         this.remarks = remarks;
         this.comment = comment;
     }

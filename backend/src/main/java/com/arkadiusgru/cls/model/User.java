@@ -55,10 +55,6 @@ public class User extends AbstractEntity implements UserDetails {
     private Boolean locked = false;
     private Boolean enabled = false; // default values
 
-    @OneToMany(mappedBy = "driver")
-    @JsonIgnore
-    private List<Job> jobs;
-
     public User(String firstName, String lastName, String email, String password, Role role, Address address) {
 
         this.firstName = firstName;

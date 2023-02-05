@@ -26,6 +26,7 @@ function AddJob() {
   const [users, setUsers] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedDriverId, setSelectedDriverId] = useState(null);
+  const [selectedCrewChiefId, setSelectedCrewChiefId] = useState(null);
 
   const [job, setJob] = useState({
     jobNumber: "",
@@ -44,6 +45,7 @@ function AddJob() {
     contactOnSite: "",
     driverRequired: "",
     driverId: "",
+    crewChiefId: "",
     remarks: "",
     comment: "",
     ccUserId: "",
@@ -64,6 +66,7 @@ function AddJob() {
     contactOnSite,
     driverRequired,
     driverId,
+    crewChiefId,
     remarks,
     comment,
     ccUserId,
@@ -114,6 +117,7 @@ function AddJob() {
         contactOnSite: contactOnSite,
         driverRequired: driverRequired,
         driverId: selectedDriverId,
+        crewChiefId: selectedCrewChiefId,
         remarks: remarks,
         comment: comment,
         ccUserId: ccUserId,
@@ -433,6 +437,28 @@ function AddJob() {
                     onChange={(e) => setSelectedDriverId(e.target.value)}
                   >
                     <option value={null}>Select Driver</option>
+                    {users.map((user) => (
+                      <option key={user.id} value={user.id}>
+                        {user.id} {user.firstName} {user.lastName}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div className="form-group row">
+                <label
+                  for="inputPassword"
+                  className="col-sm-5 col-form-label form-box"
+                >
+                  Crew Chief
+                </label>
+                <div className="col-sm-7 form-field">
+                  <select
+                    value={selectedCrewChiefId}
+                    className="cls-form-control form-field"
+                    onChange={(e) => setSelectedCrewChiefId(e.target.value)}
+                  >
+                    <option value={null}>Select Crew Chief</option>
                     {users.map((user) => (
                       <option key={user.id} value={user.id}>
                         {user.id} {user.firstName} {user.lastName}

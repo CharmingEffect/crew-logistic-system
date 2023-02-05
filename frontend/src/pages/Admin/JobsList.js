@@ -50,7 +50,13 @@ class JobsList extends Component {
           <td style={{ whiteSpace: "nowrap" }}>{job.jobNumber}</td>
           <td style={{ whiteSpace: "nowrap" }}>{job.jobDuration}</td>
           <td>{job.numberOfCrew}</td>
-          <td>{String(job.address)}</td>
+          <td>
+            {String(job.address.addressLine1)}{" "}
+            {String(job.address.addressLine2)}
+            {String(job.address.postalCode)}
+            <br></br>
+            {String(job.address.city)}
+          </td>
           <td>{String(job.dateTime)}</td>
           <td>
             <ButtonGroup>
