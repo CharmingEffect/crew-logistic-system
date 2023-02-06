@@ -1,10 +1,15 @@
 version: '3'
 services:
+
   mail-server:
     image: maildev/maildev
     ports:
       - "1080:1080"
       - "1025:1025"
+    networks:
+      main:
+        ipv4_address: 10.5.0.12
+  
   database:
     image: mysql:latest
     environment:
@@ -14,7 +19,9 @@ services:
       - "3306:3306"
       - "33060:33060"
     networks:
-      - myapp_network
+      main:
+        ipv4_address: 10.5.0.10
+  
   spring-app:
     build:
       context: ./backend
@@ -23,17 +30,32 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - myapp_network
+      main:
+        ipv4_address: 10.5.0.5
+    depends_on:
+      - database
+      - mail-server
+  
   react-app:
     build:
       context: ./frontend
     ports:
       - "3000:3000"
     networks:
-      - myapp_network
+      main:
+        ipv4_address: 10.5.0.2
+    depends_on:
+      - spring-app
+    
+
+
 networks:
-  myapp_network:
-    name: myapp_network
+    main:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.5.0.0/16
+
 volumes:
   mysql:
     driver: local

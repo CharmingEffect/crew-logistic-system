@@ -124,6 +124,8 @@ function AddJob() {
       }),
     })
       .then((response) => {
+        console.log(job);
+
         // console.log(response.status);
         if (response.status == 500) {
           swal({

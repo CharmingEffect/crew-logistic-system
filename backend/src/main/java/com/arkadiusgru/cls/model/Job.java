@@ -53,11 +53,11 @@ public class Job {
     private Boolean driverRequired;
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "driver_id", referencedColumnName = "id")
-    @JsonIgnore
+    // @JsonIgnore
     private User driver;
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
-    @JsonIgnore
+    // @JsonIgnore
     private User crewChief;
     private String remarks;
     private String comment;

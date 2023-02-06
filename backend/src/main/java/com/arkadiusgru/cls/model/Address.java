@@ -31,9 +31,4 @@ public class Address extends AbstractEntity {
     @JsonBackReference
     private User user;
 
-    @OneToOne(mappedBy = "address")
-    @JoinColumn(name = "job_number")
-    @JsonBackReference
-    private Job job;
-
 }

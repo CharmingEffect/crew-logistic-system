@@ -2,6 +2,8 @@ package com.arkadiusgru.cls.service;
 
 import java.util.List;
 
+import org.springframework.boot.configurationprocessor.json.JSONObject;
+import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
@@ -60,6 +62,15 @@ public class JobService {
     // retive job with associated address
 
     public List<Job> getAllJobs() {
+        JSONObject json = new JSONObject();
+        // get all jobs in json format
+        //
+        // get cc details in another json by cc_id
+        // grt driver details in another json by driver_id
+        // json = jobRepository.findAll().stream().filter(job -> job.getAddress() !=
+        // null).findFirst().get().getAddress().getUser();
+        // gson
+
         return jobRepository.findAll();
     }
 

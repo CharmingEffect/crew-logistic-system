@@ -10,6 +10,7 @@ import UsersMngmt from "./pages/Admin/UsersMngmt";
 import "./styles/Style.css";
 import JobsMngmt from "./pages/Admin/JobsMngmt";
 import Profile from "./pages/common/Profile";
+import Nav from "./components/Nav";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
