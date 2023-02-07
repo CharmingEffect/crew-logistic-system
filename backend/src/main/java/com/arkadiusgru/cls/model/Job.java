@@ -54,7 +54,7 @@ public class Job {
     private String contactOnSite;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
-    @JsonBackReference
+    @JsonIdentityReference(alwaysAsId = true)
     private User crewChief;
     private String remarks;
     private String comment;
