@@ -17,12 +17,14 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,20 +46,15 @@ public class Job {
     private LocalDateTime dateTime;
     private Integer jobDuration;
     private Integer numberOfCrew;
-    @JsonManagedReference
+    @JsonManagedReference("address")
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     private String clientCompanyName;
     private String contactOnSite;
-    private Boolean driverRequired;
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "driver_id", referencedColumnName = "id")
-    // @JsonIgnore
-    private User driver;
-    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
-    // @JsonIgnore
+    @JsonBackReference
     private User crewChief;
     private String remarks;
     private String comment;
@@ -83,8 +80,6 @@ public class Job {
 
         this.clientCompanyName = clientCompanyName;
         this.contactOnSite = contactOnSite;
-        this.driverRequired = driverRequired;
-        this.driver = driver;
         this.crewChief = crewChief;
         this.remarks = remarks;
         this.comment = comment;

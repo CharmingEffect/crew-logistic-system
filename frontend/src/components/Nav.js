@@ -6,6 +6,11 @@ import { useLocation } from "react-router-dom";
 const Nav = () => {
   const location = useLocation();
   const path = location.pathname;
+
+const jwt = localStorage.getItem("jwt");
+
+
+
   return (
     <>
       <nav className="navbar-default navbar-static-side" role="navigation">

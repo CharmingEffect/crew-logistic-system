@@ -1,15 +1,14 @@
 package com.arkadiusgru.cls.service;
 
 import java.util.List;
-
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.repos.JobRepository;
 import com.arkadiusgru.cls.repos.UserRepository;
+import java.io.File;
+import java.io.PrintStream;
 
 import lombok.AllArgsConstructor;
 import com.arkadiusgru.cls.model.User;
@@ -30,11 +29,6 @@ public class JobService {
             throw new IllegalStateException("Job with number " + jobDto.getJobNumber() + " already exists");
         } else {
 
-            User driver = userRepository.findById(jobDto.getDriverId()).orElse(null);
-            if (driver == null) {
-                throw new IllegalStateException("User with id " + jobDto.getDriverId() + " not found");
-            }
-
             User crewChief = userRepository.findById(jobDto.getCrewChiefId()).orElse(null);
             if (crewChief == null) {
                 throw new IllegalStateException("User with id " + jobDto.getCrewChiefId() + " not found");
@@ -48,8 +42,6 @@ public class JobService {
             job.setAddress(jobDto.getAddress());
             job.setClientCompanyName(jobDto.getClientCompanyName());
             job.setContactOnSite(jobDto.getContactOnSite());
-            job.setDriverRequired(jobDto.getDriverRequired());
-            job.setDriver(driver);
             job.setCrewChief(crewChief);
             job.setRemarks(jobDto.getRemarks());
             job.setComment(jobDto.getComment());
@@ -62,7 +54,7 @@ public class JobService {
     // retive job with associated address
 
     public List<Job> getAllJobs() {
-        JSONObject json = new JSONObject();
+
         // get all jobs in json format
         //
         // get cc details in another json by cc_id

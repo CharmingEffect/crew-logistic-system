@@ -408,7 +408,7 @@ function AddJob() {
                   />
                 </div>
               </div>
-              <div className="form-group row">
+              {/* <div className="form-group row">
                 <label
                   for="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
@@ -446,7 +446,7 @@ function AddJob() {
                     ))}
                   </select>
                 </div>
-              </div>
+              </div> */}
               <div className="form-group row">
                 <label
                   for="inputPassword"
