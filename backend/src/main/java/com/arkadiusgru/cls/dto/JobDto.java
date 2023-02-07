@@ -27,6 +27,7 @@ public class JobDto {
     private Address address;
     private String clientCompanyName;
     private String contactOnSite;
+    private Long driverId;
     private Long crewChiefId;
     private String remarks;
     private String comment;

@@ -53,6 +53,10 @@ public class Job {
     private String clientCompanyName;
     private String contactOnSite;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "driver_id", referencedColumnName = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    private User driver;
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
     @JsonIdentityReference(alwaysAsId = true)
     private User crewChief;
@@ -66,7 +70,6 @@ public class Job {
             Address address,
             String clientCompanyName,
             String contactOnSite,
-            Boolean driverRequired,
             User driver,
             User crewChief,
             String remarks,
@@ -77,9 +80,9 @@ public class Job {
         this.jobDuration = jobDuration;
         this.numberOfCrew = numberOfCrew;
         this.address = address;
-
         this.clientCompanyName = clientCompanyName;
         this.contactOnSite = contactOnSite;
+        this.driver = driver;
         this.crewChief = crewChief;
         this.remarks = remarks;
         this.comment = comment;

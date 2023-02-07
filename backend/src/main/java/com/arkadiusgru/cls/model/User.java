@@ -47,7 +47,12 @@ public class User extends AbstractEntity implements UserDetails {
     private Boolean enabled = false; // default values
 
     @OneToMany(mappedBy = "crewChief")
-    private List<Job> crewChief;
+    @JsonIgnore
+    private List<Job> crewChiefs;
+
+    @OneToMany(mappedBy = "driver")
+    @JsonIgnore
+    private List<Job> drivers;
 
     public User(String firstName, String lastName, String email, String password, Role role, Address address) {
 

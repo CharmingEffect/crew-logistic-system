@@ -424,7 +424,7 @@ function AddJob() {
                     onChange={(e) => onInputChange(e)}
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="form-group row">
                 <label
                   for="inputPassword"
@@ -446,7 +446,7 @@ function AddJob() {
                     ))}
                   </select>
                 </div>
-              </div> */}
+              </div>
               <div className="form-group row">
                 <label
                   for="inputPassword"

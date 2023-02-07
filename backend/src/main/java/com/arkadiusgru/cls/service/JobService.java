@@ -7,7 +7,12 @@ import com.arkadiusgru.cls.dto.JobDto;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.repos.JobRepository;
 import com.arkadiusgru.cls.repos.UserRepository;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import lombok.AllArgsConstructor;
@@ -29,6 +34,11 @@ public class JobService {
             throw new IllegalStateException("Job with number " + jobDto.getJobNumber() + " already exists");
         } else {
 
+            User driver = userRepository.findById(jobDto.getDriverId()).orElse(null);
+            if (driver == null) {
+                throw new IllegalStateException("User with id " + jobDto.getDriverId() + " not found");
+            }
+
             User crewChief = userRepository.findById(jobDto.getCrewChiefId()).orElse(null);
             if (crewChief == null) {
                 throw new IllegalStateException("User with id " + jobDto.getCrewChiefId() + " not found");
@@ -42,6 +52,7 @@ public class JobService {
             job.setAddress(jobDto.getAddress());
             job.setClientCompanyName(jobDto.getClientCompanyName());
             job.setContactOnSite(jobDto.getContactOnSite());
+            job.setDriver(driver);
             job.setCrewChief(crewChief);
             job.setRemarks(jobDto.getRemarks());
             job.setComment(jobDto.getComment());
@@ -53,7 +64,11 @@ public class JobService {
 
     // retive job with associated address
 
-    public List<Job> getAllJobs() {
+    public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println(jobRepository.findAll().get(0).getDriver().getFirstName());
+        ObjectMapper mapper = new ObjectMapper();
+   
 
         // get all jobs in json format
         //
