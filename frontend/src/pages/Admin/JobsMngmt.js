@@ -17,13 +17,11 @@ import JobsList from "./JobsList";
 const JobsMngmt = () => {
   return (
     <>
-      <div className="nav_bg_color" id="wrapper">
-        <Nav />
-        <div id="page-wrapper" className="gray-bg">
-          <div className="row border-bottom">
-            <Header />
-          </div>
-          <div className="wrapper wrapper-content animated fadeInRight"></div>
+      <div id="page-wrapper" className="gray-bg">
+        <div className="row border-bottom">
+          <Header />
+        </div>
+        <div className="wrapper wrapper-content animated fadeInRight">
           <div className="">
             {" "}
             <i
