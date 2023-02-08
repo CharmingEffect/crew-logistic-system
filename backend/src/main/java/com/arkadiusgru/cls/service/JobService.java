@@ -3,6 +3,11 @@ package com.arkadiusgru.cls.service;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
@@ -67,23 +72,6 @@ public class JobService {
     // retive job with associated address
 
     public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-
-        for (int i = 0; i < jobRepository.findAll().size(); i++) {
-            System.out.println(jobRepository.findAll().get(i).getDriver().toString());
-        }
-        // System.out.println(jobRepository.findAll().get(0).getDriver().getFirstName());
-        // List<Job> jobs = jobRepository.findAll();
-
-        // System.out.println(jobs.get(0).toString());
-        // // get all jobs in json format
-        //
-        // get cc details in another json by cc_id
-        // grt driver details in another json by driver_id
-        // json = jobRepository.findAll().stream().filter(job -> job.getAddress() !=
-        // null).findFirst().get().getAddress().getUser();
-        // gson
-
         return jobRepository.findAll();
     }
 

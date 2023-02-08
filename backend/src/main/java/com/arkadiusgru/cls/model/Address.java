@@ -5,9 +5,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,10 +22,5 @@ public class Address extends AbstractEntity {
     private String stateProvince;
     private String postalCode;
     private String country;
-
-    @OneToOne(mappedBy = "address")
-    @JoinColumn(name = "user_id")
-    @JsonBackReference
-    private User user;
 
 }

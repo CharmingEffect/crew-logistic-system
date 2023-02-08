@@ -17,14 +17,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.annotations.Expose;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,8 +27,8 @@ import lombok.ToString;
 @Entity
 @Data
 @NoArgsConstructor
-// @Table(name = "job")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "jobNumber", scope = String.class)
+@Table(name = "job")
+
 public class Job {
 
     @Id
@@ -42,23 +36,21 @@ public class Job {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDateTime dateTime;
     private Integer jobDuration;
     private Integer numberOfCrew;
-    @JsonManagedReference("address")
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     private String clientCompanyName;
     private String contactOnSite;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "driver_id", referencedColumnName = "id")
-    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "driver_id")
+    @JsonIgnoreProperties("address")
     private User driver;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cc_user_id", referencedColumnName = "id")
-    @JsonIdentityReference(alwaysAsId = true)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "cc_user_id")
+    @JsonIgnoreProperties("address")
     private User crewChief;
     private String remarks;
     private String comment;
@@ -88,11 +80,4 @@ public class Job {
         this.comment = comment;
     }
 
-    @Override
-    public String toString() {
-        return "Job [address=" + address + ", clientCompanyName=" + clientCompanyName + ", comment=" + comment
-                + ", contactOnSite=" + contactOnSite + ", createdAt=" + createdAt + ", crewChief=" + crewChief
-                + ", dateTime=" + dateTime + ", driver=" + driver + ", jobDuration=" + jobDuration + ", jobNumber="
-                + jobNumber + ", numberOfCrew=" + numberOfCrew + ", remarks=" + remarks + "]";
-    }
 }
