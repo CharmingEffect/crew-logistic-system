@@ -33,7 +33,7 @@ import lombok.ToString;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "job")
+// @Table(name = "job")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "jobNumber", scope = String.class)
 public class Job {
 
@@ -88,4 +88,11 @@ public class Job {
         this.comment = comment;
     }
 
+    @Override
+    public String toString() {
+        return "Job [address=" + address + ", clientCompanyName=" + clientCompanyName + ", comment=" + comment
+                + ", contactOnSite=" + contactOnSite + ", createdAt=" + createdAt + ", crewChief=" + crewChief
+                + ", dateTime=" + dateTime + ", driver=" + driver + ", jobDuration=" + jobDuration + ", jobNumber="
+                + jobNumber + ", numberOfCrew=" + numberOfCrew + ", remarks=" + remarks + "]";
+    }
 }

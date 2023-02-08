@@ -24,4 +24,5 @@ public interface JobRepository extends JpaRepository<Job, String> {
     List<Job> findAllWithAddress();
 
     
+    List<Job> findAll();
 }
