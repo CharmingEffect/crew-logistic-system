@@ -26,13 +26,15 @@ const Login = () => {
       body: JSON.stringify(reqBody),
     })
       .then((response) => {
-        console.log(response.body);
+        // console.log(response.body);
+
         if (response.status === 200)
           return Promise.all([response.json(), response.headers]);
-        else return Promise.reject("Invalid credentials or acount not enabled"); // this is issiue need to retive isACcountEnabled from backend
+        else
+          return Promise.reject("Invalid credentials or account not enabled");
       })
       .then(([body, headers]) => {
-        //console.log(body);
+        console.log(body);
         setJwt(headers.get("authorization"));
         //console.log("gdzue to jest" + headers.get("authorization"));
         if (body.role === "ADMIN") {
@@ -40,6 +42,15 @@ const Login = () => {
         }
         if (body.role === "CREW_MEMBER") {
           window.location.href = "/dashboard-crew";
+        }
+        if (body.enabled === false) {
+          swal({
+            title: "Error!",
+            text: "Your account is disabled, please contact your administrator",
+            icon: "error",
+            button: false,
+            timer: 1000,
+          });
         }
       })
       .catch((message) => {
