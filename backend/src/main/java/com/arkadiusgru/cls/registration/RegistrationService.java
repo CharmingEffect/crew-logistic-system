@@ -2,17 +2,14 @@ package com.arkadiusgru.cls.registration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.email.EmailBuilder;
 import com.arkadiusgru.cls.email.EmailSender;
-import com.arkadiusgru.cls.model.Role;
 import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.registration.token.ConfirmationToken;
 import com.arkadiusgru.cls.registration.token.ConfirmationTokenService;
 import com.arkadiusgru.cls.service.UserService;
-import com.arkadiusgru.cls.util.PassGenerator;
 
 import lombok.AllArgsConstructor;
 

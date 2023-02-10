@@ -1,15 +1,36 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useLocation } from "react-router-dom";
-// import { Link } from 'react-router-dom';
+import jwtDecode from "jwt-decode";
+import { useState } from "react";
+import { useLoggedInUser } from "../util/useUserData";
+import { useLocalState } from "../util/useLocalStorage";
 
 const Nav = () => {
   const location = useLocation();
   const path = location.pathname;
+  const [admin, setAdmin] = useState(false);
+  const [crew, setCrew] = useState(false);
+  const loggedUser = useLoggedInUser();
 
-const jwt = localStorage.getItem("jwt");
+  // sprawdza czy jest adminem i ustawia state na true
 
+  useEffect(() => {
+    if (loggedUser.role === "ADMIN") {
+      setAdmin(true);
+    } else {
+      setAdmin(false);
+    }
+  }, [loggedUser]);
+  // sprawdza czy jest crew i ustawia state na true
 
+  useEffect(() => {
+    if (loggedUser.role === "CREW") {
+      setCrew(true);
+    } else {
+      setCrew(false);
+    }
+  }, [loggedUser]);
 
   return (
     <>
@@ -38,29 +59,31 @@ const jwt = localStorage.getItem("jwt");
               </a>
             </li>
 
-            <li className={path === "/user-mngmt" ? "active" : ""}>
-              <a href="/user-mngmt">
-                <i className="fa fa-users fa-lg"></i>{" "}
-                <span className="nav-label">User Management</span>
-              </a>
-            </li>
-            <li className={path === "/job-mngmt" ? "active" : ""}>
-              <a href="/job-mngmt">
-                <i className="fa fa-wrench fa-lg"></i>{" "}
-                <span className="nav-label">Job Management</span>
-              </a>
-            </li>
+            {admin ? (
+              <li className={path === "/user-mngmt" ? "active" : ""}>
+                <a href="/user-mngmt">
+                  <i className="fa fa-users fa-lg"></i>{" "}
+                  <span className="nav-label">User Management</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
+            {admin ? (
+              <li className={path === "/job-mngmt" ? "active" : ""}>
+                <a href="/job-mngmt">
+                  <i className="fa fa-wrench fa-lg"></i>{" "}
+                  <span className="nav-label">Job Management</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
 
             <li className={path === "/profile" ? "active" : ""}>
               <a href="/profile">
                 <i className="fa fa-user fa-lg"></i>{" "}
                 <span className="nav-label">Profile</span>
-              </a>
-            </li>
-            <li className="fixed-bottom">
-              <a href="/profile">
-                <i className="fa fa-user fa-lg"></i>{" "}
-                <span className="nav-label">Logged as: </span>
               </a>
             </li>
           </ul>

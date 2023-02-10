@@ -16,7 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -38,14 +38,11 @@ public class User extends AbstractEntity implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
-    @JsonManagedReference
     private Address address;
     private Boolean locked = false;
     private Boolean enabled = false; // default values
-
     @OneToMany(mappedBy = "crewChief")
     @JsonIgnore
     private List<Job> crewChiefs;

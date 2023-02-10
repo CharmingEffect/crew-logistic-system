@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.arkadiusgru.cls.model.AbstractEntity;
 import com.arkadiusgru.cls.model.User;
 
 import lombok.AllArgsConstructor;

@@ -2,8 +2,8 @@ package com.arkadiusgru.cls.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,6 +46,14 @@ public class UserController {
 
         return crewMembers;
 
+    }
+
+    // retuve single user by email address
+    @RequestMapping(value = "/admin/getUser/{email}", method = RequestMethod.GET)
+    public Optional<User> getUserByEmail(@PathVariable String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        user.get().setPassword("");
+        return user;
     }
 
     @DeleteMapping("/admin/deleteUser/{id}")

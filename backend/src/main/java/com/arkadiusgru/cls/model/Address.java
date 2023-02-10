@@ -28,7 +28,7 @@ public class Address extends AbstractEntity {
 
     @OneToOne(mappedBy = "address")
     @JoinColumn(name = "user_id")
-    @JsonBackReference
+
     private User user;
 
 }

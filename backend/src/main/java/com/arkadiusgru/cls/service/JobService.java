@@ -10,10 +10,9 @@ import com.arkadiusgru.cls.repos.UserRepository;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 
 import lombok.AllArgsConstructor;
 import com.arkadiusgru.cls.model.User;
@@ -65,18 +64,22 @@ public class JobService {
     // retive job with associated address
 
     public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println(jobRepository.findAll().get(0).getDriver().getFirstName());
-        ObjectMapper mapper = new ObjectMapper();
-   
 
-        // get all jobs in json format
-        //
-        // get cc details in another json by cc_id
-        // grt driver details in another json by driver_id
-        // json = jobRepository.findAll().stream().filter(job -> job.getAddress() !=
-        // null).findFirst().get().getAddress().getUser();
-        // gson
+        if (jobRepository.findAll().isEmpty()) {
+            throw new IllegalStateException("No jobs found");
+        }
+        jobRepository.findAll().forEach(job -> {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JavaTimeModule());
+
+            try {
+                System.out.println(mapper.writeValueAsString(job));
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        });
 
         return jobRepository.findAll();
     }
@@ -90,5 +93,7 @@ public class JobService {
             throw new IllegalStateException("Job with number " + jobNumber + " does not exist");
         }
     }
+
+    
 
 }

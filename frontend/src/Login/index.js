@@ -36,9 +36,10 @@ const Login = () => {
         setJwt(headers.get("authorization"));
         //console.log("gdzue to jest" + headers.get("authorization"));
         if (body.role === "ADMIN") {
-          window.location.href = "/dashboard";
-        } else {
-          window.location.href = "/crew";
+          window.location.href = "/dashboard-admin";
+        }
+        if (body.role === "CREW_MEMBER") {
+          window.location.href = "/dashboard-crew";
         }
       })
       .catch((message) => {

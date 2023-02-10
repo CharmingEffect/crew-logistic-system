@@ -1,5 +1,5 @@
 import swal from "sweetalert";
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
@@ -36,9 +36,8 @@ class JobsList extends Component {
         button: false,
         timer: 1000,
       });
-
-      this.componentDidMount();
     });
+    this.componentDidMount();
   }
 
   render() {
@@ -54,7 +53,6 @@ class JobsList extends Component {
             {String(job.address.addressLine1)}{" "}
             {String(job.address.addressLine2)}
             {String(job.address.postalCode)}
-            <br></br>
             {String(job.address.city)}
           </td>
           <td>{String(job.dateTime)}</td>

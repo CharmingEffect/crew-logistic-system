@@ -143,6 +143,7 @@ function AddJob() {
             button: false,
             timer: 1000,
           });
+          setModalIsOpen(false);
         }
       })
       .catch((message) => {
