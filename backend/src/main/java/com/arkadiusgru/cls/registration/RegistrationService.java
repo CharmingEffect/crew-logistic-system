@@ -45,7 +45,8 @@ public class RegistrationService {
                 request.getEmail(),
                 TEMPORARY_PASSWORD,
                 request.getRole(),
-                request.getAddress()));
+                request.getAddress(),
+                request.getPhoneNumber()));
 
         String link = "http://localhost:8080/api/confirm-registration?token=" + token;
         emailSender.send(request.getEmail(),

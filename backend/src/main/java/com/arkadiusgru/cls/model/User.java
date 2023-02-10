@@ -41,6 +41,7 @@ public class User extends AbstractEntity implements UserDetails {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+    private String phoneNumber;
     private Boolean locked = false;
     private Boolean enabled = false; // default values
     @OneToMany(mappedBy = "crewChief")
@@ -51,7 +52,8 @@ public class User extends AbstractEntity implements UserDetails {
     @JsonIgnore
     private List<Job> drivers;
 
-    public User(String firstName, String lastName, String email, String password, Role role, Address address) {
+    public User(String firstName, String lastName, String email, String password, Role role, Address address,
+            String phoneNumber) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -59,6 +61,7 @@ public class User extends AbstractEntity implements UserDetails {
         this.password = password;
         this.role = role;
         this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override

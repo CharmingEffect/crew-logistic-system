@@ -12,20 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.arkadiusgru.cls.dto.AddressDto;
+import org.springframework.web.bind.annotation.RestController;
 import com.arkadiusgru.cls.dto.JobDto;
-import com.arkadiusgru.cls.model.Address;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.repos.AddressReposiotory;
 import com.arkadiusgru.cls.service.JobService;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
-
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api")
@@ -52,14 +47,6 @@ public class JobController {
         jobService.deleteJobByJobNumber(jobNumber);
         return ResponseEntity.ok().build();
 
-    }
-
-    @GetMapping("/admin/getAddress/{id}")
-    public Optional<Address> getUserByEmail(@PathVariable String id) {
-        Optional<Address> address = addressRepository.findById(Long.parseLong(id));
-        System.out.println(address.get().getAddressLine1());
-        address.get().setUser(null);
-        return address;
     }
 
 }

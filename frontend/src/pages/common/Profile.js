@@ -7,10 +7,11 @@ import { useLocalState } from "../../util/useLocalStorage";
 import { FindAddressById, useLoggedInUser } from "../../util/useUserData";
 
 const Profile = () => {
-  const loggedUser = useLoggedInUser();
+  const loggedUser = useLoggedInUser([]);
 
   return (
     <>
+      {console.log(loggedUser)}
       <div id="page-wrapper" className="gray-bg">
         <div className="row border-bottom">
           <Header />
@@ -104,7 +105,7 @@ const Profile = () => {
                       </div>
                       <div className="col-sm-9">
                         <p className="text-muted mb-0">
-                          needed mobile phone in database !
+                          {loggedUser.phoneNumber}
                         </p>
                       </div>
                     </div>
@@ -114,7 +115,17 @@ const Profile = () => {
                         <p className="mb-0">Address</p>
                       </div>
                       <div className="col-sm-9">
-                        <p className="text-muted mb-0"></p>
+                        <p className="text-muted mb-0">
+                          {loggedUser.addressLine1}
+                        </p>
+                        <p className="text-muted mb-0">
+                          {loggedUser.addressLine2}
+                        </p>
+                        <p className="text-muted mb-0">
+                          {loggedUser.postalCode}
+                        </p>
+                        <p className="text-muted mb-0">{loggedUser.city}</p>
+                        <p className="text-muted mb-0">{loggedUser.country}</p>
                       </div>
                     </div>
                     <hr></hr>
