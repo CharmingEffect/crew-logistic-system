@@ -35,72 +35,9 @@ const Crew = () => {
               <div className="col-lg-3">
                 <div className="widget style1 navy-bg">
                   <Widget
-                    name="Today Cases"
-                    count="107"
+                    name="Upcoming jobs (needed logic for it)"
+                    count="0"
                     icon_name="fa fa-briefcase fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 lazur-bg">
-                  <Widget
-                    name="Advocates"
-                    count="27"
-                    icon_name="fa fa-user-circle-o fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 yellow-bg">
-                  <Widget
-                    name="Documents"
-                    count="12"
-                    icon_name="fa fa-leanpub fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 red-bg">
-                  <Widget
-                    name="Team member"
-                    count="27"
-                    icon_name="fa fa-users fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 blue-bg">
-                  <Widget
-                    name="To-Dos"
-                    count="27"
-                    icon_name="fa fa-address-card-o fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 purple-bg">
-                  <Widget
-                    name="My Case Diary"
-                    count="27"
-                    icon_name="fa fa-book fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 green-bg">
-                  <Widget
-                    name="Team 1"
-                    count="27"
-                    icon_name="fa fa-heart fa-5x"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div className="widget style1 ash-bg">
-                  <Widget
-                    name="Team 2"
-                    count="27"
-                    icon_name="fa fa-envelope-o fa-5x"
                   />
                 </div>
               </div>

@@ -25,7 +25,7 @@ const Nav = () => {
   // sprawdza czy jest crew i ustawia state na true
 
   useEffect(() => {
-    if (loggedUser.role === "CREW") {
+    if (loggedUser.role === "CREW_MEMBER") {
       setCrew(true);
     } else {
       setCrew(false);
@@ -52,12 +52,28 @@ const Nav = () => {
               </div>
               <div className="logo-element">CLS</div>
             </li>
-            <li className={path === "/dashboard" ? "active" : ""}>
-              <a href="/dashboard">
-                <i className="fa fa-th-large fa-lg"></i>{" "}
-                <span className="nav-label">Dashboard Admin</span>
-              </a>
-            </li>
+
+            {admin ? (
+              <li className={path === "/dashboard-admin" ? "active" : ""}>
+                <a href="/dashboard-admin">
+                  <i className="fa fa-th-large"></i>{" "}
+                  <span className="nav-label">Dashboard</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
+
+            {crew ? (
+              <li className={path === "/dashboard-crew" ? "active" : ""}>
+                <a href="/dashboard-crew">
+                  <i className="fa fa-th-large"></i>{" "}
+                  <span className="nav-label">Dashboard</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
 
             {admin ? (
               <li className={path === "/user-mngmt" ? "active" : ""}>

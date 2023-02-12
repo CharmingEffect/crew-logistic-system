@@ -10,6 +10,7 @@ import UsersMngmt from "./pages/Admin/UsersMngmt";
 import Header from "./components/Header";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useLoggedInUser } from "./util/useUserData";
 
 import "./styles/Style.css";
 import JobsMngmt from "./pages/Admin/JobsMngmt";
@@ -30,27 +31,11 @@ function App() {
     }
   }
 
-  function correctPath() {
-    if (location.pathname === "/") {
-      return <></>;
-    } else {
-      return <Header></Header>;
-    }
-  }
-
   return (
     <>
       <div className="nav_bg_color" id="wrapper">
         {showNav()}
         <Routes>
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <DashboardAdmin />
-              </PrivateRoute>
-            }
-          ></Route>
           <Route path="/" element={<Login />}></Route>
           <Route path="/dashboard-admin" element={<DashboardAdmin />}></Route>
           <Route path="/dashboard-crew" element={<DashboardCrew />}></Route>
