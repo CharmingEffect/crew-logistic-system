@@ -1,6 +1,7 @@
 .left-profile img{
 	background-color: red;
 	margin-left: 35%;
+	max-width: 5rem
 }
 .profile-title{
 	margin-left: 17% ;

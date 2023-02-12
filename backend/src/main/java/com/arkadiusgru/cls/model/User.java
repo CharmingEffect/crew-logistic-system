@@ -9,20 +9,19 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -42,6 +41,8 @@ public class User extends AbstractEntity implements UserDetails {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     private String phoneNumber;
+    @Lob
+    private byte[] avatar;
     private Boolean locked = false;
     private Boolean enabled = false; // default values
     @OneToMany(mappedBy = "crewChief")
@@ -77,14 +78,6 @@ public class User extends AbstractEntity implements UserDetails {
     @Override
     public String getUsername() {
         return email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     @Override

@@ -28,6 +28,7 @@
     "react-responsive-list": "^0.0.4",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-super-responsive-table": "^5.2.1",
     "react-tabs": "^6.0.0",
     "reactstrap": "^9.1.5",
     "sweetalert": "^2.1.2",

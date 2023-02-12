@@ -181,7 +181,7 @@ function AddJob() {
             <div className="col-sm mx-2">
               <div className="form-group row">
                 <label
-                  for="inputEmail"
+                  forHtml="jobNumber"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Job Number
@@ -190,7 +190,7 @@ function AddJob() {
                   <input
                     type="text"
                     className="cls-form-control form-field"
-                    id="inputEmail4"
+                    id="jobNumber"
                     value={jobNumber}
                     name="jobNumber"
                     onChange={(e) => onInputChange(e)}
@@ -200,7 +200,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Date & Time
@@ -219,7 +219,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Job Duration
@@ -238,7 +238,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Number of Crew
@@ -257,7 +257,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Address Line 1
@@ -276,7 +276,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Address Line 2
@@ -295,7 +295,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   City
@@ -314,7 +314,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   State/Province
@@ -333,7 +333,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Postal Code
@@ -352,7 +352,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Country
@@ -373,7 +373,7 @@ function AddJob() {
             <div className="col-sm">
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Client's Company
@@ -392,7 +392,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Contact on site
@@ -411,7 +411,7 @@ function AddJob() {
               </div>
               {/* <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Driver Required
@@ -428,7 +428,7 @@ function AddJob() {
               </div> */}
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Driver
@@ -450,7 +450,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Crew Chief
@@ -472,7 +472,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Remarks
@@ -491,7 +491,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  for="inputPassword"
+                  forHtml="inputPassword"
                   className="col-sm-5 col-form-label form-box"
                 >
                   Comment

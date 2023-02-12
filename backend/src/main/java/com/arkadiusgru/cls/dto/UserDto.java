@@ -1,7 +1,6 @@
 package com.arkadiusgru.cls.dto;
 
 import com.arkadiusgru.cls.model.Role;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +23,7 @@ public class UserDto {
     private String lastName;
     private Role role;
     private String phoneNumber;
+    private byte[] avatar;
     private String addressLine1;
     private String addressLine2;
     private String city;

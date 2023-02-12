@@ -148,7 +148,7 @@ function AddUser() {
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group row mt-2">
             <label
-              for="inputEmail"
+              forHtml="inputEmail"
               className="col-sm-5 col-form-label form-box"
             >
               Email
@@ -167,7 +167,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box-light"
             >
               First Name
@@ -186,7 +186,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box"
             >
               Last Name
@@ -205,7 +205,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box-light"
             >
               Role
@@ -227,7 +227,7 @@ function AddUser() {
           {/* up to here is ok */}
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box"
             >
               Phone Number
@@ -245,7 +245,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="addressLine1"
               className="col-sm-5 col-form-label form-box-light"
             >
               Address Line 1
@@ -254,7 +254,7 @@ function AddUser() {
               <input
                 type="text"
                 className="cls-form-control form-field-light"
-                id="inputAddress"
+                id="addressLine1"
                 value={addressLine1}
                 name="addressLine1"
                 onChange={(e) => onInputChange(e)}
@@ -264,7 +264,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box "
             >
               Address Line 2
@@ -283,7 +283,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="city"
               className="col-sm-5 col-form-label form-box-light"
             >
               City
@@ -292,17 +292,18 @@ function AddUser() {
               <input
                 type="text"
                 className="cls-form-control form-field-light"
-                id="inputCity"
+                id="city"
                 value={city}
                 name="city"
                 onChange={(e) => onInputChange(e)}
+                autoComplete="city"
                 required
               />
             </div>
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="stateProvince"
               className="col-sm-5 col-form-label form-box"
             >
               State/Province
@@ -311,7 +312,7 @@ function AddUser() {
               <input
                 type="text"
                 className="cls-form-control form-field"
-                id="inputZip"
+                id="stateProvince"
                 value={stateProvince}
                 name="stateProvince"
                 onChange={(e) => onInputChange(e)}
@@ -321,7 +322,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              forHtml="inputPassword"
               className="col-sm-5 col-form-label form-box-light"
             >
               Postal Code
@@ -340,7 +341,7 @@ function AddUser() {
           </div>
           <div className="form-group row">
             <label
-              for="inputPassword"
+              htmlforHtml="country"
               className="col-sm-5 col-form-label form-box"
             >
               Country
@@ -349,7 +350,7 @@ function AddUser() {
               <input
                 type="text"
                 className="cls-form-control form-field"
-                id="inputZip"
+                id="country"
                 value={country}
                 name="country"
                 onChange={(e) => onInputChange(e)}

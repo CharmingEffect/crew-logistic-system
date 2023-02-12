@@ -1,20 +1,21 @@
 package com.arkadiusgru.cls.controller;
 
-import java.io.Console;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.arkadiusgru.cls.dto.UserDto;
-import com.arkadiusgru.cls.model.Address;
 import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.repos.UserRepository;
 import com.arkadiusgru.cls.service.UserService;
@@ -70,9 +71,19 @@ public class UserController {
         userDto.setCountry(user.get().getAddress().getCountry());
         userDto.setPhoneNumber(user.get().getPhoneNumber());
 
-        System.out.println(userDto);
+        userDto.setAvatar(user.get().getAvatar());
 
         return userDto;
+    }
+
+    // upload avatar
+    @PostMapping("/admin/getUser/{email}/avatar")
+    public ResponseEntity<?> uploadAvatar(@PathVariable String email, @RequestParam("avatar") MultipartFile avatar)
+            throws IOException {
+
+        userRepository.updateAvatar(email, avatar.getBytes());
+
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/admin/deleteUser/{id}")

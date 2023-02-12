@@ -14,7 +14,7 @@ const FindUserByEmail = ({ email }) => {
       });
     };
     fetchData();
-  }, [email]);
+  }, []);
 
   return user;
 };
@@ -47,7 +47,6 @@ function useAllUsers() {
     };
     fetchData();
   }, []);
-
   return users;
 }
 
@@ -58,7 +57,6 @@ function FindAddressById({ id }) {
     const fetchData = async () => {
       fetch(`/api/admin/getAddress/${id}`).then((response) => {
         response.json().then((data) => {
-          console.log(data);
           setAddress(data);
         });
       });
@@ -69,4 +67,52 @@ function FindAddressById({ id }) {
   return address;
 }
 
-export { useLoggedInUser, FindAddressById, useAllUsers };
+function SystemInfo() {
+  const [systemInfo, setSystemInfo] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/admin/systemStatus");
+        setSystemInfo(response.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  return systemInfo;
+}
+
+function MemoryStats() {
+  const [memoryStats, setMemoryStats] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/admin/memory-status");
+        setMemoryStats(response.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  return memoryStats;
+}
+
+export {
+  useLoggedInUser,
+  FindAddressById,
+  useAllUsers,
+  SystemInfo,
+  MemoryStats,
+};

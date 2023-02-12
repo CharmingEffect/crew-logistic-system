@@ -3,6 +3,9 @@ import { useState } from "react";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import Widget from "../Widget";
+import { GetAllCrewMembers } from "../../util/useUserData";
+import { SystemInfo } from "../../util/useUserData";
+import { MemoryStats } from "../../util/useUserData";
 
 const Admin = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -21,6 +24,9 @@ const Admin = () => {
     localStorage.removeItem("jwt");
     window.location.href = "/";
   };
+  const systemInfo = SystemInfo();
+
+  const memoryStats = MemoryStats();
 
   return (
     <>
@@ -35,13 +41,13 @@ const Admin = () => {
               <div className="col-lg-3">
                 <div className="widget style1 navy-bg">
                   <Widget
-                    name="Today Cases"
-                    count="107"
+                    name="Total Jobs"
+                    count={systemInfo.numberOfJobs}
                     icon_name="fa fa-briefcase fa-5x"
                   />
                 </div>
               </div>
-              <div className="col-lg-3">
+              {/* <div className="col-lg-3">
                 <div className="widget style1 lazur-bg">
                   <Widget
                     name="Advocates"
@@ -50,11 +56,14 @@ const Admin = () => {
                   />
                 </div>
               </div>
+              */}
               <div className="col-lg-3">
                 <div className="widget style1 yellow-bg">
                   <Widget
-                    name="Documents"
-                    count="12"
+                    name="Stats of JVM:"
+                    a={memoryStats.heapSize}
+                    b={memoryStats.heapMaxSize}
+                    c={memoryStats.heapFreeSize}
                     icon_name="fa fa-leanpub fa-5x"
                   />
                 </div>
@@ -62,8 +71,8 @@ const Admin = () => {
               <div className="col-lg-3">
                 <div className="widget style1 red-bg">
                   <Widget
-                    name="Team member"
-                    count="27"
+                    name="Crew members"
+                    count={systemInfo.numberOfCrewMembers}
                     icon_name="fa fa-users fa-5x"
                   />
                 </div>
@@ -71,12 +80,24 @@ const Admin = () => {
               <div className="col-lg-3">
                 <div className="widget style1 blue-bg">
                   <Widget
-                    name="To-Dos"
-                    count="27"
+                    name="Total number of users"
+                    count={systemInfo.numberOfUsers}
+                    icon_name="fa fa-users fa-5x"
+                  />
+                </div>
+              </div>
+
+              <div className="col-lg-3">
+                <div className="widget style1 purple-bg">
+                  <Widget
+                    name="Admins"
+                    count={systemInfo.numberOfAdmins}
                     icon_name="fa fa-address-card-o fa-5x"
                   />
                 </div>
               </div>
+
+              {/*
               <div className="col-lg-3">
                 <div className="widget style1 purple-bg">
                   <Widget
@@ -103,7 +124,7 @@ const Admin = () => {
                     icon_name="fa fa-envelope-o fa-5x"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

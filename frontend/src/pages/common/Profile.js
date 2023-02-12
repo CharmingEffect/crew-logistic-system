@@ -5,13 +5,13 @@ import { useEffect } from "react";
 import Header from "../../components/Header";
 import { useLocalState } from "../../util/useLocalStorage";
 import { FindAddressById, useLoggedInUser } from "../../util/useUserData";
+import AvatarUploader from "../../util/AvatarUploader";
 
 const Profile = () => {
   const loggedUser = useLoggedInUser([]);
 
   return (
     <>
-      {console.log(loggedUser)}
       <div id="page-wrapper" className="gray-bg">
         <div className="row border-bottom">
           <Header />
@@ -35,23 +35,22 @@ const Profile = () => {
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                        alt="Admin"
+                        src={`data:image/png;base64,${loggedUser.avatar}`}
+                        alt="avatar"
                         className="rounded-circle"
                         width="150"
                       ></img>
                       <div className="mt-3">
-                        <h4>John Doe</h4>
-                        <p className="text-secondary mb-1">
-                          Full Stack Developer
-                        </p>
+                        <h4 className="text-black">
+                          {" "}
+                          {loggedUser.firstName} {loggedUser.lastName}
+                        </h4>
+                        <p className="text-secondary mb-1"></p>
                         <p className="text-muted font-size-sm">
-                          Bay Area, San Francisco, CA
+                          {loggedUser.role}
                         </p>
-                        <button className="btn btn-primary">Follow</button>
-                        <button className="btn btn-outline-primary">
-                          Message
-                        </button>
+
+                        {AvatarUploader()}
                       </div>
                     </div>
                   </div>
@@ -129,15 +128,7 @@ const Profile = () => {
                       </div>
                     </div>
                     <hr></hr>
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <h6 className="mb-0">Address</h6>
-                      </div>
-                      <div className="col-sm-9 text-secondary">
-                        Bay Area, San Francisco, CA
-                      </div>
-                    </div>
-                    <hr></hr>
+
                     <div className="row">
                       <div className="col-sm-12">
                         <a

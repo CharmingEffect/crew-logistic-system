@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.arkadiusgru.cls.model.Role;
 import com.arkadiusgru.cls.model.User;
-
 
 @Transactional(readOnly = true)
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -43,5 +43,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query("DELETE FROM Address a WHERE a.id = ?1")
     int deleteAddressById(Long id);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE User u SET u.avatar = :avatar WHERE u.email = :email")
+    void updateAvatar(@Param("email") String email, @Param("avatar") byte[] avatar);
 
 }

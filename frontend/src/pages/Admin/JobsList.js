@@ -1,6 +1,8 @@
 import swal from "sweetalert";
 import React, { Component, useEffect } from "react";
-import { Button, ButtonGroup, Container, Table } from "reactstrap";
+import { Button, ButtonGroup, Container } from "reactstrap";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -45,18 +47,18 @@ class JobsList extends Component {
 
     const jobList = jobs.map((job) => {
       return (
-        <tr className="table-odd" key={job.jobNumber}>
-          <td style={{ whiteSpace: "nowrap" }}>{job.jobNumber}</td>
-          <td style={{ whiteSpace: "nowrap" }}>{job.jobDuration}</td>
-          <td>{job.numberOfCrew}</td>
-          <td>
+        <Tr key={job.jobNumber}>
+          <Td>{job.jobNumber}</Td>
+          <Td>{job.jobDuration}</Td>
+          <Td>{job.numberOfCrew}</Td>
+          <Td>
             {String(job.address.addressLine1)}{" "}
             {String(job.address.addressLine2)}
             {String(job.address.postalCode)}
             {String(job.address.city)}
-          </td>
-          <td>{String(job.dateTime)}</td>
-          <td>
+          </Td>
+          <Td>{String(job.dateTime)}</Td>
+          <Td>
             <ButtonGroup>
               <Button
                 size="sm"
@@ -74,27 +76,27 @@ class JobsList extends Component {
                 Edit
               </Button>
             </ButtonGroup>
-          </td>
-        </tr>
+          </Td>
+        </Tr>
       );
     });
 
+    const height = "50%";
+
     return (
-      <Container fluid>
-        <Table className="mt-4">
-          <thead className="thead">
-            <tr>
-              <th width="5%">Job Number</th>
-              <th width="5%">Job Duration</th>
-              <th width="5%">Number of crew</th>
-              <th width="5%">Address</th>
-              <th width="5%">Date</th>
-              <th width="10%">Actions</th>
-            </tr>
-          </thead>
-          <tbody>{jobList}</tbody>
-        </Table>
-      </Container>
+      <Table>
+        <Thead className="thead">
+          <Tr>
+            <Th width="5%">Job Number</Th>
+            <Th width="5%">Job Duration</Th>
+            <Th width="5%">Number of crew</Th>
+            <Th width="5%">Address</Th>
+            <Th width="5%">Date</Th>
+            <Th width="5%">Actions</Th>
+          </Tr>
+        </Thead>
+        <Tbody>{jobList}</Tbody>
+      </Table>
     );
   }
 }

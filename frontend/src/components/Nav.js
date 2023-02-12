@@ -40,13 +40,13 @@ const Nav = () => {
             <li className="nav-header">
               <div className="dropdown profile-element left-profile">
                 <img
-                  className="rounded-circle"
-                  src="asset/img/profile_small.jpg"
+                  className="rounded-circle width-10"
+                  src={`data:image/png;base64,${loggedUser.avatar}`}
                   alt=""
                 />
-                <a href="/dashboard">
+                <a href="/profile">
                   <span className="block m-t-xs font-bold profile-title">
-                    Dashboard
+                    {loggedUser.firstName} {loggedUser.lastName}
                   </span>
                 </a>
               </div>
