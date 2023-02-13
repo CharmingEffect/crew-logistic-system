@@ -48,7 +48,7 @@ public class User extends AbstractEntity implements UserDetails {
     @OneToMany(mappedBy = "crewChief")
     @JsonIgnore
     private List<Job> crewChiefs;
-
+    GrantedAuthority authority;// = new SimpleGrantedAuthority(Role.ADMIN.toString());
     @OneToMany(mappedBy = "driver")
     @JsonIgnore
     private List<Job> drivers;
@@ -60,14 +60,16 @@ public class User extends AbstractEntity implements UserDetails {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.authority = new SimpleGrantedAuthority(role.toString());
         this.role = role;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        System.out.println("User created: " + authority);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority(role.name()));
+        return Collections.singletonList(authority);
     }
 
     @Override

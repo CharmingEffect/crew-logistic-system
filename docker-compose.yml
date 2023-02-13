@@ -18,6 +18,9 @@ services:
     ports:
       - "3306:3306"
       - "33060:33060"
+    command: --init-file /init.sql
+    volumes:
+        - ./init.sql:/init.sql
     networks:
       main:
         ipv4_address: 10.5.0.10

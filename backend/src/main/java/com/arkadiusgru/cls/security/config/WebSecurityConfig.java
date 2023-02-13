@@ -35,7 +35,7 @@ public class WebSecurityConfig {
         http = http.csrf().disable().cors().and();
         http = http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and();
+                .and().authenticationProvider(daoAuthenticationProvider());
 
         http = http.exceptionHandling().authenticationEntryPoint((request, response, exception) -> {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, exception.getMessage());
