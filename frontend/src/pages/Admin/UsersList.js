@@ -2,6 +2,8 @@ import swal from "sweetalert";
 import React, { Component } from "react";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
 import { useLocalState } from "../../util/useLocalStorage";
+import BASE_URL from "../../util/baseUrl";
+
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -13,13 +15,13 @@ class UsersList extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/admin/getAllUsers")
+    fetch(BASE_URL + "/api/admin/getAllUsers")
       .then((response) => response.json())
       .then((data) => this.setState({ users: data }));
   }
 
   async remove(id) {
-    await fetch(`/api/admin/deleteUser/${id}`, {
+    await fetch(BASE_URL + `/api/admin/deleteUser/${id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

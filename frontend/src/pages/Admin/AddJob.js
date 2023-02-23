@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import swal from "sweetalert";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { number } from "prop-types";
+import BASE_URL from "../../util/baseUrl";
 // import Loginpage.css
 
 const customStyles = {
@@ -78,7 +79,7 @@ function AddJob() {
   };
 
   useEffect(() => {
-    fetch("/api/admin/getAllUsers")
+    fetch(BASE_URL + "/api/admin/getAllUsers")
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
@@ -94,7 +95,7 @@ function AddJob() {
       timer: 4000,
     });
 
-    await fetch("/api/admin/newJob", {
+    await fetch(BASE_URL + "/api/admin/newJob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

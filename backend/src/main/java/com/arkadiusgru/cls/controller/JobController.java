@@ -23,6 +23,8 @@ import com.fasterxml.jackson.databind.DatabindException;
 import lombok.AllArgsConstructor;
 
 @RestController
+
+@CrossOrigin
 @RequestMapping("/api")
 @AllArgsConstructor
 public class JobController {
@@ -36,7 +38,6 @@ public class JobController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(path = "/admin/getAllJobs")
     public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
         return jobService.getAllJobs();

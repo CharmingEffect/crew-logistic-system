@@ -3,6 +3,7 @@ import React, { Component, useEffect } from "react";
 import { Button, ButtonGroup, Container } from "reactstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import BASE_URL from "../../util/baseUrl";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -14,13 +15,13 @@ class JobsList extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/admin/getAllJobs")
+    fetch(BASE_URL + "/api/admin/getAllJobs")
       .then((response) => response.json())
       .then((data) => this.setState({ jobs: data }));
   }
 
   async remove(jobNumber) {
-    await fetch(`/api/admin/deleteJob/${jobNumber}`, {
+    await fetch(BASE_URL + `/api/admin/deleteJob/${jobNumber}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

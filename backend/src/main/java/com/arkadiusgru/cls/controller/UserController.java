@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ import com.arkadiusgru.cls.service.UserService;
 import lombok.AllArgsConstructor;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api")
 @AllArgsConstructor
 public class UserController {

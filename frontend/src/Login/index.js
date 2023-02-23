@@ -5,6 +5,7 @@ import { FileLock2Fill } from "react-bootstrap-icons";
 import { useLocalState } from "../util/useLocalStorage";
 import { useState } from "react";
 import swal from "sweetalert";
+import BASE_URL from "../util/baseUrl";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ const Login = () => {
       isAccountEnabled: null,
     };
 
-    fetch("/api/auth/login", {
+    fetch( "http://localhost:8080/api/auth/login", {
       headers: {
         "content-type": "application/json",
       },

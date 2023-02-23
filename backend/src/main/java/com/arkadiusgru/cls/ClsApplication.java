@@ -6,12 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.arkadiusgru.cls.util.CustomConfigProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties(CustomConfigProperties.class)
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@CrossOrigin
 public class ClsApplication {
 
 	public static void main(String[] args) throws IOException {

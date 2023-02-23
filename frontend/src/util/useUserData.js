@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import BASE_URL from "../util/baseUrl";
 
 const FindUserByEmail = ({ email }) => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch(`/api/admin/getUser/${email}`).then((response) => {
+      fetch(BASE_URL + `/api/admin/getUser/${email}`).then((response) => {
         response.json().then((data) => {
           setUser(data);
         });
@@ -37,7 +38,7 @@ function useAllUsers() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("/api/admin/getAllUsers");
+        const response = await axios.get(BASE_URL + "/api/admin/getAllUsers");
         setUsers(response.data);
       } catch (error) {
         setError(error);
@@ -55,7 +56,7 @@ function FindAddressById({ id }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch(`/api/admin/getAddress/${id}`).then((response) => {
+      fetch(BASE_URL + `/api/admin/getAddress/${id}`).then((response) => {
         response.json().then((data) => {
           setAddress(data);
         });
@@ -75,7 +76,7 @@ function SystemInfo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/admin/systemStatus");
+        const response = await axios.get(BASE_URL + "/api/admin/systemStatus");
         setSystemInfo(response.data);
       } catch (error) {
         setError(error);
@@ -96,7 +97,7 @@ function MemoryStats() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/admin/memory-status");
+        const response = await axios.get(BASE_URL + "/api/admin/memory-status");
         setMemoryStats(response.data);
       } catch (error) {
         setError(error);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import swal from "sweetalert";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import BASE_URL from "../../util/baseUrl";
 // import Loginpage.css
 
 const customStyles = {
@@ -68,7 +69,7 @@ function AddUser() {
       timer: 4000,
     });
 
-    await fetch("/api/admin/registration", {
+    await fetch( BASE_URL + "/api/admin/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

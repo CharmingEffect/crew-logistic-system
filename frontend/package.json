@@ -2,7 +2,6 @@
   "name": "cls-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -21,7 +20,6 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-icons": "^1.10.2",
-    "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-modal": "^3.16.1",
     "react-redux": "^8.0.5",
@@ -39,8 +37,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "open-mail-dev": "open http://localhost:1080"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
