@@ -13914,3 +13914,133 @@ java.lang.IllegalStateException: No jobs found
 2023-02-24 22:14:47.822 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2023-02-24 22:14:47.823 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
 2023-02-24 22:14:47.824 DEBUG 34802 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.280 DEBUG 34802 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.282 DEBUG 34802 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.282 DEBUG 34802 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.285 DEBUG 34802 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:44.285 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:44.286 DEBUG 34802 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/systemStatus", parameters={}
+2023-02-24 22:17:44.286 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/memory-status", parameters={}
+2023-02-24 22:17:44.286 DEBUG 34802 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:44.286 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:44.287 DEBUG 34802 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.288 DEBUG 34802 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [MemoryStats(heapSize=160 MB, heapMaxSize=8008 MB, heapFreeSize=56 MB)]
+2023-02-24 22:17:44.289 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.293 DEBUG 34802 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.293 DEBUG 34802 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.293 DEBUG 34802 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:44.294 DEBUG 34802 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/memory-status", parameters={}
+2023-02-24 22:17:44.294 DEBUG 34802 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.294 DEBUG 34802 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:44.295 DEBUG 34802 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.295 DEBUG 34802 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [MemoryStats(heapSize=160 MB, heapMaxSize=8008 MB, heapFreeSize=56 MB)]
+2023-02-24 22:17:44.296 DEBUG 34802 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.302 DEBUG 34802 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.302 DEBUG 34802 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.303 DEBUG 34802 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.304 DEBUG 34802 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.305 DEBUG 34802 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [InfoDto(numberOfUsers=1, numberOfJobs=0, numberOfCrewMembers=0, numberOfAdmins=1, numberOfCrewChiefs (truncated)...]
+2023-02-24 22:17:44.306 DEBUG 34802 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.311 DEBUG 34802 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:44.311 DEBUG 34802 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.311 DEBUG 34802 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.311 DEBUG 34802 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/systemStatus", parameters={}
+2023-02-24 22:17:44.311 DEBUG 34802 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:44.312 DEBUG 34802 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.318 DEBUG 34802 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.319 DEBUG 34802 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.319 DEBUG 34802 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.325 DEBUG 34802 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.325 DEBUG 34802 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.326 DEBUG 34802 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.330 DEBUG 34802 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.330 DEBUG 34802 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [InfoDto(numberOfUsers=1, numberOfJobs=0, numberOfCrewMembers=0, numberOfAdmins=1, numberOfCrewChiefs (truncated)...]
+2023-02-24 22:17:44.331 DEBUG 34802 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.333 DEBUG 34802 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.334 DEBUG 34802 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.334 DEBUG 34802 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.339 DEBUG 34802 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.340 DEBUG 34802 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.341 DEBUG 34802 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.352 DEBUG 34802 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.352 DEBUG 34802 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.353 DEBUG 34802 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.361 DEBUG 34802 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.361 DEBUG 34802 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.362 DEBUG 34802 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:44.368 DEBUG 34802 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.369 DEBUG 34802 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:44.369 DEBUG 34802 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:44.377 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:44.377 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:44.378 DEBUG 34802 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.563 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
+2023-02-24 22:17:55.564 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/auth/login", parameters={}
+2023-02-24 22:17:55.565 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.AuthController#login(AuthCredentialRequest)
+2023-02-24 22:17:55.566 DEBUG 34802 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [AuthCredentialRequest(email=a@wp.pl, password=1234)]
+2023-02-24 22:17:55.684 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.685 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [java.lang.StackOverflowError]
+2023-02-24 22:17:55.686 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.836 DEBUG 34802 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.836 DEBUG 34802 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.837 DEBUG 34802 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.839 DEBUG 34802 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:55.839 DEBUG 34802 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:55.840 DEBUG 34802 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/memory-status", parameters={}
+2023-02-24 22:17:55.840 DEBUG 34802 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/systemStatus", parameters={}
+2023-02-24 22:17:55.841 DEBUG 34802 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:55.841 DEBUG 34802 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:55.841 DEBUG 34802 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.842 DEBUG 34802 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [MemoryStats(heapSize=160 MB, heapMaxSize=8008 MB, heapFreeSize=48 MB)]
+2023-02-24 22:17:55.843 DEBUG 34802 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.845 DEBUG 34802 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.845 DEBUG 34802 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.846 DEBUG 34802 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.852 DEBUG 34802 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:55.853 DEBUG 34802 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/memory-status", parameters={}
+2023-02-24 22:17:55.853 DEBUG 34802 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMemoryStatistics()
+2023-02-24 22:17:55.854 DEBUG 34802 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.855 DEBUG 34802 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.855 DEBUG 34802 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [MemoryStats(heapSize=160 MB, heapMaxSize=8008 MB, heapFreeSize=47 MB)]
+2023-02-24 22:17:55.857 DEBUG 34802 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.857 DEBUG 34802 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.858 DEBUG 34802 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.865 DEBUG 34802 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.866 DEBUG 34802 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.867 DEBUG 34802 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.867 DEBUG 34802 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.868 DEBUG 34802 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [InfoDto(numberOfUsers=1, numberOfJobs=0, numberOfCrewMembers=0, numberOfAdmins=1, numberOfCrewChiefs (truncated)...]
+2023-02-24 22:17:55.868 DEBUG 34802 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.874 DEBUG 34802 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:55.874 DEBUG 34802 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.875 DEBUG 34802 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.875 DEBUG 34802 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/systemStatus", parameters={}
+2023-02-24 22:17:55.876 DEBUG 34802 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.876 DEBUG 34802 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.SystemController#getMethodName()
+2023-02-24 22:17:55.882 DEBUG 34802 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.883 DEBUG 34802 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.884 DEBUG 34802 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.889 DEBUG 34802 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.889 DEBUG 34802 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.890 DEBUG 34802 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.892 DEBUG 34802 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.892 DEBUG 34802 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [InfoDto(numberOfUsers=1, numberOfJobs=0, numberOfCrewMembers=0, numberOfAdmins=1, numberOfCrewChiefs (truncated)...]
+2023-02-24 22:17:55.893 DEBUG 34802 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.896 DEBUG 34802 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.897 DEBUG 34802 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.899 DEBUG 34802 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.907 DEBUG 34802 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.908 DEBUG 34802 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.908 DEBUG 34802 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.916 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.916 DEBUG 34802 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.917 DEBUG 34802 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:17:55.923 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.924 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/a@wp.pl", parameters={}
+2023-02-24 22:17:55.924 DEBUG 34802 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-02-24 22:17:55.929 DEBUG 34802 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-02-24 22:17:55.930 DEBUG 34802 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=7, email=a@wp.pl, firstName=Arkadiusz, lastName=Grudzien, role=ADMIN, phoneNumber=null, a (truncated)...]
+2023-02-24 22:17:55.930 DEBUG 34802 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-02-24 22:19:09.159  INFO 34802 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-24 22:19:09.161  INFO 34802 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-02-24 22:19:09.165  INFO 34802 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
