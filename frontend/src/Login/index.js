@@ -19,7 +19,7 @@ const Login = () => {
       isAccountEnabled: null,
     };
 
-    fetch( "http://localhost:8080/api/auth/login", {
+    fetch("/api/auth/login", {
       headers: {
         "content-type": "application/json",
       },

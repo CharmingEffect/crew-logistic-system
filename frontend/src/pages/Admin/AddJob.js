@@ -79,7 +79,7 @@ function AddJob() {
   };
 
   useEffect(() => {
-    fetch(BASE_URL + "/api/admin/getAllUsers")
+    fetch("/api/admin/getAllUsers")
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
@@ -95,7 +95,7 @@ function AddJob() {
       timer: 4000,
     });
 
-    await fetch(BASE_URL + "/api/admin/newJob", {
+    await fetch("/api/admin/newJob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

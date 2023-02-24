@@ -15,13 +15,13 @@ class JobsList extends Component {
   }
 
   componentDidMount() {
-    fetch(BASE_URL + "/api/admin/getAllJobs")
+    fetch("/api/admin/getAllJobs")
       .then((response) => response.json())
       .then((data) => this.setState({ jobs: data }));
   }
 
   async remove(jobNumber) {
-    await fetch(BASE_URL + `/api/admin/deleteJob/${jobNumber}`, {
+    await fetch(`/api/admin/deleteJob/${jobNumber}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

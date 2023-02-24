@@ -15,13 +15,13 @@ class UsersList extends Component {
   }
 
   componentDidMount() {
-    fetch(BASE_URL + "/api/admin/getAllUsers")
+    fetch("/api/admin/getAllUsers")
       .then((response) => response.json())
       .then((data) => this.setState({ users: data }));
   }
 
   async remove(id) {
-    await fetch(BASE_URL + `/api/admin/deleteUser/${id}`, {
+    await fetch(`/api/admin/deleteUser/${id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

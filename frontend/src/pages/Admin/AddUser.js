@@ -69,7 +69,7 @@ function AddUser() {
       timer: 4000,
     });
 
-    await fetch( BASE_URL + "/api/admin/registration", {
+    await fetch("/api/admin/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

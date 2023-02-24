@@ -8,7 +8,7 @@ const FindUserByEmail = ({ email }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch(BASE_URL + `/api/admin/getUser/${email}`).then((response) => {
+      fetch(`/api/admin/getUser/${email}`).then((response) => {
         response.json().then((data) => {
           setUser(data);
         });
@@ -38,7 +38,7 @@ function useAllUsers() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(BASE_URL + "/api/admin/getAllUsers");
+        const response = await axios.get("/api/admin/getAllUsers");
         setUsers(response.data);
       } catch (error) {
         setError(error);
@@ -56,7 +56,7 @@ function FindAddressById({ id }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch(BASE_URL + `/api/admin/getAddress/${id}`).then((response) => {
+      fetch(`/api/admin/getAddress/${id}`).then((response) => {
         response.json().then((data) => {
           setAddress(data);
         });
@@ -76,7 +76,7 @@ function SystemInfo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(BASE_URL + "/api/admin/systemStatus");
+        const response = await axios.get("/api/admin/systemStatus");
         setSystemInfo(response.data);
       } catch (error) {
         setError(error);
@@ -97,7 +97,7 @@ function MemoryStats() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(BASE_URL + "/api/admin/memory-status");
+        const response = await axios.get("/api/admin/memory-status");
         setMemoryStats(response.data);
       } catch (error) {
         setError(error);
