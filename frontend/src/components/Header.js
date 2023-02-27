@@ -40,7 +40,7 @@ const Header = () => {
         <ul className="nav navbar-top-links navbar-right">
           <li>
             {" "}
-            <p className="h6" onClick={() => logoutUser()}>
+            <p>
               <strong>
                 {" "}
                 Logged as:{" "}

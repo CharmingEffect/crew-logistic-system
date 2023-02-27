@@ -110,6 +110,7 @@ function AddUser() {
             timer: 1000,
           });
           setModalIsOpen(false);
+          window.location.reload();
         }
       })
       .catch((message) => {
