@@ -92,6 +92,19 @@ color: #fff;
 
 
 }
+.memory-stats{
+  position: absolute;
+  bottom: -60em;
+  right: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+font-size: small;
+
+}
+
 
 
 .swal-modal {

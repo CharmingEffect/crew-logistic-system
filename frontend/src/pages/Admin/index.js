@@ -57,17 +57,7 @@ const Admin = () => {
                 </div>
               </div>
               */}
-              <div className="col-lg-3">
-                <div className="widget style1 yellow-bg">
-                  <Widget
-                    name="Stats of JVM:"
-                    a={memoryStats.heapSize}
-                    b={memoryStats.heapMaxSize}
-                    c={memoryStats.heapFreeSize}
-                    icon_name="fa fa-leanpub fa-5x"
-                  />
-                </div>
-              </div>
+
               <div className="col-lg-3">
                 <div className="widget style1 red-bg">
                   <Widget
@@ -125,6 +115,14 @@ const Admin = () => {
                   />
                 </div>
               </div> */}
+            </div>
+            <div className="col">
+              <p className="row memory-stats">
+                <strong>Memory Stats:</strong>
+                <small>Heap Size: {memoryStats.heapSize}</small>
+                <small>Heap Max Size: {memoryStats.heapMaxSize}</small>
+                <small>Heap Free Size: {memoryStats.heapFreeSize}</small>
+              </p>
             </div>
           </div>
         </div>
