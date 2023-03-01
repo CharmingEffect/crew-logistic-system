@@ -10,6 +10,7 @@ import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.registration.token.ConfirmationToken;
 import com.arkadiusgru.cls.registration.token.ConfirmationTokenService;
 import com.arkadiusgru.cls.service.UserService;
+import com.arkadiusgru.cls.util.PassGenerator;
 
 import lombok.AllArgsConstructor;
 
