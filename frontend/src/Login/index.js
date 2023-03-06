@@ -6,6 +6,7 @@ import { useLocalState } from "../util/useLocalStorage";
 import { useState } from "react";
 import swal from "sweetalert";
 import BASE_URL from "../util/baseUrl";
+import Snowfall from 'react-snowfall';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -67,6 +68,7 @@ const Login = () => {
 
   return (
     <div className="login-dark">
+       <Snowfall />
       <form method="post">
         <h2 className="sr-only text-center">Pinnacle Login</h2>
         <div className="illustration">
