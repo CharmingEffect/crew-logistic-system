@@ -48,7 +48,7 @@ class JobsList extends Component {
 
     const jobList = jobs.map((job) => {
       return (
-        <Tr key={job.jobNumber}>
+        <Tr className="table-odd" key={job.jobNumber}>
           <Td>{job.jobNumber}</Td>
           <Td>{job.jobDuration}</Td>
           <Td>{job.numberOfCrew}</Td>

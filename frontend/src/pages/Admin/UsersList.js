@@ -1,9 +1,10 @@
 import swal from "sweetalert";
 import React, { Component } from "react";
-import { Button, ButtonGroup, Container, Table } from "reactstrap";
+import { Button, ButtonGroup, Container } from "reactstrap";
 import { useLocalState } from "../../util/useLocalStorage";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import BASE_URL from "../../util/baseUrl";
-
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -35,18 +36,20 @@ class UsersList extends Component {
     });
   }
 
+  async edit(id) {}
+
   render() {
     const { users } = this.state;
 
     const userList = users.map((user) => {
       return (
-        <tr className="table-odd" key={user.id}>
-          <td style={{ whiteSpace: "nowrap" }}>{user.firstName}</td>
-          <td style={{ whiteSpace: "nowrap" }}>{user.lastName}</td>
-          <td>{user.email}</td>
-          <td>{String(user.enabled)}</td>
-          <td>{String(user.createdAt)}</td>
-          <td>
+        <Tr className="table-odd" key={user.id}>
+          <Td style={{ whiteSpace: "nowrap" }}>{user.firstName}</Td>
+          <Td style={{ whiteSpace: "nowrap" }}>{user.lastName}</Td>
+          <Td>{user.email}</Td>
+          <Td>{String(user.enabled)}</Td>
+          <Td>{String(user.createdAt)}</Td>
+          <Td>
             <ButtonGroup>
               <Button
                 size="sm"
@@ -58,31 +61,31 @@ class UsersList extends Component {
               <Button
                 size="sm"
                 color="success"
-                onClick={() => this.remove(user.id)}
+                onClick={() => this.edit(user.id)}
                 className="mx-2"
               >
                 Edit
               </Button>
             </ButtonGroup>
-          </td>
-        </tr>
+          </Td>
+        </Tr>
       );
     });
 
     return (
       <Container fluid>
         <Table className="mt-4">
-          <thead className="thead">
-            <tr>
-              <th width="5%">First Name</th>
-              <th width="5%">Last Name</th>
-              <th width="5%">Email</th>
-              <th width="5%">Activated</th>
-              <th width="5%">Joined</th>
-              <th width="10%">Actions</th>
-            </tr>
-          </thead>
-          <tbody>{userList}</tbody>
+          <Thead className="thead">
+            <Tr>
+              <Th width="5%">First Name</Th>
+              <Th width="5%">Last Name</Th>
+              <Th width="5%">Email</Th>
+              <Th width="5%">Activated</Th>
+              <Th width="5%">Joined</Th>
+              <Th width="10%">Actions</Th>
+            </Tr>
+          </Thead>
+          <Tbody>{userList}</Tbody>
         </Table>
       </Container>
     );

@@ -79,6 +79,21 @@ public class UserController {
     }
 
     // upload avatar
+    @PostMapping("/admin/updateUser/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable Long id, UserDto userDto)
+            throws IOException {
+
+        User user = userRepository.findById(id).get();
+
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setPhoneNumber(userDto.getEmail());
+        userRepository.save(user);
+
+        return ResponseEntity.ok().build();
+    }
+
+    // upload avatar
     @PostMapping("/admin/getUser/{email}/avatar")
     public ResponseEntity<?> uploadAvatar(@PathVariable String email, @RequestParam("avatar") MultipartFile avatar)
             throws IOException {
@@ -96,7 +111,5 @@ public class UserController {
         return ResponseEntity.ok().build();
 
     }
-
-    
 
 }

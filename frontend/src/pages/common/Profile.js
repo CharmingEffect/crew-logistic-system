@@ -6,9 +6,42 @@ import Header from "../../components/Header";
 import { useLocalState } from "../../util/useLocalStorage";
 import { FindAddressById, useLoggedInUser } from "../../util/useUserData";
 import AvatarUploader from "../../util/AvatarUploader";
+import { Button } from "reactstrap";
 
 const Profile = () => {
   const loggedUser = useLoggedInUser([]);
+  const [userToUpdate, setUserToUpdate] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const [editMode, setEditMode] = useState(false);
+
+  const {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+  } = userToUpdate;
+
+  const onInputChange = (e) => {
+    setUserToUpdate({ ...userToUpdate, [e.target.name]: e.target.value });
+  };
+
+  function updateUser() {
+    console.log("update user");
+
+    fetch(`/api/admin/updateUser/${loggedUser.id}`, {
+      method: "UPDATE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userToUpdate),
+    }).then(() => {
+      console.log("user updated");
+    });
+  }
 
   return (
     <>
@@ -83,9 +116,26 @@ const Profile = () => {
                         <p className="mb-0">Full Name</p>
                       </div>
                       <div className="col-sm-9">
-                        <p className="text-muted mb-0">
-                          {loggedUser.firstName} {loggedUser.lastName}
-                        </p>
+                        {editMode ? (
+                          <>
+                            <input
+                              name="firstName"
+                              onChange={(e) => onInputChange(e)}
+                              value={firstName}
+                            />
+
+                            <input
+                              className="ml-2"
+                              name="lastName"
+                              onChange={(e) => onInputChange(e)}
+                              value={lastName}
+                            />
+                          </>
+                        ) : (
+                          <p className="text-muted mb-0">
+                            {loggedUser.firstName} {loggedUser.lastName}
+                          </p>
+                        )}
                       </div>
                     </div>
                     <hr></hr>
@@ -94,7 +144,15 @@ const Profile = () => {
                         <p className="mb-0">Email</p>
                       </div>
                       <div className="col-sm-9">
-                        <p className="text-muted mb-0">{loggedUser.email}</p>
+                        {editMode ? (
+                          <input
+                            name="email"
+                            onChange={(e) => onInputChange(e)}
+                            value={email}
+                          />
+                        ) : (
+                          <p className="text-muted mb-0">{loggedUser.email}</p>
+                        )}
                       </div>
                     </div>
                     <hr></hr>
@@ -131,140 +189,29 @@ const Profile = () => {
 
                     <div className="row">
                       <div className="col-sm-12">
-                        <a
-                          className="btn btn-info "
-                          target="__blank"
-                          href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills"
-                        >
-                          Edit
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row gutters-sm">
-                  <div className="col-sm-6 mb-3">
-                    <div className="card h-100">
-                      <div className="card-body">
-                        <h6 className="d-flex align-items-center mb-3">
-                          <i className="material-icons text-info mr-2">
-                            assignment
-                          </i>
-                          Project Status
-                        </h6>
-                        <small>Web Design</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="80"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Website Markup</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="72"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>One Page</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="89"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="55"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="66"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 mb-3">
-                    <div className="card h-100">
-                      <div className="card-body">
-                        <h6 className="d-flex align-items-center mb-3">
-                          <i className="material-icons text-info mr-2">
-                            assignment
-                          </i>
-                          Project Status
-                        </h6>
-                        <small>Web Design</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="80"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Website Markup</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="72"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>One Page</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="89"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="55"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div className="progress mb-3">
-                          <div
-                            className="progress-bar bg-primary"
-                            role="progressbar"
-                            aria-valuenow="66"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
+                        {editMode ? (
+                          <>
+                            <Button
+                              onClick={updateUser()}
+                              className="button-color"
+                            >
+                              Save
+                            </Button>
+                            <Button
+                              onClick={() => setEditMode(false)}
+                              className="button-color"
+                            >
+                              Cancel
+                            </Button>
+                          </>
+                        ) : (
+                          <Button
+                            className="button-color"
+                            onClick={() => setEditMode(true)}
+                          >
+                            Edit
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>

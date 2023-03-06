@@ -28,7 +28,6 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody AuthCredentialRequest authCredentialRequest) {
 
@@ -41,8 +40,7 @@ public class AuthController {
             user.setPassword(null); // for security reasons
             return ResponseEntity.ok()
                     .header(HttpHeaders.AUTHORIZATION, jwtUtil.generateToken(user))
-                    .body(user); // powinno byc userDTO zamiast user bez hasla to z powdu
-                                 // bezpieczenstwa ale to pozniej
+                    .body(user);
 
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
