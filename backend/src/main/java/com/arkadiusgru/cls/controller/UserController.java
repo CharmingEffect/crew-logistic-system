@@ -6,20 +6,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.arkadiusgru.cls.dto.UserDto;
 import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.repos.UserRepository;
 import com.arkadiusgru.cls.service.UserService;
+
+import com.arkadiusgru.cls.dto.UpdateUser;
+import com.arkadiusgru.cls.dto.UserDto;
 
 import lombok.AllArgsConstructor;
 
@@ -32,14 +27,14 @@ public class UserController {
     private final UserService userService;
     private final UserRepository userRepository;
 
-    @RequestMapping(value = "/admin/getAllUsers", method = RequestMethod.GET)
+    @GetMapping("/admin/getAllUsers")
     public List<User> showAll() {
         return userService.getAll();
 
     }
 
     // mapping for getting only crew members
-    @RequestMapping(value = "/admin/getAllCrewMembers", method = RequestMethod.GET)
+    @GetMapping("/admin/getAllCrewMembers")
     public List<User> getAllCrewMembers() {
         List<User> crewMembers = new ArrayList<>();
         userRepository.findAll().iterator().forEachRemaining(user -> {
@@ -56,7 +51,7 @@ public class UserController {
     }
 
     // retuve single user by email address
-    @RequestMapping(value = "/admin/getUser/{email}", method = RequestMethod.GET)
+    @GetMapping("/admin/getUser/{email}")
     public UserDto getUserByEmail(@PathVariable String email) {
         Optional<User> user = userRepository.findByEmail(email);
         UserDto userDto = new UserDto();
@@ -78,16 +73,16 @@ public class UserController {
         return userDto;
     }
 
-    // upload avatar
-    @PostMapping("/admin/updateUser/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable Long id, UserDto userDto)
+    @PostMapping(value = "/admin/updateUser/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody UserDto userDto)
             throws IOException {
 
         User user = userRepository.findById(id).get();
 
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
-        user.setPhoneNumber(userDto.getEmail());
+        user.setEmail(userDto.getEmail());
+        user.setPhoneNumber(userDto.getPhoneNumber());
         userRepository.save(user);
 
         return ResponseEntity.ok().build();

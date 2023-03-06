@@ -14,15 +14,12 @@ const Profile = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phoneNumber: "",
   });
 
   const [editMode, setEditMode] = useState(false);
 
-  const {
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-  } = userToUpdate;
+  const { firstName, lastName, email, phoneNumber } = userToUpdate;
 
   const onInputChange = (e) => {
     setUserToUpdate({ ...userToUpdate, [e.target.name]: e.target.value });
@@ -32,7 +29,7 @@ const Profile = () => {
     console.log("update user");
 
     fetch(`/api/admin/updateUser/${loggedUser.id}`, {
-      method: "UPDATE",
+      method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -76,7 +73,8 @@ const Profile = () => {
                       <div className="mt-3">
                         <h4 className="text-black">
                           {" "}
-                          {loggedUser.firstName} {loggedUser.lastName}
+                          {loggedUser.firstName} {loggedUser.lastName} <br></br>{" "}
+                          ID :{loggedUser.id}
                         </h4>
                         <p className="text-secondary mb-1"></p>
                         <p className="text-muted font-size-sm">
@@ -94,16 +92,18 @@ const Profile = () => {
                       <span className="text-secondary"></span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">bootdey</span>
+                      <span className="text-secondary">
+                        Upladed Documents:{" "}
+                      </span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">@bootdey</span>
+                      <span className="text-secondary">Passport</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">bootdey</span>
+                      <span className="text-secondary">Driving Licence</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">bootdey</span>
+                      <span className="text-secondary">Etc</span>
                     </li>
                   </ul>
                 </div>
@@ -161,9 +161,17 @@ const Profile = () => {
                         <p className="mb-0">Phone</p>
                       </div>
                       <div className="col-sm-9">
-                        <p className="text-muted mb-0">
-                          {loggedUser.phoneNumber}
-                        </p>
+                        {editMode ? (
+                          <input
+                            name="phoneNumber"
+                            onChange={(e) => onInputChange(e)}
+                            value={loggedUser.phoneNumber}
+                          />
+                        ) : (
+                          <p className="text-muted mb-0">
+                            {loggedUser.phoneNumber}
+                          </p>
+                        )}
                       </div>
                     </div>
                     <hr></hr>
@@ -192,7 +200,7 @@ const Profile = () => {
                         {editMode ? (
                           <>
                             <Button
-                              onClick={updateUser()}
+                              onClick={updateUser}
                               className="button-color"
                             >
                               Save
