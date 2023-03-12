@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,11 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import java.time.LocalDateTime;
 import com.arkadiusgru.cls.model.Address;
 import com.arkadiusgru.cls.model.Role;
 import com.arkadiusgru.cls.model.User;
@@ -66,6 +65,7 @@ public class ClsApplication {
 			}
 
 		};
+
 	}
 
 }

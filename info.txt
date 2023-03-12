@@ -1,1 +1,0 @@
-In forntend to be able to open the app in docker please chnage the proxy in package.json file to:  "proxy": "http://10.5.0.5:8080",  

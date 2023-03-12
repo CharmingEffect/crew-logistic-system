@@ -25,12 +25,11 @@ public class RegistrationService {
     private final EmailBuilder emailBuilder;
     private static Logger logger = LoggerFactory.getLogger(RegistrationService.class);
 
-    // private final String TEMPORARY_PASSWORD = new
-    // PassGenerator().generateStandardPassword();
+    private final String TEMPORARY_PASSWORD = new PassGenerator().generateStandardPassword();
 
     // This is only for developemnt needs to be changed at the end of the project
 
-    private final String TEMPORARY_PASSWORD = "1234";
+    // private final String TEMPORARY_PASSWORD = "1234";
 
     public String register(RegistrationRequest request) {
 

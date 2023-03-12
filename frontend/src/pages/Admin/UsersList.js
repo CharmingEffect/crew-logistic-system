@@ -42,6 +42,12 @@ class UsersList extends Component {
     const { users } = this.state;
 
     const userList = users.map((user) => {
+      if (user.enabled === true) {
+        user.enabled = "Yes";
+      } else {
+        user.enabled = "No";
+      }
+
       return (
         <Tr className="table-odd" key={user.id}>
           <Td style={{ whiteSpace: "nowrap" }}>{user.firstName}</Td>

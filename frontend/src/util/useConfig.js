@@ -1,9 +1,9 @@
-import { useLoggedInUser } from "./useLoggedInUser";
+import { useLoggedInUser } from "./useUserData";
 
 function useValidPahts() {
   const adminValidPaths = [
     "/",
-    "/dashboard-crew",
+    "/dashboard-admin",
     "/user-mngmt",
     "/job-mngmt",
     "/profile",
@@ -12,6 +12,8 @@ function useValidPahts() {
 
   const loggedInUser = useLoggedInUser();
 
+
+  
   if (loggedInUser.role === "ADMIN") {
     return adminValidPaths;
   } else if (loggedInUser.role === "CEW_MEMBER") {

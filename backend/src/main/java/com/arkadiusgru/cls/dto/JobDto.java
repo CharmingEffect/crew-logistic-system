@@ -1,7 +1,9 @@
 package com.arkadiusgru.cls.dto;
 
 import java.time.LocalDateTime;
+
 import com.arkadiusgru.cls.model.Address;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

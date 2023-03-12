@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.arkadiusgru.cls.dto.JobDto;
 import com.arkadiusgru.cls.model.Job;
-import com.arkadiusgru.cls.repos.AddressReposiotory;
 import com.arkadiusgru.cls.service.JobService;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -29,7 +28,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class JobController {
     private final JobService jobService;
-    private final AddressReposiotory addressRepository;
 
     @PostMapping(path = "/admin/newJob")
     public String register(@RequestBody JobDto job) {
@@ -40,6 +38,7 @@ public class JobController {
 
     @GetMapping(path = "/admin/getAllJobs")
     public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
+
         return jobService.getAllJobs();
     }
 

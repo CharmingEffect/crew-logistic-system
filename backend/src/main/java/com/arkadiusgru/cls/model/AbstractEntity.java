@@ -10,6 +10,7 @@ import javax.persistence.MappedSuperclass;
 import org.hibernate.annotations.CreationTimestamp;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -23,6 +24,7 @@ public class AbstractEntity {
     private Long id;
 
     @CreationTimestamp
+    @JsonFormat(pattern = "dd-MMM-yyyy HH:mm")
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 

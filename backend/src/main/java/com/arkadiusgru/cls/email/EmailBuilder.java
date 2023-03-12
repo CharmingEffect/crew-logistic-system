@@ -406,7 +406,7 @@ public class EmailBuilder {
                 "                        </p>" +
                 "                        <div style=\"line-height: 100%\">" +
                 "                          <a" +
-                "                            href=\"http://localhost:8080/login\"" +
+                "                            href=\"http://localhost:3000/\"" +
                 "                            id=\"click-confirm\"" +
                 "                            class=\"hover-bg-blue-600\"" +
                 "                            style=\"" +

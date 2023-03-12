@@ -16,6 +16,7 @@ import "./styles/Style.css";
 import JobsMngmt from "./pages/Admin/JobsMngmt";
 import Profile from "./pages/common/Profile";
 import Nav from "./components/Nav";
+import { useValidPahts } from "./util/useConfig";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -23,6 +24,9 @@ function App() {
   // useEffect(() => {
   //   console.log("JWT Value is: " + jwt);
   // }, [jwt]);
+
+  // const validPaths = useValidPahts();
+
   function showNav() {
     if (location.pathname === "/") {
       return <></>;
@@ -31,6 +35,14 @@ function App() {
     }
   }
 
+  // function authorize() {
+  //   if (validPaths.includes(location.pathname)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+
   return (
     <>
       <div className="nav_bg_color" id="wrapper">
@@ -38,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/dashboard-admin" element={<DashboardAdmin />}></Route>
+
           <Route path="/dashboard-crew" element={<DashboardCrew />}></Route>
           <Route path="/user-mngmt" element={<UsersMngmt />}></Route>
           <Route path="/job-mngmt" element={<JobsMngmt />}></Route>

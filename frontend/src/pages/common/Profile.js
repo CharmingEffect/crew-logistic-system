@@ -74,7 +74,6 @@ const Profile = () => {
                         <h4 className="text-black">
                           {" "}
                           {loggedUser.firstName} {loggedUser.lastName} <br></br>{" "}
-                          ID :{loggedUser.id}
                         </h4>
                         <p className="text-secondary mb-1"></p>
                         <p className="text-muted font-size-sm">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import BASE_URL from "../util/baseUrl";
-
+import { useLocalState } from "./useLocalStorage";
 const FindUserByEmail = ({ email }) => {
   const [user, setUser] = useState({});
 
@@ -21,6 +21,9 @@ const FindUserByEmail = ({ email }) => {
 };
 
 const useLoggedInUser = () => {
+  
+  const [jwt, setJwt] = useLocalState("", "jwt");
+
   const userDecoded = jwtDecode(localStorage.getItem("jwt"));
 
   const userEmail = userDecoded.sub;

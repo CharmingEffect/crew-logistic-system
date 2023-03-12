@@ -51,7 +51,6 @@ services:
       - spring-app
     
 
-
 networks:
     main:
         ipam:
