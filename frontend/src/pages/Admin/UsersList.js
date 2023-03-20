@@ -50,6 +50,7 @@ class UsersList extends Component {
 
       return (
         <Tr className="table-odd" key={user.id}>
+          <Td style={{ whiteSpace: "nowrap" }}>{user.id}</Td>
           <Td style={{ whiteSpace: "nowrap" }}>{user.firstName}</Td>
           <Td style={{ whiteSpace: "nowrap" }}>{user.lastName}</Td>
           <Td>{user.email}</Td>
@@ -83,6 +84,7 @@ class UsersList extends Component {
         <Table className="mt-4">
           <Thead className="thead">
             <Tr>
+              <Th width="5%">Id</Th>
               <Th width="5%">First Name</Th>
               <Th width="5%">Last Name</Th>
               <Th width="5%">Email</Th>

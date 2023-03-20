@@ -33,18 +33,18 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http = http.csrf().disable().cors().and();
-        http = http.sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().authenticationProvider(daoAuthenticationProvider());
+        http = http.sessionManagement(management -> management
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(daoAuthenticationProvider());
 
-        http = http.exceptionHandling().authenticationEntryPoint((request, response, exception) -> {
+        http = http.exceptionHandling(handling -> handling.authenticationEntryPoint((request, response, exception) -> {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, exception.getMessage());
-        }).and();
+        }));
 
         http.headers().frameOptions().disable();
 
-        http.authorizeRequests()
-                .antMatchers("/api/auth/**", "/api/admin/**", "/h2-console/**", "/api/confirm-registration")
+        http.authorizeHttpRequests()
+                .antMatchers("/api/auth/**", "/api/admin/**", "/h2-console/**", "/api/confirm-registration", "/api/**")
                 .permitAll()
                 .anyRequest().authenticated();
 

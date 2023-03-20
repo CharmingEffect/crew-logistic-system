@@ -27,7 +27,7 @@ function AvatarUploader() {
   const [avatar, setAvatar] = useState(null);
   const loggedUser = useLoggedInUser();
   const [imageUrl, setImageUrl] = useState(null);
-  const maxFileSize = 1000000;
+  const maxFileSize = 50000; // 50kB
 
   function handleFileChange(event) {
     setAvatar(event.target.files[0]);
@@ -42,7 +42,7 @@ function AvatarUploader() {
     if (avatar.size > maxFileSize) {
       swal({
         title: "Error!",
-        text: "File size is too big. Only 1MB allowed",
+        text: "File size is too big. Only up to 50kB allowed",
         icon: "error",
         button: false,
         timer: 1000,
