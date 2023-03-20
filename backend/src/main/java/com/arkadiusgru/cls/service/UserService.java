@@ -83,6 +83,14 @@ public class UserService implements UserDetailsService {
 
     }
 
+    public void updatePassword(Long id, String password) {
+        String encryptedPassword = bCryptPasswordEncoder.encode(password);
+        User user = userRepository.findById(id).get();
+        user.setPassword(encryptedPassword);
+        userRepository.save(user);
+
+    }
+
     
 
 }

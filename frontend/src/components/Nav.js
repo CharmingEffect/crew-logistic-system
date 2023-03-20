@@ -75,6 +75,17 @@ const Nav = () => {
               <></>
             )}
 
+            {crew ? (
+              <li className={path === "/jobs" ? "active" : ""}>
+                <a href="/jobs">
+                  <i className="fa fa-tasks"></i>{" "}
+                  <span className="nav-label">Jobs</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
+
             {admin ? (
               <li className={path === "/user-mngmt" ? "active" : ""}>
                 <a href="/user-mngmt">

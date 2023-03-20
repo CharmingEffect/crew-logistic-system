@@ -3,20 +3,18 @@ import React, { useEffect } from "react";
 import { useLocalState } from "./util/useLocalStorage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import PrivateRoute from "./PrivateRoute";
 import DashboardAdmin from "./pages/Admin";
 import DashboardCrew from "./pages/Crew";
 import UsersMngmt from "./pages/Admin/UsersMngmt";
-import Header from "./components/Header";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useLoggedInUser } from "./util/useUserData";
+
 
 import "./styles/Style.css";
 import JobsMngmt from "./pages/Admin/JobsMngmt";
 import Profile from "./pages/common/Profile";
 import Nav from "./components/Nav";
 import { useValidPahts } from "./util/useConfig";
+import Jobs from "./pages/Crew/Jobs";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -50,6 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/dashboard-admin" element={<DashboardAdmin />}></Route>
+          <Route path="/jobs" element={<Jobs />}></Route>
 
           <Route path="/dashboard-crew" element={<DashboardCrew />}></Route>
           <Route path="/user-mngmt" element={<UsersMngmt />}></Route>

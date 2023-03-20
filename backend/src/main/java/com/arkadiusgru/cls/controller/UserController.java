@@ -113,4 +113,13 @@ public class UserController {
 
     }
 
+    @PostMapping("/common/changePassword/{id}/newPassword")
+    public ResponseEntity<?> changePassword(@PathVariable Long id, @RequestParam String newPassword) {
+        userService.updatePassword(id, newPassword);
+        return ResponseEntity.ok().build();
+    }
+
+
+
+
 }
