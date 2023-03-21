@@ -33,6 +33,16 @@ function AssignCrew() {
     setSelectedOptions(selected);
   }
 
+  function selectAll() {
+    const options = Array.from(document.querySelectorAll("option"));
+    setSelectedOptions(options.map((option) => option.value));
+  }
+
+  function cancelAssign() {
+    setModalIsOpen(false);
+    setSelectedOptions([]);
+  }
+
   return (
     <div>
       <Button
@@ -67,14 +77,17 @@ function AssignCrew() {
                 );
               })}
             </select>
+            <Button className="button-color" size="sm" onClick={selectAll}>
+              Select All
+            </Button>
           </div>
 
           <div className="form-group row mt-2">
             <label className="col-sm-6 col-form-label">
-              Chosen Crew Members
+              Chosen Crew Members:
             </label>
             {selectedOptions.map((option) => {
-              return <p>{option} </p>;
+              return <p>{option}</p>;
             })}
           </div>
         </form>
@@ -87,7 +100,7 @@ function AssignCrew() {
           <Button
             className="button-color"
             size="sm"
-            onClick={() => setModalIsOpen(false)}
+            onClick={() => cancelAssign()}
           >
             Cancel
           </Button>
