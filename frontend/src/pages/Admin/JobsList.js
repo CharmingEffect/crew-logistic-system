@@ -4,6 +4,7 @@ import { Button, ButtonGroup, Container } from "reactstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import BASE_URL from "../../util/baseUrl";
+import AssignCrew from "./AssignCrew";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -43,6 +44,10 @@ class JobsList extends Component {
     this.componentDidMount();
   }
 
+  assginCrew(jobNumber) {
+    return <AssignCrew jobNumber={jobNumber}></AssignCrew>;
+  }
+
   render() {
     const { jobs } = this.state;
 
@@ -76,6 +81,7 @@ class JobsList extends Component {
               >
                 Edit
               </Button>
+              <AssignCrew jobNumber={job.jobNumber}></AssignCrew>
             </ButtonGroup>
           </Td>
         </Tr>
