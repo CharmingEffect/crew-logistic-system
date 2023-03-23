@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { useAllUsers } from "../../util/useUserData";
+import { useAllCrewMembers } from "../../util/useUserData";
+import axios from "axios";
+import swal from "sweetalert";
 
 // import Loginpage.css
 
@@ -21,7 +23,7 @@ const customStyles = {
   },
 };
 
-function AssignCrew() {
+function AssignCrew(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
@@ -43,6 +45,26 @@ function AssignCrew() {
     setSelectedOptions([]);
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const crewMemberIds = selectedOptions.map((option) => option.value);
+
+      const response = await axios.post(`/api/admin/sendJobAssignments`, {
+        jobNumber: props.jobNumber,
+        crewMemberIds: selectedOptions,
+      });
+
+      if (response.status === 200) {
+        swal("Success", "Crew members assigned", "success");
+        setModalIsOpen(false);
+      }
+    } catch (error) {
+      swal("Error", "Something went wrong", "error");
+    }
+  };
+
   return (
     <div>
       <Button
@@ -53,9 +75,12 @@ function AssignCrew() {
         Assign Crew
       </Button>
       <Modal
+        ariaHideApp={false}
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         style={customStyles}
+        keyboard={false}
+        backdrop="static"
       >
         <i
           className="fa fa-user-plus fa-2x text-black d-inline-block m-3"
@@ -66,13 +91,14 @@ function AssignCrew() {
           If you want to assign a crew to this job, please select the crew
           members from the list below. Press ctrl to select multiple options.
         </p>
-        <form>
+        <p> Job number: {props.jobNumber}</p>
+        <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group row mt-2">
-            <select multiple onChange={handleSelect}>
-              {useAllUsers().map((user) => {
+            <select key={1} multiple onChange={handleSelect}>
+              {useAllCrewMembers().map((crewMember) => {
                 return (
-                  <option value={user.id + " " + user.firstName}>
-                    {user.id} {user.firstName} {user.lastName}
+                  <option key={crewMember.id} value={crewMember.id}>
+                    {crewMember.id} {crewMember.firstName} {crewMember.lastName}
                   </option>
                 );
               })}
@@ -87,24 +113,23 @@ function AssignCrew() {
               Chosen Crew Members:
             </label>
             {selectedOptions.map((option) => {
-              return <p>{option}</p>;
+              return <p key={option.value}>{option}</p>;
             })}
           </div>
+          <div className="d-flex justify-content-end mt-3">
+            <br></br>
+            <Button type="submit" className="button-color">
+              Submit
+            </Button>
+            <Button
+              className="button-color"
+              size="sm"
+              onClick={() => cancelAssign()}
+            >
+              Cancel
+            </Button>
+          </div>
         </form>
-
-        <div className="d-flex justify-content-end mt-3">
-          <br></br>
-          <Button type="submit" className="button-color">
-            Submit
-          </Button>
-          <Button
-            className="button-color"
-            size="sm"
-            onClick={() => cancelAssign()}
-          >
-            Cancel
-          </Button>
-        </div>
       </Modal>
     </div>
   );

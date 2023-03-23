@@ -21,7 +21,6 @@ const FindUserByEmail = ({ email }) => {
 };
 
 const useLoggedInUser = () => {
-  
   const [jwt, setJwt] = useLocalState("", "jwt");
 
   const userDecoded = jwtDecode(localStorage.getItem("jwt"));
@@ -52,6 +51,28 @@ function useAllUsers() {
     fetchData();
   }, []);
   return users;
+}
+
+function useAllCrewMembers() {
+  const [crewMembers, setCrewMembers] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get("/api/admin/getAllCrewMembers");
+        setCrewMembers(response.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+  return crewMembers;
 }
 
 function FindAddressById({ id }) {
@@ -119,4 +140,5 @@ export {
   useAllUsers,
   SystemInfo,
   MemoryStats,
+  useAllCrewMembers,
 };

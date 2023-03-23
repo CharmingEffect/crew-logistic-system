@@ -2,6 +2,7 @@ package com.arkadiusgru.cls.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,20 +15,22 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "jobs_assignment")
+@Table(name = "job_assignment")
 @EqualsAndHashCode(callSuper = false)
 public class JobAssignment {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "job_number")
-    private Job job;
+    @ManyToOne
+    @JoinColumn(name = "job_number", nullable = false)
+    private Job jobNumber;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User userId;
+
+    private String status;
 
 }

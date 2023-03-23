@@ -3,13 +3,13 @@ package com.arkadiusgru.cls.repos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import com.arkadiusgru.cls.model.Job;
 import java.util.Optional;
 import java.util.List;
 
 import javax.transaction.Transactional;
-
 
 public interface JobRepository extends JpaRepository<Job, String> {
     Optional<Job> findByJobNumber(String jobNumber);
@@ -22,5 +22,7 @@ public interface JobRepository extends JpaRepository<Job, String> {
     @Query("SELECT j FROM Job j LEFT JOIN FETCH j.address a")
     List<Job> findAllWithAddress();
 
-    
+
+    List<Job> findByJobNumberIn(List<String> jobNumbers);
+
 }

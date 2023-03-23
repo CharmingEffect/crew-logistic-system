@@ -1,13 +1,18 @@
 package com.arkadiusgru.cls.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
 import com.arkadiusgru.cls.model.Job;
+import com.arkadiusgru.cls.model.JobAssignment;
 import com.arkadiusgru.cls.model.User;
+import com.arkadiusgru.cls.repos.JobAssignmentRepository;
 import com.arkadiusgru.cls.repos.JobRepository;
 import com.arkadiusgru.cls.repos.UserRepository;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
@@ -23,6 +28,7 @@ public class JobService {
 
     JobRepository jobRepository;
     UserRepository userRepository;
+    JobAssignmentRepository jobAssignmentRepository;
 
     public void createNewJob(JobDto jobDto) {
         // System.out.println("job " + job.toString());
@@ -87,6 +93,57 @@ public class JobService {
         } else {
             throw new IllegalStateException("Job with number " + jobNumber + " does not exist");
         }
+    }
+
+    public void sendJobAssignments(String jobNumber, List<Long> crewMemberIds) {
+        Job job = jobRepository.findById(jobNumber).orElseThrow(() -> new RuntimeException("Job not found"));
+        List<User> crewMembers = userRepository.findAllById(crewMemberIds);
+
+        for (User crewMember : crewMembers) {
+            JobAssignment assignment = new JobAssignment();
+            assignment.setJobNumber(job);
+            assignment.setUserId(crewMember);
+            assignment.setStatus("PENDING");
+            jobAssignmentRepository.save(assignment);
+        }
+    }
+
+    public void confirmJob(Long assignmentId) {
+        JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
+                .orElseThrow(() -> new RuntimeException("Assignment not found"));
+
+        if (assignment.getStatus().equals("PENDING")) {
+            Job job = assignment.getJobNumber();
+            // Check if the job has reached its crew member limit
+            int assignedCrewCount = jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(), "CONFIRMED")
+                    .size();
+            if (job.getNumberOfCrew() > assignedCrewCount) {
+                assignment.setStatus("CONFIRMED");
+                jobAssignmentRepository.save(assignment);
+            } else {
+                throw new IllegalStateException("Job has already reached its crew member limit");
+            }
+        } else {
+            throw new IllegalStateException("Assignment has already been confirmed or declined");
+        }
+    }
+
+    public List<Job> getPendingJobsForLoggedInUser(Long loggedInUserId) {
+
+        User loggedUser = userRepository.findById(loggedInUserId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        List<JobAssignment> assignments = jobAssignmentRepository.findByUserIdAndStatus(loggedUser.getId(),
+                "PENDING");
+
+        List<String> jobsIDs = new ArrayList<>();
+        for (JobAssignment assignment : assignments) {
+            jobsIDs.add(assignment.getJobNumber().getJobNumber());
+        }
+
+        List<Job> jobs = jobRepository.findByJobNumberIn(jobsIDs);
+
+        return jobs;
     }
 
 }

@@ -47,12 +47,22 @@ class UsersList extends Component {
       } else {
         user.enabled = "No";
       }
+      
+      // this function changes the role from ADMIN to A and CREW_MEMBER to C
+      // const userList = users.map((user) => {
+      //   if (user.role === "ADMIN") {
+      //     user.role = "A";
+      //   } else if (user.role === "CREW_MEMBER") {
+      //     user.role = "C";
+      //   }
+      // });
 
       return (
         <Tr className="table-odd" key={user.id}>
           <Td style={{ whiteSpace: "nowrap" }}>{user.id}</Td>
           <Td style={{ whiteSpace: "nowrap" }}>{user.firstName}</Td>
           <Td style={{ whiteSpace: "nowrap" }}>{user.lastName}</Td>
+          <Td style={{ whiteSpace: "nowrap" }}>{user.role}</Td>
           <Td>{user.email}</Td>
           <Td>{String(user.enabled)}</Td>
           <Td>{String(user.createdAt)}</Td>
@@ -87,6 +97,7 @@ class UsersList extends Component {
               <Th width="5%">Id</Th>
               <Th width="5%">First Name</Th>
               <Th width="5%">Last Name</Th>
+              <Th width="5%">Role</Th>
               <Th width="5%">Email</Th>
               <Th width="5%">Activated</Th>
               <Th width="5%">Joined</Th>

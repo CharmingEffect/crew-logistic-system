@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -119,7 +121,15 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    // test whos logded in
+    @GetMapping("/common/whoIsLoggedIn")
+    public ResponseEntity<?> whoIsLoggedIn() {
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String loggedInUserEmail = authentication.getName();
 
+        return ResponseEntity.ok().body("Logged in user:  " + loggedInUserEmail);
+
+    }
 
 }
