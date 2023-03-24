@@ -65,8 +65,9 @@ public class JobController {
         return ResponseEntity.ok().body("Job confirmed successfully");
     }
 
-    @PutMapping("/admin/confirmJob/{userId}")
-    public ResponseEntity<?> getPendingJobs(@RequestParam Long userId) {
+    @GetMapping("/admin/pendingJobs/{userId}")
+    public ResponseEntity<?> getPendingJobs(@PathVariable Long userId) {
+        System.out.println("userId: " + userId);
         jobService.getPendingJobsForLoggedInUser(userId);
         return ResponseEntity.ok().build();
     }

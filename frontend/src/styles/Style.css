@@ -75,8 +75,38 @@ font-weight: bold;
   background-color: #D9D9D9;
 
 }
+/* Tabs */
 
 
+.tab-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+.tab-button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.tab-content {
+  padding: 1rem;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+}
+
+
+/* Tabs */
 
 .button-color{
   background-color: #214A80;

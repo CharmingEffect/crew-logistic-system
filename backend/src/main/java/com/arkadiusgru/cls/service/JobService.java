@@ -128,20 +128,20 @@ public class JobService {
         }
     }
 
-    public List<Job> getPendingJobsForLoggedInUser(Long loggedInUserId) {
+    public List<Job> getPendingJobsForLoggedInUser(Long userId) {
 
-        User loggedUser = userRepository.findById(loggedInUserId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        // User loggedUser = userRepository.findByEmail(email)
+        // .orElseThrow(() -> new RuntimeException("User not found"));
 
-        List<JobAssignment> assignments = jobAssignmentRepository.findByUserIdAndStatus(loggedUser.getId(),
+        List<JobAssignment> assignments = jobAssignmentRepository.findByUserIdAndStatus(userId,
                 "PENDING");
-
-        List<String> jobsIDs = new ArrayList<>();
+        System.out.println("assignments " + assignments);
+        List<Job> jobs = new ArrayList<>();
         for (JobAssignment assignment : assignments) {
-            jobsIDs.add(assignment.getJobNumber().getJobNumber());
+            Job job = jobRepository.findByJobNumber(assignment.getJobNumber().toString())
+                    .orElseThrow(() -> new RuntimeException("Job not found"));
+            jobs.add(job);
         }
-
-        List<Job> jobs = jobRepository.findByJobNumberIn(jobsIDs);
 
         return jobs;
     }
