@@ -1,5 +1,6 @@
 package com.arkadiusgru.cls.service;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -141,6 +142,7 @@ public class JobService {
             Job job = jobRepository.findByJobNumber(assignment.getJobNumber().toString())
                     .orElseThrow(() -> new RuntimeException("Job not found"));
             jobs.add(job);
+
         }
 
         return jobs;
