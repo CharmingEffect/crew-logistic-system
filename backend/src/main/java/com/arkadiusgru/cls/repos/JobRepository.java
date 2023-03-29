@@ -22,7 +22,6 @@ public interface JobRepository extends JpaRepository<Job, String> {
     @Query("SELECT j FROM Job j LEFT JOIN FETCH j.address a")
     List<Job> findAllWithAddress();
 
-
     List<Job> findByJobNumberIn(List<String> jobNumbers);
 
 }

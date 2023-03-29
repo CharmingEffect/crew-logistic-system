@@ -59,17 +59,17 @@ public class JobController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/admin/confirmJob/{assignment_id}")
-    public ResponseEntity<?> confirmJob(@PathVariable("assignment_id") Long assignmentId) {
-        jobService.confirmJob(assignmentId);
-        return ResponseEntity.ok().body("Job confirmed successfully");
-    }
+    // @PutMapping("/admin/confirmJob/{assignment_id}")
+    // public ResponseEntity<?> confirmJob(@PathVariable("assignment_id") Long
+    // assignmentId) {
+    // jobService.confirmJob(assignmentId);
+    // return ResponseEntity.ok().body("Job confirmed successfully");
+    // }
 
     @GetMapping("/admin/pendingJobs/{userId}")
-    public ResponseEntity<?> getPendingJobs(@PathVariable Long userId) {
-        System.out.println("userId: " + userId);
-        jobService.getPendingJobsForLoggedInUser(userId);
-        return ResponseEntity.ok().build();
+    public List<JobDto> getPendingJobs(@PathVariable Long userId) {
+
+        return jobService.getPendingJobsForLoggedInUser(userId);
     }
 
 }

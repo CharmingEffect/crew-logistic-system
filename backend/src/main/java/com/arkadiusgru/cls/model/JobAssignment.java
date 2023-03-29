@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -24,12 +25,12 @@ public class JobAssignment {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "job_number", nullable = false)
-    private Job jobNumber;
+    @JoinColumn(name = "job", nullable = false)
+    private Job job;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User userId;
+    @JoinColumn(name = "user", nullable = false)
+    private User user;
 
     private String status;
 

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.helpers.SubstituteLogger;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
@@ -102,50 +103,63 @@ public class JobService {
 
         for (User crewMember : crewMembers) {
             JobAssignment assignment = new JobAssignment();
-            assignment.setJobNumber(job);
-            assignment.setUserId(crewMember);
+            assignment.setJob(job);
+            assignment.setUser(crewMember);
             assignment.setStatus("PENDING");
             jobAssignmentRepository.save(assignment);
         }
     }
 
-    public void confirmJob(Long assignmentId) {
-        JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
-                .orElseThrow(() -> new RuntimeException("Assignment not found"));
+    // public void confirmJob(Long assignmentId) {
+    // JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
+    // .orElseThrow(() -> new RuntimeException("Assignment not found"));
 
-        if (assignment.getStatus().equals("PENDING")) {
-            Job job = assignment.getJobNumber();
-            // Check if the job has reached its crew member limit
-            int assignedCrewCount = jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(), "CONFIRMED")
-                    .size();
-            if (job.getNumberOfCrew() > assignedCrewCount) {
-                assignment.setStatus("CONFIRMED");
-                jobAssignmentRepository.save(assignment);
-            } else {
-                throw new IllegalStateException("Job has already reached its crew member limit");
-            }
-        } else {
-            throw new IllegalStateException("Assignment has already been confirmed or declined");
+    // if (assignment.getStatus().equals("PENDING")) {
+    // Job job = assignment.getJob();
+    // // Check if the job has reached its crew member limit
+    // int assignedCrewCount =
+    // jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(),
+    // "CONFIRMED")
+    // .size();
+    // if (job.getNumberOfCrew() > assignedCrewCount) {
+    // assignment.setStatus("CONFIRMED");
+    // jobAssignmentRepository.save(assignment);
+    // } else {
+    // throw new IllegalStateException("Job has already reached its crew member
+    // limit");
+    // }
+    // } else {
+    // throw new IllegalStateException("Assignment has already been confirmed or
+    // declined");
+    // }
+    // }
+
+    public List<JobDto> getPendingJobsForLoggedInUser(Long userId) {
+
+        List<JobDto> pendingJobs = new ArrayList<JobDto>();
+
+        for (Job job : jobAssignmentRepository.findJobsByUserId(userId)) {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.registerModule(new JavaTimeModule());
+            JobDto jobDto = new JobDto();
+            jobDto.setJobNumber(job.getJobNumber());
+            jobDto.setDateTime(job.getDateTime());
+            jobDto.setJobDuration(job.getJobDuration());
+            jobDto.setNumberOfCrew(job.getNumberOfCrew());
+            jobDto.setAddress(job.getAddress());
+            jobDto.setClientCompanyName(job.getClientCompanyName());
+            jobDto.setContactOnSite(job.getContactOnSite());
+            jobDto.setDriverId(job.getDriver().getId());
+            jobDto.setCrewChiefId(job.getCrewChief().getId());
+            jobDto.setRemarks(job.getRemarks());
+            jobDto.setComment(job.getComment());
+            pendingJobs.add(jobDto);
         }
-    }
 
-    public List<Job> getPendingJobsForLoggedInUser(Long userId) {
+        System.out.println("pending jobs: " + pendingJobs);
 
-        // User loggedUser = userRepository.findByEmail(email)
-        // .orElseThrow(() -> new RuntimeException("User not found"));
+        return pendingJobs.stream().distinct().collect(Collectors.toList());
 
-        List<JobAssignment> assignments = jobAssignmentRepository.findByUserIdAndStatus(userId,
-                "PENDING");
-        System.out.println("assignments " + assignments);
-        List<Job> jobs = new ArrayList<>();
-        for (JobAssignment assignment : assignments) {
-            Job job = jobRepository.findByJobNumber(assignment.getJobNumber().toString())
-                    .orElseThrow(() -> new RuntimeException("Job not found"));
-            jobs.add(job);
-
-        }
-
-        return jobs;
     }
 
 }

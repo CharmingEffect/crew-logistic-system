@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
@@ -15,7 +16,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
-// to jest aby przetlumaczyc cokolwiek wpada do jacy na jave rozimesz bocie
+@Setter
 
 public class JobDto {
     private String jobNumber;
