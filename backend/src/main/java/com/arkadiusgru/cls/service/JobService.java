@@ -111,34 +111,31 @@ public class JobService {
     }
 
     // public void confirmJob(Long assignmentId) {
-    // JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
-    // .orElseThrow(() -> new RuntimeException("Assignment not found"));
+    //     JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
+    //             .orElseThrow(() -> new RuntimeException("Assignment not found"));
 
-    // if (assignment.getStatus().equals("PENDING")) {
-    // Job job = assignment.getJob();
-    // // Check if the job has reached its crew member limit
-    // int assignedCrewCount =
-    // jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(),
-    // "CONFIRMED")
-    // .size();
-    // if (job.getNumberOfCrew() > assignedCrewCount) {
-    // assignment.setStatus("CONFIRMED");
-    // jobAssignmentRepository.save(assignment);
-    // } else {
-    // throw new IllegalStateException("Job has already reached its crew member
-    // limit");
-    // }
-    // } else {
-    // throw new IllegalStateException("Assignment has already been confirmed or
-    // declined");
-    // }
+    //     if (assignment.getStatus().equals("PENDING")) {
+    //         Job job = assignment.getJob();
+    //         // Check if the job has reached its crew member limit
+    //         int assignedCrewCount = jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(),
+    //                 "CONFIRMED")
+    //                 .size();
+    //         if (job.getNumberOfCrew() > assignedCrewCount) {
+    //             assignment.setStatus("CONFIRMED");
+    //             jobAssignmentRepository.save(assignment);
+    //         } else {
+    //             throw new IllegalStateException("Job has already reached its crew member limit");
+    //         }
+    //     } else {
+    //         throw new IllegalStateException("Assignment has already been confirmed or declined");
+    //     }
     // }
 
     public List<JobDto> getPendingJobsForLoggedInUser(Long userId) {
 
         List<JobDto> pendingJobs = new ArrayList<JobDto>();
 
-        for (Job job : jobAssignmentRepository.findJobsByUserId(userId)) {
+        for (Job job : jobAssignmentRepository.findJobsByUserId(userId, "PENDING")) {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());
             JobDto jobDto = new JobDto();

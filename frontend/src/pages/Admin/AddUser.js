@@ -125,10 +125,10 @@ function AddUser() {
   };
 
   return (
-    <div>
+    <>
       <Button
-        className="button-color"
         size="sm"
+        className="button-color"
         onClick={() => setModalIsOpen(true)}
       >
         Create New User
@@ -376,7 +376,7 @@ function AddUser() {
           </div>
         </form>
       </Modal>
-    </div>
+    </>
   );
 }
 

@@ -20,22 +20,19 @@ const UsersMngmt = () => {
           <Header />
         </div>
         <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="">
-            {" "}
-            <i
-              className="fa fa-user fa-3x text-black d-inline-block m-3"
-              aria-hidden="true"
-            ></i>
-            <h1 className="display-5 text-black d-inline-block">
+          <div className="mb-4">
+            <h1 className="sophisticated-header display-5 text-black mr-4">
+              <i
+                className="fa fa-user text-black d-inline-block m-3"
+                aria-hidden="true"
+              ></i>
               User Management
             </h1>
-            <div className="d-flex justify-content-end d-inline-block">
-              <AddUser></AddUser>
+            <div className="d-flex justify-content-end">
+              <AddUser />
             </div>
           </div>
-
-          <br />
-          <UsersList></UsersList>
+          <UsersList />
         </div>
       </div>
     </>

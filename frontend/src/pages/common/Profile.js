@@ -47,14 +47,11 @@ const Profile = () => {
           <Header />
         </div>
         <div className="wrapper wrapper-content animated fadeInRight"></div>
-        <div className="">
-          {" "}
-          <i
-            className="fa fa-user fa-3x text-black d-inline-block m-3"
-            aria-hidden="true"
-          ></i>
-          <h1 className="display-5 text-black d-inline-block">Profile</h1>
-          <div className="d-flex justify-content-end d-inline-block"></div>
+        <div className="mb-4">
+          <h1 className="sophisticated-header display-5 text-black mr-4">
+            <i className="fa fa-user text-black m-3" aria-hidden="true"></i>
+            Profile
+          </h1>
         </div>
 
         <div className="container-fluid">

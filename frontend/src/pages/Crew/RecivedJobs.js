@@ -13,7 +13,7 @@ class JobsList extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/admin/getAllJobs")
+    fetch(`/api/admin/pendingJobs/${this.props.loggedUserId}`)
       .then((response) => response.json())
       .then((data) => this.setState({ jobs: data }));
   }

@@ -22,22 +22,17 @@ const JobsMngmt = () => {
           <Header />
         </div>
         <div className="wrapper wrapper-content animated fadeInRight">
-          <div className="">
-            {" "}
-            <i
-              className="fa fa-wrench fa-3x text-black d-inline-block m-3"
-              aria-hidden="true"
-            ></i>
-            <h1 className="display-5 text-black d-inline-block">
+          <div className="mb-4">
+            <h1 className="sophisticated-header display-5 text-black mr-4">
+              <i className="fa fa-wrench text-black m-3" aria-hidden="true"></i>
               Job Management
             </h1>
             <div className="d-flex justify-content-end">
-              <AddJob></AddJob>
+              <AddJob />
             </div>
           </div>
 
-          <br />
-          <JobsList></JobsList>
+          <JobsList />
         </div>
       </div>
     </>
