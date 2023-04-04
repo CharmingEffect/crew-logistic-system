@@ -1,10 +1,13 @@
 package com.arkadiusgru.cls.controller;
 
 import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.arkadiusgru.cls.dto.UserDto;
 import com.arkadiusgru.cls.model.User;
@@ -109,10 +113,17 @@ public class UserController {
     @DeleteMapping("/admin/deleteUser/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         Long addressIdFromUser = userRepository.getAddressIdByUserId(id);
-        userService.deleteUserById(id);
-        userRepository.deleteAddressById(addressIdFromUser);
-        return ResponseEntity.ok().build();
-
+        try {
+            userService.deleteUserById(id);
+            userRepository.deleteAddressById(addressIdFromUser);
+        } catch (RuntimeException e) {
+            if (e.getCause() instanceof SQLIntegrityConstraintViolationException) {
+                return ResponseEntity.status(HttpStatus.CONFLICT)
+                        .body("Cannot delete user with id: " + id + " because they are still assigned to jobs.");
+            }
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An unexpected error occurred", e);
+        }
+        return ResponseEntity.ok().body("User deleted successfully.");
     }
 
     @PostMapping("/common/changePassword/{id}/newPassword")

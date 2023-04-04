@@ -22,18 +22,28 @@ class UsersList extends Component {
   }
 
   async remove(id) {
-    await fetch(`/api/admin/deleteUser/${id}`, {
+    const response = await fetch(`/api/admin/deleteUser/${id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    }).then(() => {
+    });
+
+    if (response.ok) {
       let updatedUsers = [...this.state.users].filter((i) => i.id !== id);
       this.setState({ clients: updatedUsers });
       swal("Deleted!", "User has been deleted.", "success");
       this.componentDidMount();
-    });
+    } else if (response.status === 500) {
+      swal(
+        "Cannot Delete!",
+        "The user is associated with ongoing job",
+        "error"
+      );
+    } else {
+      swal("Error!", "An unexpected error occurred.", "error");
+    }
   }
 
   async edit(id) {}
@@ -47,7 +57,7 @@ class UsersList extends Component {
       } else {
         user.enabled = "No";
       }
-      
+
       // this function changes the role from ADMIN to A and CREW_MEMBER to C
       // const userList = users.map((user) => {
       //   if (user.role === "ADMIN") {
