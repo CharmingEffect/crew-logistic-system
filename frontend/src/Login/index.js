@@ -28,7 +28,7 @@ const Login = () => {
       body: JSON.stringify(reqBody),
     })
       .then((response) => {
-        // console.log(response.body);
+
 
         if (response.status === 200)
           return Promise.all([response.json(), response.headers]);
@@ -38,7 +38,6 @@ const Login = () => {
       .then(([body, headers]) => {
         console.log(body);
         setJwt(headers.get("authorization"));
-        //console.log("gdzue to jest" + headers.get("authorization"));
         if (body.role === "ADMIN") {
           window.location.href = "/dashboard-admin";
         }
@@ -72,7 +71,7 @@ const Login = () => {
       <form method="post">
         <h2 className="sr-only text-center">Pinnacle Login</h2>
         <div className="illustration">
-          <FileLock2Fill />
+       < FileLock2Fill/>
         </div>
         <div className="form-group">
           {/* binding the data to the input from fields */}

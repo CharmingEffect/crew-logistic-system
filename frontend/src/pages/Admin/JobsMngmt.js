@@ -2,19 +2,12 @@ import React, { useState } from "react";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import AddUser from "./AddUser";
-import { PersonPlusFill, PersonLinesFill } from "react-bootstrap-icons";
-import UsersList from "./UsersList";
-import Nav from "../../components/Nav";
-
-import { useEffect } from "react";
-import SwalForm from "./AddUser";
-
 import Header from "../../components/Header";
 import AddJob from "./AddJob";
 import JobsList from "./JobsList";
+import JobAssignmentList from "./JobAssignmentList";
 
-const JobsMngmt = () => {
+function JobsMngmt() {
   return (
     <>
       <div id="page-wrapper" className="gray-bg">
@@ -32,11 +25,22 @@ const JobsMngmt = () => {
             </div>
           </div>
 
-          <JobsList />
+          <Tabs>
+            <TabList>
+              <Tab>Job List</Tab>
+              <Tab>Job Assignments Sent </Tab>
+            </TabList>
+            <TabPanel>
+              <JobsList />
+            </TabPanel>
+            <TabPanel>
+              <JobAssignmentList />
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default JobsMngmt;
