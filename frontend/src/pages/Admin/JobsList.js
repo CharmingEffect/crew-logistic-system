@@ -34,7 +34,7 @@ class JobsList extends Component {
       );
       this.setState({ clients: updatedJobs });
       swal({
-        title: "Error!",
+        title: "Sucess!",
         text: "Job has been deleted.",
         icon: "success",
         button: false,

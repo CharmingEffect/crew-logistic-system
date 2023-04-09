@@ -1,0 +1,84 @@
+
+
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Header from "../../components/Header";
+import AddJob from "./AddJob";
+import React, { useState, useEffect } from 'react';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import axios from 'axios';
+
+
+const localizer = momentLocalizer(moment);
+
+function CalendarAdmin() {
+
+    const [jobs, setJobs] = useState([]);
+
+    useEffect(() => {
+      axios.get('/api/admin/getAllJobs')
+        .then(response => setJobs(response.data))
+        .catch(error => console.error(error));
+    }, []);
+  
+    const events = jobs.map(job => {
+      const date = new Date(job.dateTime);
+      const endDate = new Date(date.getTime() + job.jobDuration * 60 * 60 * 1000);
+      return {
+        title: job.jobNumber,
+        start: date,
+        end: endDate
+      }
+    });
+
+    const tooltipAccessor = (event) => {
+        if (event.job) {
+          const job = event.job;
+          return (
+            <div>
+              <div>Job Number: {job.jobNumber}</div>
+              <div>Client: {job.clientCompanyName}</div>
+              <div>Address: {job.address.addressLine1}, {job.address.city}</div>
+              <div>Contact: {job.contactOnSite}</div>
+            </div>
+          );
+        }
+        return null;
+      }
+    
+    return (
+        <>
+            <div id="page-wrapper" className="gray-bg">
+                <div className="row border-bottom">
+                    <Header />
+                </div>
+                <div className="wrapper wrapper-content animated fadeInRight">
+                    <div className="mb-4">
+                        <h1 className="sophisticated-header display-5 text-black mr-4">
+                            <i className="fa fa-wrench text-black m-3" aria-hidden="true"></i>
+                            Calendar
+                        </h1>
+                        <div className="d-flex justify-content-end">
+                            <AddJob />
+                        </div>
+                    </div>
+                    <div style={{ height: '500pt' }}>
+                        <Calendar
+                            localizer={localizer}
+                            events={events}
+                            startAccessor="start"
+                            endAccessor="end"
+                            style={{ padding: '10px' }}
+                            tooltipAccessor={tooltipAccessor}
+                        />
+                    </div>
+
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default CalendarAdmin;

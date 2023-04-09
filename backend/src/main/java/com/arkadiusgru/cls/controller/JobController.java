@@ -62,12 +62,7 @@ public class JobController {
         return ResponseEntity.ok().build();
     }
 
-    // @PutMapping("/admin/confirmJob/{assignment_id}")
-    // public ResponseEntity<?> confirmJob(@PathVariable("assignment_id") Long
-    // assignmentId) {
-    // jobService.confirmJob(assignmentId);
-    // return ResponseEntity.ok().body("Job confirmed successfully");
-    // }
+
 
     @GetMapping("/admin/pendingJobs/{userId}")
     public List<JobDto> getPendingJobs(@PathVariable Long userId) {
@@ -83,7 +78,7 @@ public class JobController {
     @DeleteMapping("/admin/job-assignments/{id}")
     public ResponseEntity<Void> deleteJobAssignment(@PathVariable Long id) {
         jobAssignmentRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
 }

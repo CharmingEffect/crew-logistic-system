@@ -34,6 +34,7 @@ import lombok.AllArgsConstructor;
 @CrossOrigin
 @RequestMapping("/api")
 @AllArgsConstructor
+
 public class UserController {
 
     private final UserService userService;

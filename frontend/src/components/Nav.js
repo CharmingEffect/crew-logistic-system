@@ -64,6 +64,8 @@ const Nav = () => {
               <></>
             )}
 
+
+
             {crew ? (
               <li className={path === "/dashboard-crew" ? "active" : ""}>
                 <a href="/dashboard-crew">
@@ -101,6 +103,17 @@ const Nav = () => {
                 <a href="/job-mngmt">
                   <i className="fa fa-wrench fa-lg"></i>{" "}
                   <span className="nav-label">Job Management</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
+
+            {admin ? (
+              <li className={path === "/calendar-admin" ? "active" : ""}>
+                <a href="/calendar-admin">
+                  <i className="fa fa-th-large"></i>{" "}
+                  <span className="nav-label">Calendar</span>
                 </a>
               </li>
             ) : (

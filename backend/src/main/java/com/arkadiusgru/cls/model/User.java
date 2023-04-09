@@ -19,6 +19,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,6 +30,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "user")
 @EqualsAndHashCode(callSuper = false)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User extends AbstractEntity implements UserDetails {
 
     private String email;

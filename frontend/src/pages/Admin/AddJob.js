@@ -79,7 +79,7 @@ function AddJob() {
   };
 
   useEffect(() => {
-    fetch("/api/admin/getAllUsers")
+    fetch("/api/admin/getAllCrewMembers")
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);

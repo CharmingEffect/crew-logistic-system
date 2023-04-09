@@ -4,6 +4,7 @@ import { useLocalState } from "./util/useLocalStorage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import DashboardAdmin from "./pages/Admin";
+import CalendarAdmin from "./pages/Admin/CalendarAdmin";
 import DashboardCrew from "./pages/Crew";
 import UsersMngmt from "./pages/Admin/UsersMngmt";
 import { useLocation } from "react-router-dom";
@@ -54,6 +55,7 @@ function App() {
           <Route path="/user-mngmt" element={<UsersMngmt />}></Route>
           <Route path="/job-mngmt" element={<JobsMngmt />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/calendar-admin" element={<CalendarAdmin />}></Route>
         </Routes>
       </div>
     </>
