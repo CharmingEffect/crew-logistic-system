@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.repos;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +16,7 @@ public interface JobAssignmentRepository extends JpaRepository<JobAssignment, Lo
 
     @Query("SELECT ja.job FROM JobAssignment ja WHERE ja.user.id = :userId AND ja.status = :status")
     List<Job> findJobsByUserId(Long userId, String status);
+
+    Optional<JobAssignment> findByJobAndUser(Job job, User user);
     
 }
