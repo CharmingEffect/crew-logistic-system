@@ -4530,7 +4530,6 @@ video {
 /* WRAPPERS */
 #wrapper {
   width: 100%;
-  overflow-x: hidden;
 }
 .wrapper {
   padding: 0 20px;

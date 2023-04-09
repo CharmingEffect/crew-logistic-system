@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import Header from "../../components/Header";
-import Tabs from "../../components/Tabs";
 import RecivedJobs from "./RecivedJobs";
 import { useLoggedInUser } from "../../util/useUserData";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const Jobs = () => {
   return (
@@ -20,18 +20,22 @@ const Jobs = () => {
                   className="fa fa-wrench text-black m-3"
                   aria-hidden="true"
                 ></i>
-                Job Management
+                Jobs
               </h1>
             </div>
             <Tabs>
-              <div title="Recived Jobs">
+              <TabList>
+                <Tab>Recived Jobs</Tab>
+                <Tab>Accepted Jobs</Tab>
+              </TabList>
+              <TabPanel>
                 <RecivedJobs loggedUserId={useLoggedInUser().id} />
-              </div>
-              <div title="Accepted Jobs">
+              </TabPanel>
+              <TabPanel>
                 <h2>Tab 2 Content</h2>
 
                 <p>This is the content for Tab 2.</p>
-              </div>
+              </TabPanel>
             </Tabs>
           </div>
         </div>

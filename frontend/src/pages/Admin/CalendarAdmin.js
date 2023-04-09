@@ -27,15 +27,21 @@ function CalendarAdmin() {
       const date = new Date(job.dateTime);
       const endDate = new Date(date.getTime() + job.jobDuration * 60 * 60 * 1000);
       return {
-        title: job.jobNumber,
+        title: job.jobNumber + ' - ' + job.clientCompanyName + ' - ' + job.address.addressLine1,
+        companyName: job.clientCompanyName,
+        address: job.address.addressLine1,
         start: date,
         end: endDate
       }
     });
 
-    const tooltipAccessor = (event) => {
-        if (event.job) {
-          const job = event.job;
+    
+
+
+    const tooltipAccessor = (e) => {
+        if (e.job) {
+          const job = e.job;
+          console.log(job);
           return (
             <div>
               <div>Job Number: {job.jobNumber}</div>
@@ -45,9 +51,7 @@ function CalendarAdmin() {
             </div>
           );
         }
-        return null;
       }
-    
     return (
         <>
             <div id="page-wrapper" className="gray-bg">
@@ -57,7 +61,7 @@ function CalendarAdmin() {
                 <div className="wrapper wrapper-content animated fadeInRight">
                     <div className="mb-4">
                         <h1 className="sophisticated-header display-5 text-black mr-4">
-                            <i className="fa fa-wrench text-black m-3" aria-hidden="true"></i>
+                            <i className="fa fa-calendar text-black m-3" aria-hidden="true"></i>
                             Calendar
                         </h1>
                         <div className="d-flex justify-content-end">
@@ -68,8 +72,7 @@ function CalendarAdmin() {
                         <Calendar
                             localizer={localizer}
                             events={events}
-                            startAccessor="start"
-                            endAccessor="end"
+                           
                             style={{ padding: '10px' }}
                             tooltipAccessor={tooltipAccessor}
                         />

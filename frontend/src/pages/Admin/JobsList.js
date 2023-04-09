@@ -95,7 +95,7 @@ class JobsList extends Component {
         <Thead className="thead">
           <Tr>
             <Th width="5%">Job Number</Th>
-            <Th width="5%">Job Duration</Th>
+            <Th width="5%">Job Duration (h)</Th>
             <Th width="5%">Number of crew</Th>
             <Th width="5%">Address</Th>
             <Th width="5%">Date</Th>

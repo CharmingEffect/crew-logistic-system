@@ -28,7 +28,7 @@ function JobsMngmt() {
           <Tabs>
             <TabList>
               <Tab>Job List</Tab>
-              <Tab>Job Assignments Sent </Tab>
+              <Tab>Sent Job Assignments </Tab>
             </TabList>
             <TabPanel>
               <JobsList />

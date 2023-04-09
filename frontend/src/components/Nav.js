@@ -112,7 +112,7 @@ const Nav = () => {
             {admin ? (
               <li className={path === "/calendar-admin" ? "active" : ""}>
                 <a href="/calendar-admin">
-                  <i className="fa fa-th-large"></i>{" "}
+                  <i className="fa fa-calendar"></i>{" "}
                   <span className="nav-label">Calendar</span>
                 </a>
               </li>

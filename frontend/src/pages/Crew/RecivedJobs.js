@@ -1,91 +1,91 @@
 import swal from "sweetalert";
-import React, { Component, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, ButtonGroup, Container } from "reactstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import BASE_URL from "../../util/baseUrl";
+import { useLoggedInUser } from "../../util/useUserData";
+import axios from "axios";
+const qs = require('qs');
 
-class JobsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { jobs: [] };
-    this.remove = this.remove.bind(this);
-  }
 
-  componentDidMount() {
-    fetch(`/api/admin/pendingJobs/${this.props.loggedUserId}`)
+
+
+const JobsList = (props) => {
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    fetch(`/api/admin/pendingJobs/${props.loggedUserId}`)
       .then((response) => response.json())
-      .then((data) => this.setState({ jobs: data }));
-  }
+      .then((data) => setJobs(data))
+      .catch((error) => console.error(error));
+  }, [props.loggedUserId]);
 
-  async remove(jobNumber) {
-    await fetch(`/api/admin/deleteJob/${jobNumber}`, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+  const confirmJob = async (jobN) => {
+    const userId = props.loggedUserId;
+    let data = qs.stringify({
+      'jobNumber': jobN,
+      'userId': userId 
+    });
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: '/api/admin/confirmJob/',
+      headers: { 
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
-    }).then(() => {
-      let updatedJobs = [...this.state.jobs].filter(
-        (i) => i.jobNumber !== jobNumber
-      );
-      this.setState({ clients: updatedJobs });
-      swal({
-        title: "Error!",
-        text: "Job has been deleted.",
-        icon: "success",
-        button: false,
-        timer: 1000,
-      });
+      data : data
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      if (response.status === 200) {
+        swal("Success!", "Job Confirmed!", "success");
+        window.location.reload();
+      }
+      
+    })
+    .catch((error) => {
+      console.log(error);
     });
-    this.componentDidMount();
-  }
+    
+  };
 
-  render() {
-    const { jobs } = this.state;
+  const jobList = jobs.map((job) => (
+    <Tr className="table-odd" key={job.jobNumber}>
+      <Td>{job.jobNumber}</Td>
+      <Td>{job.jobDuration}</Td>
+      <Td>{job.numberOfCrew}</Td>
+      <Td>
+        {job.address.addressLine1} {job.address.addressLine2}{" "}
+        {job.address.postalCode} {job.address.city}
+      </Td>
+      <Td>{job.dateTime}</Td>
+      <Td>
+        <ButtonGroup>
+          <Button size="sm" color="success" className="mx-2">
+            <i className="fa fa-check" onClick={() => confirmJob(job.jobNumber)}></i>
+          </Button>
+        </ButtonGroup>
+      </Td>
+    </Tr>
+  ));
 
-    const jobList = jobs.map((job) => {
-      return (
-        <Tr className="table-odd" key={job.jobNumber}>
-          <Td>{job.jobNumber}</Td>
-          <Td>{job.jobDuration}</Td>
-          <Td>{job.numberOfCrew}</Td>
-          <Td>
-            {String(job.address.addressLine1)}{" "}
-            {String(job.address.addressLine2)}
-            {String(job.address.postalCode)}
-            {String(job.address.city)}
-          </Td>
-          <Td>{String(job.dateTime)}</Td>
-          <Td>
-            <ButtonGroup>
-              <Button size="sm" color="success" className="mx-2">
-                Confirm
-              </Button>
-            </ButtonGroup>
-          </Td>
+  return (
+    <Table>
+      <Thead className="thead">
+        <Tr>
+          <Th width="5%">Job Number</Th>
+          <Th width="5%">Job Duration</Th>
+          <Th width="5%">Number of crew</Th>
+          <Th width="5%">Address</Th>
+          <Th width="5%">Date</Th>
+          <Th width="5%">Actions</Th>
         </Tr>
-      );
-    });
-
-    const height = "50%";
-
-    return (
-      <Table>
-        <Thead className="thead">
-          <Tr>
-            <Th width="5%">Job Number</Th>
-            <Th width="5%">Job Duration</Th>
-            <Th width="5%">Number of crew</Th>
-            <Th width="5%">Address</Th>
-            <Th width="5%">Date</Th>
-            <Th width="5%">Actions</Th>
-          </Tr>
-        </Thead>
-        <Tbody>{jobList}</Tbody>
-      </Table>
-    );
-  }
-}
+      </Thead>
+      <Tbody>{jobList}</Tbody>
+    </Table>
+  );
+};
 
 export default JobsList;

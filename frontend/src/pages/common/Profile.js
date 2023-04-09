@@ -10,6 +10,7 @@ import { Button } from "reactstrap";
 
 const Profile = () => {
   const loggedUser = useLoggedInUser([]);
+  const [jwt, setJwt] = useLocalState("", "jwt");
   const [userToUpdate, setUserToUpdate] = useState({
     firstName: "",
     lastName: "",
@@ -37,6 +38,8 @@ const Profile = () => {
       body: JSON.stringify(userToUpdate),
     }).then(() => {
       console.log("user updated");
+      window.location = "/";
+      setJwt("");
     });
   }
 
@@ -114,6 +117,7 @@ const Profile = () => {
                       <div className="col-sm-9">
                         {editMode ? (
                           <>
+                          <div>
                             <input
                               name="firstName"
                               onChange={(e) => onInputChange(e)}
@@ -126,6 +130,8 @@ const Profile = () => {
                               onChange={(e) => onInputChange(e)}
                               value={lastName}
                             />
+                
+                          </div>
                           </>
                         ) : (
                           <p className="text-muted mb-0">
@@ -133,6 +139,7 @@ const Profile = () => {
                           </p>
                         )}
                       </div>
+                      
                     </div>
                     <hr></hr>
                     <div className="row">
@@ -207,6 +214,7 @@ const Profile = () => {
                             >
                               Cancel
                             </Button>
+                            <p>After saving, you will need to log in again.</p>
                           </>
                         ) : (
                           <Button
