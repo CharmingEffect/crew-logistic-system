@@ -16,6 +16,7 @@ import Profile from "./pages/common/Profile";
 import Nav from "./components/Nav";
 import { useValidPahts } from "./util/useConfig";
 import Jobs from "./pages/Crew/Jobs";
+import ChangePassword from "./Login/ChangePassword";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -27,7 +28,7 @@ function App() {
   // const validPaths = useValidPahts();
 
   function showNav() {
-    if (location.pathname === "/") {
+    if (location.pathname === "/" || location.pathname === "/change-password") {
       return <></>;
     } else {
       return <Nav></Nav>;
@@ -56,6 +57,7 @@ function App() {
           <Route path="/job-mngmt" element={<JobsMngmt />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/calendar-admin" element={<CalendarAdmin />}></Route>
+          <Route path="/change-password" element={<ChangePassword />}></Route>
         </Routes>
       </div>
     </>

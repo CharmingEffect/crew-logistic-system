@@ -11,6 +11,7 @@ import org.slf4j.helpers.SubstituteLogger;
 import org.springframework.stereotype.Service;
 
 import com.arkadiusgru.cls.dto.JobDto;
+import com.arkadiusgru.cls.dto.JobResponse;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.model.JobAssignment;
 import com.arkadiusgru.cls.model.User;
@@ -70,22 +71,55 @@ public class JobService {
     }
 
     // retive job with associated address
-    public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
 
-        jobRepository.findAll().forEach(job -> {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.registerModule(new JavaTimeModule());
 
-            try {
-                System.out.println(mapper.writeValueAsString(job));
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
 
-        return jobRepository.findAll();
+    public List<JobResponse> getAllJobs() {
+        return jobRepository.findAll().stream().map(job -> {
+            // Fetch driver details
+            User driver = job.getDriver() != null ? userRepository.findById(job.getDriver().getId()).orElse(null) : null;
+            // Fetch crew chief details
+            User crewChief = job.getCrewChief() != null ? userRepository.findById(job.getCrewChief().getId()).orElse(null) : null;
+    
+            String driverName = driver != null ? driver.getId() + " " +  driver.getFirstName() + " " +  driver.getLastName() : null;
+            String crewChiefName = driver != null ? crewChief.getId() + " " +  crewChief.getFirstName() + " " +  crewChief.getLastName() : null;
+    
+            return new JobResponse(
+                job.getJobNumber(),
+                job.getDateTime(),
+                job.getJobDuration(),
+                job.getNumberOfCrew(),
+                job.getAddress(),
+                job.getClientCompanyName(),
+                job.getContactOnSite(),
+                driverName,
+                crewChiefName,
+                job.getRemarks(),
+                job.getComment()
+            );
+        }).collect(Collectors.toList());
     }
+    
+
+
+    
+    // public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
+
+    //     jobRepository.findAll().forEach(job -> {
+    //         ObjectMapper mapper = new ObjectMapper();
+    //         mapper.registerModule(new JavaTimeModule());
+
+    //         try {
+    //             System.out.println(mapper.writeValueAsString(job));
+
+    //         } catch (IOException e) {
+    //             e.printStackTrace();
+    //         }
+    //     });
+
+    //     return jobRepository.findAll();
+    // }
 
     public void deleteJobByJobNumber(String jobNumber) {
         boolean jobExists = jobRepository.findByJobNumber(jobNumber).isPresent();

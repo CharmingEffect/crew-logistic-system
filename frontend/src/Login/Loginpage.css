@@ -19,6 +19,13 @@
     box-shadow:3px 3px 4px rgba(0,0,0,0.2);
   }
 
+  .go-back-arrow{
+    cursor: pointer !important;
+  
+  
+  }
+  
+
   swal-icon--success__hide-corners {
     display:none;
   }

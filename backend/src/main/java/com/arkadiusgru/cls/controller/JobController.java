@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.arkadiusgru.cls.dto.JobDto;
+import com.arkadiusgru.cls.dto.JobResponse;
 import com.arkadiusgru.cls.dto.JobAssignmentDto;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.model.JobAssignment;
@@ -51,7 +52,7 @@ public class JobController {
     }
 
     @GetMapping(path = "/admin/getAllJobs")
-    public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
+    public List<JobResponse> getAllJobs() throws StreamWriteException, DatabindException, IOException {
 
         return jobService.getAllJobs();
     }

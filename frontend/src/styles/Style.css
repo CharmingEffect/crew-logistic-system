@@ -31,6 +31,9 @@ font-weight: bold;
   border-radius: 5px 5px 0 0;
 }
 
+.react-tabs__tab:focus:after {
+  background: none; 
+}
 
 
 .react-tabs__tab-list {
@@ -61,6 +64,20 @@ body {
   body {
     overflow: scroll;
   }
+}
+
+/* TOOLTIP  */
+
+.tooltip-popup {
+  position: absolute;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  pointer-events: none;
+  transform: translate(-50px, -100%);
+  z-index: 100;
 }
 
 

@@ -22,7 +22,7 @@ function JobAssignmentList() {
     <Thead className="thead">
       <Tr>
         <Th>Job Number</Th>
-        <Th>Assigned To</Th>
+        <Th>Sent To</Th>
         <Th>Status</Th>
         <Th>Action</Th>
       </Tr>

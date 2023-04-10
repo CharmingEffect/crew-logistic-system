@@ -7,6 +7,7 @@ import { useState } from "react";
 import swal from "sweetalert";
 import BASE_URL from "../util/baseUrl";
 import Snowfall from 'react-snowfall';
+import {Link} from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -105,7 +106,7 @@ const Login = () => {
         </div>
         <a href="#" className="forgot">
           <br></br>
-          Forgot your email or password?
+          <Link to="/change-password" >Forgot your password?</Link>
         </a>
       </form>
     </div>
