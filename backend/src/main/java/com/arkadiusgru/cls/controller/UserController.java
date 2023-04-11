@@ -5,10 +5,13 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -27,10 +30,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.arkadiusgru.cls.dto.ChangePasswordDto;
+import com.arkadiusgru.cls.dto.RecoverAccountDto;
 import com.arkadiusgru.cls.dto.UserDto;
+import com.arkadiusgru.cls.email.EmailBuilder;
 import com.arkadiusgru.cls.model.User;
 import com.arkadiusgru.cls.repos.UserRepository;
 import com.arkadiusgru.cls.service.UserService;
+import com.arkadiusgru.cls.util.PassGenerator;
 
 import lombok.AllArgsConstructor;
 
@@ -43,6 +49,10 @@ public class UserController {
 
     private final UserService userService;
     private final UserRepository userRepository;
+    private final JavaMailSender javaMailSender;
+  
+    private final String TEMPORARY_PASSWORD = new PassGenerator().generateStandardPassword();
+
 
     @GetMapping("/admin/getAllUsers")
     public List<User> showAll() {
@@ -166,5 +176,33 @@ public class UserController {
 
         return ResponseEntity.ok().build();
     } 
+
+    @PostMapping("/common/recoverAccount")
+    public ResponseEntity<?> recoverAccount(@RequestBody RecoverAccountDto request) {
+
+        Optional<User> optionalUser = userRepository.findByEmail(request.getEmail());
+
+        if (!optionalUser.isPresent()) {
+            return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+        }
+    
+        User user = optionalUser.get();
+
+
+        // Encrypt the temporary password
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        user.setPassword(passwordEncoder.encode(TEMPORARY_PASSWORD));
+        userRepository.save(user);
+
+        // Send an email with the temporary password
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(user.getEmail());
+        mailMessage.setSubject("Account Recovery Pinnacle Crew");
+        mailMessage.setText("Your temporary password is: " + TEMPORARY_PASSWORD + "\nPlease use this password to log in and reset your password immediately.");
+        javaMailSender.send(mailMessage);
+
+        return ResponseEntity.ok().build();
+    }
+
 
 }

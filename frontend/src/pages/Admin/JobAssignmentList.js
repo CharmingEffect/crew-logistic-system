@@ -30,8 +30,8 @@ function JobAssignmentList() {
     <Tbody>
       {jobAssignments.map((assignment) => (
         <Tr className="table-odd"  key={assignment.id}>
-          <Td>{assignment.job.jobNumber}</Td>
-          <Td>{assignment.user.firstName} {assignment.user.lastName}</Td>
+          <Td>{assignment.jobNumber}</Td>
+          <Td>{assignment.sendTo}</Td>
           <Td>{assignment.status}</Td>
           <Td>
             <button className="btn btn-danger btn-sm" onClick={() => handleDelete(assignment.id)}>Delete</button>

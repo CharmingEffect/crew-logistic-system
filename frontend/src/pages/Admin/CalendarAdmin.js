@@ -35,22 +35,6 @@ function CalendarAdmin() {
     });
 
     
-
-
-    const tooltipAccessor = (e) => {
-        if (e.job) {
-          const job = e.job;
-          console.log(job);
-          return (
-            <div>
-              <div>Job Number: {job.jobNumber}</div>
-              <div>Client: {job.clientCompanyName}</div>
-              <div>Address: {job.address.addressLine1}, {job.address.city}</div>
-              <div>Contact: {job.contactOnSite}</div>
-            </div>
-          );
-        }
-      }
     return (
         <>
             <div id="page-wrapper" className="gray-bg">
@@ -71,9 +55,8 @@ function CalendarAdmin() {
                         <Calendar
                             localizer={localizer}
                             events={events}
-                           
                             style={{ padding: '10px' }}
-                            tooltipAccessor={tooltipAccessor}
+                  
                         />
                     </div>
 

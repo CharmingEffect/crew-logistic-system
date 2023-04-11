@@ -16,7 +16,7 @@ import Profile from "./pages/common/Profile";
 import Nav from "./components/Nav";
 import { useValidPahts } from "./util/useConfig";
 import Jobs from "./pages/Crew/Jobs";
-import ChangePassword from "./Login/ChangePassword";
+import RecoverAccount from "./Login/RecoverAccount";
 
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
@@ -57,7 +57,7 @@ function App() {
           <Route path="/job-mngmt" element={<JobsMngmt />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/calendar-admin" element={<CalendarAdmin />}></Route>
-          <Route path="/change-password" element={<ChangePassword />}></Route>
+          <Route path="/change-password" element={<RecoverAccount />}></Route>
         </Routes>
       </div>
     </>

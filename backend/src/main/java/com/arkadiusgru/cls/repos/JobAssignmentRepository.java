@@ -18,5 +18,7 @@ public interface JobAssignmentRepository extends JpaRepository<JobAssignment, Lo
     List<Job> findJobsByUserId(Long userId, String status);
 
     Optional<JobAssignment> findByJobAndUser(Job job, User user);
+
+    Optional<JobAssignment> findByJob(Job job);
     
 }

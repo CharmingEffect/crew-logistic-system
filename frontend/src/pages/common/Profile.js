@@ -5,6 +5,10 @@ import { useLocalState } from "../../util/useLocalStorage";
 import { useLoggedInUser } from "../../util/useUserData";
 import AvatarUploader from "../../util/AvatarUploader";
 import { Button } from "reactstrap";
+import { FileLock2Fill, ArrowLeft } from "react-bootstrap-icons";
+import swal from "sweetalert";
+import Snowfall from 'react-snowfall';
+
 
 const Profile = () => {
   const loggedUser = useLoggedInUser([]);
@@ -15,6 +19,11 @@ const Profile = () => {
     email: "",
     phoneNumber: "",
   });
+
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
 
   const [editMode, setEditMode] = useState(false);
 
@@ -39,6 +48,94 @@ const Profile = () => {
       window.location = "/";
       setJwt("");
     });
+  }
+
+
+
+  function handleChangePassword() {
+
+    if (oldPassword === "" || newPassword === "" || confirmPassword === "") {
+      swal({
+        title: "Oops!",
+        text: "Please fill in all fields",
+        icon: "error",
+        button: false,
+        timer: 1000,
+      });
+      return;
+    }
+
+
+    if (newPassword !== confirmPassword) {
+      swal({
+        title: "Oops!",
+        text: "New password and confirm password do not match",
+        icon: "error",
+        button: false,
+        timer: 1000,
+      });
+      return;
+    }
+
+    if (oldPassword === newPassword) {
+      swal({
+        title: "Oops!",
+        text: "New password and old password cannot be the same",
+        icon: "error",
+        button: false,
+        timer: 1000,
+      });
+      return;
+    }
+
+
+    if (newPassword.length < 4) {
+      swal({
+        title: "Oops!",
+        text: "New password must be at least 4 characters long",
+        icon: "error",
+        button: false,
+        timer: 1000,
+      });
+      return;
+    }
+
+
+    const reqBody = {
+      email: loggedUser.email,
+      currentPassword: oldPassword,
+      newPassword: newPassword,
+    };
+
+    fetch("/api/common/changePassword", {
+      headers: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(reqBody),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          swal({
+            title: "Success!",
+            text: "Password changed successfully",
+            icon: "success",
+            button: false,
+            timer: 1000,
+          }); 
+        } else {
+          return Promise.reject("Failed to change password");
+        }
+      })
+      .catch((message) => {
+        swal({
+          title: "Error!",
+          text: message,
+          icon: "error",
+          button: false,
+          timer: 1000,
+        });
+      });
   }
 
   return (
@@ -115,21 +212,21 @@ const Profile = () => {
                       <div className="col-sm-9">
                         {editMode ? (
                           <>
-                          <div>
-                            <input
-                              name="firstName"
-                              onChange={(e) => onInputChange(e)}
-                              value={firstName}
-                            />
+                            <div>
+                              <input
+                                name="firstName"
+                                onChange={(e) => onInputChange(e)}
+                                value={firstName}
+                              />
 
-                            <input
-                              className="ml-2"
-                              name="lastName"
-                              onChange={(e) => onInputChange(e)}
-                              value={lastName}
-                            />
-                
-                          </div>
+                              <input
+                                className="ml-2"
+                                name="lastName"
+                                onChange={(e) => onInputChange(e)}
+                                value={lastName}
+                              />
+
+                            </div>
                           </>
                         ) : (
                           <p className="text-muted mb-0">
@@ -137,7 +234,7 @@ const Profile = () => {
                           </p>
                         )}
                       </div>
-                      
+
                     </div>
                     <hr></hr>
                     <div className="row">
@@ -195,6 +292,8 @@ const Profile = () => {
                       </div>
                     </div>
                     <hr></hr>
+                    {/* Password */}
+               
 
                     <div className="row">
                       <div className="col-sm-12">
@@ -225,6 +324,56 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
+
+                  
+                </div>
+
+                <div className="card mb-4">
+                  <div className="card-body">
+                      <form method="post">
+
+                        <div className="form-group m-3">
+                          <input
+                            className="form-control"
+                            type="password"
+                            name="oldPassword"
+                            placeholder="Old Password"
+                            value={oldPassword}
+                            onChange={(e) => setOldPassword(e.target.value)}
+                          ></input>
+                        </div>
+                        <div className="form-group m-3">
+                          <input
+                            className="form-control"
+                            type="password"
+                            name="newPassword"
+                            placeholder="New Password"
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                          ></input>
+                        </div>
+                        <div className="form-group m-3">
+                          <input
+                            className="form-control"
+                            type="password"
+                            name="confirmPassword"
+                            placeholder="Confirm New Password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                          ></input>
+                        </div>
+
+                        <Button
+                            className="button-color"
+                            onClick={() => handleChangePassword()}
+                          >
+                            Change Password
+                          </Button>
+                    
+                      </form>
+                  </div>
+
+                  
                 </div>
               </div>
             </div>

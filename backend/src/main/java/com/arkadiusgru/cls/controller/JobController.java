@@ -1,6 +1,7 @@
 package com.arkadiusgru.cls.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arkadiusgru.cls.dto.JobDto;
 import com.arkadiusgru.cls.dto.JobResponse;
 import com.arkadiusgru.cls.dto.JobAssignmentDto;
+import com.arkadiusgru.cls.dto.JobAssignmentsInfo;
 import com.arkadiusgru.cls.model.Job;
 import com.arkadiusgru.cls.model.JobAssignment;
 import com.arkadiusgru.cls.model.User;
@@ -77,8 +79,23 @@ public class JobController {
     }
 
     @GetMapping("/admin/job-assignments")
-    public List<JobAssignment> getAllJobAssignments() {
-        return jobAssignmentRepository.findAll();
+    public List<JobAssignmentsInfo> getAllJobAssignments() {
+
+        List<JobAssignmentsInfo> jobsList = new ArrayList<>();
+
+        for (int i = 0; i < jobAssignmentRepository.findAll().size(); i++) {
+            JobAssignment jobAssignment =  jobAssignmentRepository.findAll().get(i);
+            JobAssignmentsInfo jobAssignmentsInfo = new JobAssignmentsInfo();
+            Optional<User> optionalUser = userRepository.findById(jobAssignment.getUser().getId());
+            jobAssignmentsInfo.setJobNumber(jobAssignment.getJob().getJobNumber());
+            jobAssignmentsInfo.setStatus(jobAssignment.getStatus());
+            jobAssignmentsInfo.setSendTo(optionalUser.get().getFirstName() + " " + optionalUser.get().getLastName());
+            jobAssignmentsInfo.setId(jobAssignment.getId());
+            jobsList.add(jobAssignmentsInfo);
+
+        }
+
+        return jobsList;
     }
 
     @DeleteMapping("/admin/job-assignments/{id}")
