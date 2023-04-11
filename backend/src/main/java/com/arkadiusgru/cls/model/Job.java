@@ -1,6 +1,9 @@
 package com.arkadiusgru.cls.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -16,6 +21,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -55,7 +61,10 @@ public class Job {
     private String remarks;
     private String comment;
 
-    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "job_crew_list", joinColumns = @JoinColumn(name = "job_number"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JsonIgnore
+    private List<User> crewList = new ArrayList<>();
 
     public Job(String jobNumber,
             LocalDateTime dateTime,
@@ -80,6 +89,24 @@ public class Job {
         this.crewChief = crewChief;
         this.remarks = remarks;
         this.comment = comment;
+    }
+
+    public void addCrewMember(User user) {
+        if (crewList.size() < numberOfCrew) {
+            crewList.add(user);
+            user.getJobs().add(this);
+        } else {
+            throw new RuntimeException("The maximum number of crew members has been reached.");
+        }
+    }
+
+    public void removeCrewMember(User user) {
+        crewList.remove(user);
+        user.getJobs().remove(this);
+    }
+
+    public List<User> getCrewMembers() {
+        return new ArrayList<>(crewList);
     }
 
 }

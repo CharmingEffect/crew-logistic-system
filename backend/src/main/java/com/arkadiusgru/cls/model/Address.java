@@ -25,7 +25,7 @@ public class Address extends AbstractEntity {
     private String stateProvince;
     private String postalCode;
     private String country;
-    @JsonBackReference 
+
     @OneToOne(mappedBy = "address")
     @JoinColumn(name = "user_id")
     private User user;

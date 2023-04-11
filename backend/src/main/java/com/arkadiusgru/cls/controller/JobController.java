@@ -96,7 +96,7 @@ public class JobController {
 
     @PostMapping("/admin/confirmJob/")
     public ResponseEntity<?> confirmJob(@RequestParam String jobNumber, @RequestParam Long userId) {
-        System.out.println("jobNumber: " + jobNumber + " userId: " + userId) ;
+        System.out.println("jobNumber: " + jobNumber + " userId: " + userId);
         Optional<Job> optionalJob = jobRepository.findByJobNumber(jobNumber);
         if (optionalJob.isPresent()) {
             Optional<User> optionalUser = userRepository.findById(userId);
@@ -107,6 +107,12 @@ public class JobController {
                     JobAssignment assignment = optionalAssignment.get();
                     assignment.setStatus("CONFIRMED");
                     jobAssignmentRepository.save(assignment);
+                        // here adding the user to crew list  !!! very important !!!
+                    Job job = optionalJob.get();
+                    User user = optionalUser.get();
+                    job.addCrewMember(user);
+                    jobRepository.save(job);
+
                     return ResponseEntity.ok("Job confirmed successfully");
                 } else {
                     return ResponseEntity.badRequest().body("Job not assigned to user");

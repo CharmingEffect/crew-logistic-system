@@ -64,6 +64,11 @@ public class JobService {
             job.setCrewChief(crewChief);
             job.setRemarks(jobDto.getRemarks());
             job.setComment(jobDto.getComment());
+
+            // condition if driver or crew chief is the same as driver 
+
+            job.addCrewMember(crewChief);
+            job.addCrewMember(driver);
             jobRepository.save(job);
 
         }
@@ -96,7 +101,8 @@ public class JobService {
                 driverName,
                 crewChiefName,
                 job.getRemarks(),
-                job.getComment()
+                job.getComment(),
+                job.getCrewList()
             );
         }).collect(Collectors.toList());
     }

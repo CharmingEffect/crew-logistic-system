@@ -11,6 +11,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -31,7 +32,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "user")
 @EqualsAndHashCode(callSuper = false)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class User extends AbstractEntity implements UserDetails {
 
     private String email;
@@ -55,6 +56,10 @@ public class User extends AbstractEntity implements UserDetails {
     @OneToMany(mappedBy = "driver")
     @JsonIgnore
     private List<Job> drivers;
+
+    @ManyToMany(mappedBy = "crewList")
+    @JsonIgnore
+    private List<Job> jobs;
 
     public User(String firstName, String lastName, String email, String password, Role role, Address address,
             String phoneNumber) {

@@ -80,7 +80,7 @@ class JobsList extends Component {
               style={{
                 fontWeight: "bold",
                 color: "white",
-                marginBottom: "5px",
+       
               }}
             >
              JOB INFORMATION: 
@@ -99,17 +99,18 @@ class JobsList extends Component {
               style={{
                 fontWeight: "bold",
                 color: "white",
-                marginBottom: "5px",
+ 
               }}
             >
+
+              {/* if there is a crew assigned to the job, it will be displayed here, display it also for each of member */}
             CREW LIST
             </p>
-                crew list  - modify job info to include crew list
-            {/* {job.crewList.map((crewMember) => (
+            {job.crewList.map((crewMember) => (
               <p key={crewMember.id} style={{ color: "white" }}>
-                {crewMember.name}
+                {crewMember.id} {crewMember.firstName} {crewMember.lastName}
               </p>
-            ))} */}
+            ))}
           </div>
         </div>
       );
