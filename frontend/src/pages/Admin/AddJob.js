@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import swal from "sweetalert";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { number } from "prop-types";
-import BASE_URL from "../../util/baseUrl";
+import { Button } from "reactstrap";
 // import Loginpage.css
 
 const customStyles = {
@@ -28,6 +26,9 @@ function AddJob() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedDriverId, setSelectedDriverId] = useState(null);
   const [selectedCrewChiefId, setSelectedCrewChiefId] = useState(null);
+  const now = new Date().toISOString().slice(0, -8);
+
+
 
   const [job, setJob] = useState({
     jobNumber: "",
@@ -159,6 +160,8 @@ function AddJob() {
       });
   };
 
+
+
   return (
     <div>
       <Button
@@ -169,15 +172,17 @@ function AddJob() {
         Create New Job
       </Button>
       <Modal
+        
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         style={customStyles}
       >
-        <i
-          className="fa fa-plus-circle fa-2x text-black d-inline-block m-3"
-          aria-hidden="true"
-        ></i>
-        <h3 className="text-black d-inline-block">Create New Job</h3>
+
+        <h5 className="sophisticated-header text-black mr-4">
+          <i className="fa fa-plus-circle text-black m-3" aria-hidden="true"></i>
+          Create New Job
+        </h5>
+        <h3 className="text-black d-inline-block"></h3>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="row">
             <div className="col-sm mx-2">
@@ -202,7 +207,7 @@ function AddJob() {
               </div>
               <div className="form-group row">
                 <label
-                  forHtml="inputPassword"
+                  forHtml="dateTime"
                   className="col-sm-5 col-form-label form-box-light"
                 >
                   Date & Time
@@ -211,9 +216,10 @@ function AddJob() {
                   <input
                     type="datetime-local"
                     className="cls-form-control form-field-light"
-                    id="inputEmail4"
+                    id="dateTime"
                     value={dateTime}
                     name="dateTime"
+                    min={now}
                     onChange={(e) => onInputChange(e)}
                     required
                   />
@@ -228,9 +234,9 @@ function AddJob() {
                 </label>
                 <div className="col-sm-7 form-field">
                   <input
-                    type="number"
+                    type="text"
                     className="cls-form-control form-field"
-                    id="inputPassword4"
+                    id="jobDuration"
                     value={jobDuration}
                     name="jobDuration"
                     onChange={(e) => onInputChange(e)}
@@ -247,9 +253,9 @@ function AddJob() {
                 </label>
                 <div className="col-sm-7 form-field-light">
                   <input
-                    type="number"
+                    type="text"
                     className="cls-form-control form-field-light"
-                    id="inputAddress"
+                    id="numberOfCrew"
                     value={numberOfCrew}
                     name="numberOfCrew"
                     onChange={(e) => onInputChange(e)}
@@ -403,7 +409,7 @@ function AddJob() {
                   <input
                     type="text"
                     className="cls-form-control form-field"
-                    id="inputCity"
+                    id="contactOnSite"
                     value={contactOnSite}
                     name="contactOnSite"
                     onChange={(e) => onInputChange(e)}
@@ -411,23 +417,6 @@ function AddJob() {
                   />
                 </div>
               </div>
-              {/* <div className="form-group row">
-                <label
-                  forHtml="inputPassword"
-                  className="col-sm-5 col-form-label form-box-light"
-                >
-                  Driver Required
-                </label>
-                <div className="col-sm-7 form-field-light">
-                  <input
-                    type="checkbox"
-                    id="inputZip"
-                    value={driverRequired}
-                    name="driverRequired"
-                    onChange={(e) => onInputChange(e)}
-                  />
-                </div>
-              </div> */}
               <div className="form-group row">
                 <label
                   forHtml="inputPassword"
@@ -440,8 +429,9 @@ function AddJob() {
                     value={selectedDriverId}
                     className="cls-form-control form-field"
                     onChange={(e) => setSelectedDriverId(e.target.value)}
+                    required
                   >
-                    <option value={null}>Select Driver</option>
+                    <option value="">Select Driver</option>
                     {users.map((user) => (
                       <option key={user.id} value={user.id}>
                         {user.id} {user.firstName} {user.lastName}
@@ -462,8 +452,9 @@ function AddJob() {
                     value={selectedCrewChiefId}
                     className="cls-form-control form-field"
                     onChange={(e) => setSelectedCrewChiefId(e.target.value)}
+                    required
                   >
-                    <option value={null}>Select Crew Chief</option>
+                    <option value="">Select Crew Chief</option>
                     {users.map((user) => (
                       <option key={user.id} value={user.id}>
                         {user.id} {user.firstName} {user.lastName}
@@ -480,10 +471,11 @@ function AddJob() {
                   Remarks
                 </label>
                 <div className="col-sm-7 form-field-light">
-                  <input
+                  <textarea
+                    rows="7" cols="30"
                     type="text"
                     className="cls-form-control form-field-light"
-                    id="inputZip"
+                    id="remarks"
                     value={remarks}
                     name="remarks"
                     onChange={(e) => onInputChange(e)}

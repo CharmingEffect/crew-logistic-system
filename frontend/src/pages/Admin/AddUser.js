@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import swal from "sweetalert";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import BASE_URL from "../../util/baseUrl";
+import { Button } from "reactstrap";
 // import Loginpage.css
 
 const customStyles = {
@@ -138,11 +137,11 @@ function AddUser() {
         onRequestClose={() => setModalIsOpen(false)}
         style={customStyles}
       >
-        <i
-          className="fa fa-user-plus fa-2x text-black d-inline-block m-3"
-          aria-hidden="true"
-        ></i>
-        <h3 className="text-black d-inline-block">Create New User</h3>
+        <h5 className="sophisticated-header text-black mr-4">
+          <i className="fa fa-user-plus text-black m-3" aria-hidden="true"></i>
+          Create New User
+        </h5>
+        <h3 className="text-black d-inline-block"></h3>
         <p>
           Ones the user is created the system send a confirmation link. The user
           needs to click on it to activate his/her account.
@@ -333,7 +332,7 @@ function AddUser() {
               <input
                 type="text"
                 className="cls-form-control form-field-light"
-                id="inputCity"
+                id="postalCode"
                 value={postalCode}
                 name="postalCode"
                 onChange={(e) => onInputChange(e)}
@@ -367,7 +366,7 @@ function AddUser() {
               Submit
             </Button>
             <Button
-              className="button-color ml-3"
+              className="button-color"
               size="sm"
               onClick={() => setModalIsOpen(false)}
             >

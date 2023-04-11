@@ -5,6 +5,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Table(name = "address")
+
 public class Address extends AbstractEntity {
 
     private String addressLine1;
@@ -22,10 +25,9 @@ public class Address extends AbstractEntity {
     private String stateProvince;
     private String postalCode;
     private String country;
-
+    @JsonBackReference 
     @OneToOne(mappedBy = "address")
     @JoinColumn(name = "user_id")
-
     private User user;
 
 }

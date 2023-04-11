@@ -3,7 +3,6 @@ import { useState } from "react";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import Widget from "../Widget";
-import { GetAllCrewMembers } from "../../util/useUserData";
 import { SystemInfo } from "../../util/useUserData";
 import { MemoryStats } from "../../util/useUserData";
 import JobWidget from "../../components/JobWidget";

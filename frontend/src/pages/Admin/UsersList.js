@@ -1,10 +1,8 @@
 import swal from "sweetalert";
 import React, { Component } from "react";
 import { Button, ButtonGroup, Container } from "reactstrap";
-import { useLocalState } from "../../util/useLocalStorage";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
-import BASE_URL from "../../util/baseUrl";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 

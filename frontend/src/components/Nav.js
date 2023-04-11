@@ -1,10 +1,7 @@
-import React, { Component, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import jwtDecode from "jwt-decode";
-import { useState } from "react";
 import { useLoggedInUser } from "../util/useUserData";
-import { useLocalState } from "../util/useLocalStorage";
 
 const Nav = () => {
   const location = useLocation();

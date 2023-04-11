@@ -55,6 +55,8 @@ public class Job {
     private String remarks;
     private String comment;
 
+    
+
     public Job(String jobNumber,
             LocalDateTime dateTime,
             Integer jobDuration,

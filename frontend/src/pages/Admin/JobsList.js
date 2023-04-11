@@ -1,6 +1,6 @@
 import swal from "sweetalert";
-import React, { Component, useEffect } from "react";
-import { Button, ButtonGroup, Container } from "reactstrap";
+import React, { Component } from "react";
+import { Button, ButtonGroup } from "reactstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import AssignCrew from "./AssignCrew";
@@ -104,7 +104,7 @@ class JobsList extends Component {
             >
             CREW LIST
             </p>
-                cre list  - modify job info to include crew list
+                crew list  - modify job info to include crew list
             {/* {job.crewList.map((crewMember) => (
               <p key={crewMember.id} style={{ color: "white" }}>
                 {crewMember.name}
@@ -128,8 +128,8 @@ class JobsList extends Component {
           <Td>{job.numberOfCrew}</Td>
           <Td>
             {String(job.address.addressLine1)}{" "}
-            {String(job.address.addressLine2)}
-            {String(job.address.postalCode)}
+            {String(job.address.addressLine2)}{" "}
+            {String(job.address.postalCode)}{" "}
             {String(job.address.city)}
           </Td>
           <Td>{String(job.dateTime)}</Td>

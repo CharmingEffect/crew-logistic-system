@@ -1,6 +1,5 @@
 
 
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Header from "../../components/Header";
 import AddJob from "./AddJob";

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "react-tabs/style/react-tabs.css";
-import Nav from "../../components/Nav";
-import { useEffect } from "react";
 import Header from "../../components/Header";
 import { useLocalState } from "../../util/useLocalStorage";
-import { FindAddressById, useLoggedInUser } from "../../util/useUserData";
+import { useLoggedInUser } from "../../util/useUserData";
 import AvatarUploader from "../../util/AvatarUploader";
 import { Button } from "reactstrap";
 
