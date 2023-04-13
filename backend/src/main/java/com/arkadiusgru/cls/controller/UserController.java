@@ -53,6 +53,7 @@ public class UserController {
   
     private final String TEMPORARY_PASSWORD = new PassGenerator().generateStandardPassword();
 
+   
 
     @GetMapping("/admin/getAllUsers")
     public List<User> showAll() {
@@ -147,16 +148,7 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    // test whos logded in
-    @GetMapping("/common/whoIsLoggedIn")
-    public ResponseEntity<?> whoIsLoggedIn() {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String loggedInUserEmail = authentication.getName();
-
-        return ResponseEntity.ok().body("Logged in user:  " + loggedInUserEmail);
-
-    }
 
     @PostMapping("/common/changePassword")
     public ResponseEntity<?> changePassword(@RequestBody ChangePasswordDto request) {
@@ -203,6 +195,5 @@ public class UserController {
 
         return ResponseEntity.ok().build();
     }
-
 
 }

@@ -8,6 +8,8 @@ import CalendarAdmin from "./pages/Admin/CalendarAdmin";
 import DashboardCrew from "./pages/Crew";
 import UsersMngmt from "./pages/Admin/UsersMngmt";
 import { useLocation } from "react-router-dom";
+import Messages from "./pages/common/Messages";
+import CalendarCrew from "./pages/Crew/CalendarCrew";
 
 
 import "./styles/Style.css";
@@ -57,7 +59,9 @@ function App() {
           <Route path="/job-mngmt" element={<JobsMngmt />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/calendar-admin" element={<CalendarAdmin />}></Route>
+          <Route path="/calendar-crew" element={<CalendarCrew />}></Route>
           <Route path="/change-password" element={<RecoverAccount />}></Route>
+          <Route path="/messages" element={<Messages />}></Route>
         </Routes>
       </div>
     </>

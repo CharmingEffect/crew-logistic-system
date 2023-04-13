@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import RecivedJobs from "./RecivedJobs";
 import { useLoggedInUser } from "../../util/useUserData";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import ConfirmedJobs from "./ConfirmedJobs";
 
 const Jobs = () => {
   return (
@@ -32,9 +33,7 @@ const Jobs = () => {
                 <RecivedJobs loggedUserId={useLoggedInUser().id} />
               </TabPanel>
               <TabPanel>
-                <h2>Tab 2 Content</h2>
-
-                <p>This is the content for Tab 2.</p>
+              <ConfirmedJobs loggedUserId={useLoggedInUser().id} />
               </TabPanel>
             </Tabs>
           </div>

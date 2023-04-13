@@ -44,7 +44,7 @@ public class WebSecurityConfig {
         http.headers().frameOptions().disable();
 
         http.authorizeHttpRequests()
-                .antMatchers("/api/auth/**", "/api/admin/**", "/h2-console/**", "/api/confirm-registration", "/api/**")
+                .antMatchers("/api/auth/**", "/api/admin/**", "/h2-console/**", "/api/confirm-registration", "/api/**", "/ws/**")
                 .permitAll()
                 .anyRequest().authenticated();
 

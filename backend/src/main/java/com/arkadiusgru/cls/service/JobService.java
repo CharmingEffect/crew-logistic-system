@@ -65,7 +65,7 @@ public class JobService {
             job.setRemarks(jobDto.getRemarks());
             job.setComment(jobDto.getComment());
 
-            // condition if driver or crew chief is the same as driver 
+            // condition if driver or crew chief is the same as driver
 
             job.addCrewMember(crewChief);
             job.addCrewMember(driver);
@@ -77,55 +77,38 @@ public class JobService {
 
     // retive job with associated address
 
-
-
-
     public List<JobResponse> getAllJobs() {
         return jobRepository.findAll().stream().map(job -> {
             // Fetch driver details
-            User driver = job.getDriver() != null ? userRepository.findById(job.getDriver().getId()).orElse(null) : null;
+            User driver = job.getDriver() != null ? userRepository.findById(job.getDriver().getId()).orElse(null)
+                    : null;
             // Fetch crew chief details
-            User crewChief = job.getCrewChief() != null ? userRepository.findById(job.getCrewChief().getId()).orElse(null) : null;
-    
-            String driverName = driver != null ? driver.getId() + " " +  driver.getFirstName() + " " +  driver.getLastName() : null;
-            String crewChiefName = driver != null ? crewChief.getId() + " " +  crewChief.getFirstName() + " " +  crewChief.getLastName() : null;
-    
+            User crewChief = job.getCrewChief() != null
+                    ? userRepository.findById(job.getCrewChief().getId()).orElse(null)
+                    : null;
+
+            String driverName = driver != null
+                    ? driver.getId() + " " + driver.getFirstName() + " " + driver.getLastName()
+                    : null;
+            String crewChiefName = driver != null
+                    ? crewChief.getId() + " " + crewChief.getFirstName() + " " + crewChief.getLastName()
+                    : null;
+
             return new JobResponse(
-                job.getJobNumber(),
-                job.getDateTime(),
-                job.getJobDuration(),
-                job.getNumberOfCrew(),
-                job.getAddress(),
-                job.getClientCompanyName(),
-                job.getContactOnSite(),
-                driverName,
-                crewChiefName,
-                job.getRemarks(),
-                job.getComment(),
-                job.getCrewList()
-            );
+                    job.getJobNumber(),
+                    job.getDateTime(),
+                    job.getJobDuration(),
+                    job.getNumberOfCrew(),
+                    job.getAddress(),
+                    job.getClientCompanyName(),
+                    job.getContactOnSite(),
+                    driverName,
+                    crewChiefName,
+                    job.getRemarks(),
+                    job.getComment(),
+                    job.getCrewList());
         }).collect(Collectors.toList());
     }
-    
-
-
-    
-    // public List<Job> getAllJobs() throws StreamWriteException, DatabindException, IOException {
-
-    //     jobRepository.findAll().forEach(job -> {
-    //         ObjectMapper mapper = new ObjectMapper();
-    //         mapper.registerModule(new JavaTimeModule());
-
-    //         try {
-    //             System.out.println(mapper.writeValueAsString(job));
-
-    //         } catch (IOException e) {
-    //             e.printStackTrace();
-    //         }
-    //     });
-
-    //     return jobRepository.findAll();
-    // }
 
     public void deleteJobByJobNumber(String jobNumber) {
         boolean jobExists = jobRepository.findByJobNumber(jobNumber).isPresent();
@@ -150,32 +133,10 @@ public class JobService {
         }
     }
 
-    // public void confirmJob(Long assignmentId) {
-    //     JobAssignment assignment = jobAssignmentRepository.findById(assignmentId)
-    //             .orElseThrow(() -> new RuntimeException("Assignment not found"));
+    public List<JobDto> getJobsForLoggedInUser(Long userId, String status) {
+        List<JobDto> jobs = new ArrayList<JobDto>();
 
-    //     if (assignment.getStatus().equals("PENDING")) {
-    //         Job job = assignment.getJob();
-    //         // Check if the job has reached its crew member limit
-    //         int assignedCrewCount = jobAssignmentRepository.findByJobNumberAndStatus(job.getJobNumber(),
-    //                 "CONFIRMED")
-    //                 .size();
-    //         if (job.getNumberOfCrew() > assignedCrewCount) {
-    //             assignment.setStatus("CONFIRMED");
-    //             jobAssignmentRepository.save(assignment);
-    //         } else {
-    //             throw new IllegalStateException("Job has already reached its crew member limit");
-    //         }
-    //     } else {
-    //         throw new IllegalStateException("Assignment has already been confirmed or declined");
-    //     }
-    // }
-
-    public List<JobDto> getPendingJobsForLoggedInUser(Long userId) {
-
-        List<JobDto> pendingJobs = new ArrayList<JobDto>();
-
-        for (Job job : jobAssignmentRepository.findJobsByUserId(userId, "PENDING")) {
+        for (Job job : jobAssignmentRepository.findJobsByUserId(userId, status)) {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());
             JobDto jobDto = new JobDto();
@@ -190,13 +151,45 @@ public class JobService {
             jobDto.setCrewChiefId(job.getCrewChief().getId());
             jobDto.setRemarks(job.getRemarks());
             jobDto.setComment(job.getComment());
-            pendingJobs.add(jobDto);
+            jobs.add(jobDto);
         }
 
-        System.out.println("pending jobs: " + pendingJobs);
+        return jobs.stream().distinct().collect(Collectors.toList());
+    }
 
-        return pendingJobs.stream().distinct().collect(Collectors.toList());
+    public String updateJobStatus(String jobNumber, Long userId, String status) {
+        Optional<Job> optionalJob = jobRepository.findByJobNumber(jobNumber);
+        if (optionalJob.isPresent()) {
+            Optional<User> optionalUser = userRepository.findById(userId);
+            if (optionalUser.isPresent()) {
+                Optional<JobAssignment> optionalAssignment = jobAssignmentRepository.findByJobAndUser(optionalJob.get(),
+                        optionalUser.get());
+                if (optionalAssignment.isPresent()) {
+                    JobAssignment assignment = optionalAssignment.get();
+                    assignment.setStatus(status);
+                    jobAssignmentRepository.save(assignment);
 
+                    Job job = optionalJob.get();
+                    User user = optionalUser.get();
+
+                    if (status.equals("CONFIRMED")) {
+                        job.addCrewMember(user);
+                    } else if (status.equals("PENDING")) {
+                        job.removeCrewMember(user);
+                    }
+
+                    jobRepository.save(job);
+
+                    return "Job status updated successfully";
+                } else {
+                    return "Job not assigned to user";
+                }
+            } else {
+                return "Invalid user id";
+            }
+        } else {
+            return "Invalid job number";
+        }
     }
 
 }

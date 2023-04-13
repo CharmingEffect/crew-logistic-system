@@ -25,12 +25,13 @@ const JobsList = (props) => {
     const userId = props.loggedUserId;
     let data = qs.stringify({
       'jobNumber': jobN,
-      'userId': userId 
+      'userId': userId ,
+      'status': 'CONFIRMED'
     });
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: '/api/admin/confirmJob/',
+      url: '/api/admin/updateJobStatus/',
       headers: { 
         'Content-Type': 'application/x-www-form-urlencoded'
       },

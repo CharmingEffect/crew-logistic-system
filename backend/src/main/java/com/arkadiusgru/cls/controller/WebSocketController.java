@@ -1,21 +1,22 @@
 package com.arkadiusgru.cls.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.arkadiusgru.cls.model.Message;
 
 @Controller
 public class WebSocketController {
 
-    @Autowired
-    private SimpMessagingTemplate messagingTemplate;
+ 
 
-    @MessageMapping("/chat/{roomId}")
-    public void sendMessage(@DestinationVariable String roomId, Message message) {
-        messagingTemplate.convertAndSend("/topic/" + roomId, message);
+    @MessageMapping("/{roomId}/chat")
+    @SendTo("/topic/{roomId}/chat")
+    public Message sendMessage(@DestinationVariable String roomId, @Payload Message message) {
+        return message;
     }
 }

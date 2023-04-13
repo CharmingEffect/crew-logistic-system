@@ -117,10 +117,28 @@ const Nav = () => {
               <></>
             )}
 
+            {crew ? (
+              <li className={path === "/calendar-crew" ? "active" : ""}>
+                <a href="/calendar-crew">
+                  <i className="fa fa-calendar"></i>{" "}
+                  <span className="nav-label">Calendar</span>
+                </a>
+              </li>
+            ) : (
+              <></>
+            )}
+
             <li className={path === "/profile" ? "active" : ""}>
               <a href="/profile">
                 <i className="fa fa-user fa-lg"></i>{" "}
                 <span className="nav-label">Profile</span>
+              </a>
+            </li>
+
+            <li className={path === "/messages" ? "active" : ""}>
+              <a href="/messages">
+                <i className="fa fa-user fa-lg"></i>{" "}
+                <span className="nav-label">Messages</span>
               </a>
             </li>
           </ul>

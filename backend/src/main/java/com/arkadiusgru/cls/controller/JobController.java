@@ -75,7 +75,13 @@ public class JobController {
     @GetMapping("/admin/pendingJobs/{userId}")
     public List<JobDto> getPendingJobs(@PathVariable Long userId) {
 
-        return jobService.getPendingJobsForLoggedInUser(userId);
+        return jobService.getJobsForLoggedInUser(userId, "PENDING");
+    }
+
+    @GetMapping("/admin/confirmedJobs/{userId}")
+    public List<JobDto> getConfirmedJobs(@PathVariable Long userId) {
+
+        return jobService.getJobsForLoggedInUser(userId, "CONFIRMED");
     }
 
     @GetMapping("/admin/job-assignments")
@@ -111,35 +117,19 @@ public class JobController {
         return jobRepository.findAll(pageRequest).getContent();
     }
 
-    @PostMapping("/admin/confirmJob/")
-    public ResponseEntity<?> confirmJob(@RequestParam String jobNumber, @RequestParam Long userId) {
-        System.out.println("jobNumber: " + jobNumber + " userId: " + userId);
-        Optional<Job> optionalJob = jobRepository.findByJobNumber(jobNumber);
-        if (optionalJob.isPresent()) {
-            Optional<User> optionalUser = userRepository.findById(userId);
-            if (optionalUser.isPresent()) {
-                Optional<JobAssignment> optionalAssignment = jobAssignmentRepository.findByJobAndUser(optionalJob.get(),
-                        optionalUser.get());
-                if (optionalAssignment.isPresent()) {
-                    JobAssignment assignment = optionalAssignment.get();
-                    assignment.setStatus("CONFIRMED");
-                    jobAssignmentRepository.save(assignment);
-                        // here adding the user to crew list  !!! very important !!!
-                    Job job = optionalJob.get();
-                    User user = optionalUser.get();
-                    job.addCrewMember(user);
-                    jobRepository.save(job);
 
-                    return ResponseEntity.ok("Job confirmed successfully");
-                } else {
-                    return ResponseEntity.badRequest().body("Job not assigned to user");
-                }
-            } else {
-                return ResponseEntity.badRequest().body("Invalid user id");
-            }
+    @PostMapping("/admin/updateJobStatus/")
+    public ResponseEntity<?> updateJobStatus(@RequestParam String jobNumber, @RequestParam Long userId,
+                                          @RequestParam String status) {
+        String response = jobService.updateJobStatus(jobNumber, userId, status);
+        if (response.equals("Job status updated successfully")) {
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.badRequest().body("Invalid job number");
+            return ResponseEntity.badRequest().body(response);
         }
     }
+
+
+
 
 }
