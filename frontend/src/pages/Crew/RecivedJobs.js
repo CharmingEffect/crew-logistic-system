@@ -64,8 +64,8 @@ const JobsList = (props) => {
       <Td>{job.dateTime}</Td>
       <Td>
         <ButtonGroup>
-          <Button size="sm" color="success" className="mx-2">
-            <i className="fa fa-check" onClick={() => confirmJob(job.jobNumber)}></i>
+          <Button size="sm" color="success" className="mx-2" onClick={() => confirmJob(job.jobNumber)}>
+            <i className="fa fa-check"></i>
           </Button>
         </ButtonGroup>
       </Td>

@@ -62,8 +62,8 @@ const ConfirmedJobs = (props) => {
       <Td>{job.dateTime}</Td>
       <Td>
         <ButtonGroup>
-          <Button size="sm" color="danger" className="mx-2">
-            <i className="fa fa-times" onClick={() => declineJob(job.jobNumber)}></i>
+          <Button size="sm" color="danger" className="mx-2" onClick={() => declineJob(job.jobNumber)}>
+            <i className="fa fa-times" ></i>
           </Button>
         </ButtonGroup>
       </Td>
