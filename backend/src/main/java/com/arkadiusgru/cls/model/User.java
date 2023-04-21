@@ -38,6 +38,7 @@ public class User extends AbstractEntity implements UserDetails {
     private String email;
     private String firstName;
     private String lastName;
+    @JsonIgnore
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;

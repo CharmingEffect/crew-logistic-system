@@ -1,28 +1,25 @@
-
 import React from "react";
-
-
+import "./JobWidget.css";
 
 const JobWidget = ({ jobNumber, clientCompanyName, address, contactOnSite, dateTime }) => {
   return (
-    <div className="col-lg-4 m-2">
-      <div className="widget navy-bg p-xl">
-        <div className="row">
-          <div className="col-xs-4">
-            <i className="fa fa-wrench fa-5x"></i>
-          </div>
-          <div className="col-xs-8 text-right">
-           
-            <h2 className="font-bold">Job Number {jobNumber}</h2>
-            <span className="font-bold">Client:</span>
-            <p className="font-bold">{clientCompanyName}</p>
-            <span className="font-bold">Address:</span>
-            <p className="font-bold">{address}</p>
-            <span className="font-bold">Contact:</span>
-            <p className="font-bold">{contactOnSite}</p>
-            <span className="font-bold">Date:</span>
-            <p className="font-bold">{dateTime}</p>
-          </div>
+    <div className="job-widget widget col-lg-4 m-2 p-4 navy-bg shadow rounded">
+      <div className="row">
+        <div className="col-4">
+          <i className="fa fa-wrench fa-5x"></i>
+        </div>
+        <div className="col-8 text-right">
+          <h2 className="font-weight-bold">Job #{jobNumber}</h2>
+          <dl>
+            <dt>Client</dt>
+            <dd>{clientCompanyName}</dd>
+            <dt>Address</dt>
+            <dd>{address}</dd>
+            <dt>Contact</dt>
+            <dd>{contactOnSite}</dd>
+            <dt>Date</dt>
+            <dd>{dateTime}</dd>
+          </dl>
         </div>
       </div>
     </div>
