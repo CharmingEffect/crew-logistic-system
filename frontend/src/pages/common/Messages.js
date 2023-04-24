@@ -2,59 +2,54 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import { Stomp } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
-//import { useLoggedInUser } from '../../util/useUserData';
+import { useLoggedInUser } from '../../util/useUserData';
+import MessageList from '../../components/MessageList';
+import MessageForm from '../../components/MessageForm';
 
 const Messages = () => {
-    const [socket, setSocket] = useState(null);
     const [messages, setMessages] = useState([]);
-    const [newMessage, setNewMessage] = useState('');
+    const loggedUserId = useLoggedInUser().id;
+    const selectedUserId = 2;
 
-    // const loggedUser = useLoggedInUser();
 
-    const roomId = "CHATROOM";
-    useEffect(() => {
-        // Connect to the WebSocket server
-        const socket = new SockJS('http://localhost:8080/ws');
+    const fetchMessages = async (senderId, receiverId) => {
+        const response = await fetch(`/api/messages/${senderId}/${receiverId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch messages');
+        }
+        return await response.json();
+    };
 
-        // Initialize Stomp client
-        const stompClient = Stomp.over(socket);
-
-        // Set the callback function for when the client is connected to the server
-        stompClient.connect({}, () => {
-            // Subscribe to the appropriate topic for this user
-            stompClient.subscribe(`/topic/${roomId}/chat`, (message) => {
-                const updatedMessages = [...messages, JSON.parse(message.body)];
-                console.log("updatedMessages: " + messages);
-                setMessages(updatedMessages);
-            });
+    const sendMessage = async (message) => {
+        const response = await fetch("/api/messages/send", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(message),
         });
 
-        // Save the socket and Stomp client to state
-        setSocket(socket);
-
-        // Clean up function for disconnecting the socket when the component unmounts
-        return () => {
-            stompClient.disconnect();
-        };
-    }, []);
-
-    // Handle sending a new message
-    const sendMessage = (event) => {
-        event.preventDefault();
-        const message = {
-            sender: "user",
-            recipent: "crewmember",
-            content: newMessage,
-            roomId: roomId,
-
-        };
-
-        // Send the message to the appropriate topic for the recipient
-        socket.send(`/app/message`, {}, JSON.stringify(message));
-
-        // Clear the input field
-        setNewMessage('');
+        if (!response.ok) {
+            throw new Error('Failed to send message');
+        }
+        return await response.json();
     };
+
+    useEffect(() => {
+        if (selectedUserId) {
+            fetchMessages(loggedUserId, selectedUserId).then((data) => {
+                setMessages(data.map((message) => ({ ...message, loggedUserId })));
+            });
+        }
+    }, [loggedUserId, selectedUserId]);
+
+    const handleSendMessage = (content) => {
+        const message = { senderId: loggedUserId, receiverId: selectedUserId, content };
+        sendMessage(message).then((sentMessage) => {
+            setMessages((prevMessages) => [...prevMessages, { ...sentMessage, loggedUserId }]);
+        });
+    };
+
 
     return (
         <>
@@ -73,23 +68,11 @@ const Messages = () => {
                 <div className="container-fluid">
                     <div className="main-body">
                         <div>
-                            <h2>WebSocket Chat</h2>
-                            <div>
-                                {messages.map((message, index) => (
-                                    <div key={index}>
-                                        <strong>{message.sender}:</strong> {message.content}
-                                    </div>
-                                ))}
+                            <h2>Messages</h2>
+                            <div className="messaging-container">
+                                <MessageList messages={messages} loggedUserId={loggedUserId} />
+                                <MessageForm onSubmit={handleSendMessage} />
                             </div>
-                            <form onSubmit={sendMessage}>
-                                <input
-                                    type="text"
-                                    placeholder="Type a message..."
-                                    value={newMessage}
-                                    onChange={(event) => setNewMessage(event.target.value)}
-                                />
-                                <button type="submit">Send</button>
-                            </form>
                         </div>
                     </div>
                 </div>
