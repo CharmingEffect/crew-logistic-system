@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const MessageList = ({ messages, loggedUserId }) => {
+
+  const messageListRef = useRef();
+
+  useEffect(() => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
-    <ul className="message-list">
+    <ul className="message-list" ref={messageListRef}>
       {messages.map((message, index) => (
         <li key={index} className={`message ${message.senderId === message.loggedUserId ? 'sent' : 'received'}`}>
              <p>From: {message.senderId}</p>

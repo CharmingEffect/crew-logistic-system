@@ -9,7 +9,7 @@ import MessageForm from '../../components/MessageForm';
 const Messages = () => {
     const [messages, setMessages] = useState([]);
     const loggedUserId = useLoggedInUser().id;
-    const selectedUserId = 2;
+    const selectedUserId = 3;
 
 
     const fetchMessages = async (senderId, receiverId) => {
@@ -60,15 +60,14 @@ const Messages = () => {
                 <div className="wrapper wrapper-content animated fadeInRight"></div>
                 <div className="mb-4">
                     <h1 className="sophisticated-header display-5 text-black mr-4">
-                        <i className="fa fa-user text-black m-3" aria-hidden="true"></i>
-                        Profile
+                        <i className="fa fa-comments text-black m-3" aria-hidden="true"></i>
+                        Messages
                     </h1>
                 </div>
-
+       
                 <div className="container-fluid">
                     <div className="main-body">
                         <div>
-                            <h2>Messages</h2>
                             <div className="messaging-container">
                                 <MessageList messages={messages} loggedUserId={loggedUserId} />
                                 <MessageForm onSubmit={handleSendMessage} />

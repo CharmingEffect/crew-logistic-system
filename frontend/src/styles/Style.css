@@ -23,7 +23,11 @@ color: white;
 font-weight: bold;
 
 }
-
+.message-list {
+  max-height: 400px; /* Adjust this value based on the desired maximum height of the message list */
+  overflow-y: scroll;
+  padding: 1rem;
+}
 .react-tabs__tab--selected {
   background: #1E2833;
 

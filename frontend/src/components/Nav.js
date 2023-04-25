@@ -127,7 +127,12 @@ const Nav = () => {
             ) : (
               <></>
             )}
-
+            <li className={path === "/messages" ? "active" : ""}>
+              <a href="/messages">
+                <i className="fa fa-comments fa-lg"></i>{" "}
+                <span className="nav-label">Messages</span>
+              </a>
+            </li>
             <li className={path === "/profile" ? "active" : ""}>
               <a href="/profile">
                 <i className="fa fa-user fa-lg"></i>{" "}
@@ -135,12 +140,7 @@ const Nav = () => {
               </a>
             </li>
 
-            <li className={path === "/messages" ? "active" : ""}>
-              <a href="/messages">
-                <i className="fa fa-user fa-lg"></i>{" "}
-                <span className="nav-label">Messages</span>
-              </a>
-            </li>
+
           </ul>
         </div>
       </nav>
