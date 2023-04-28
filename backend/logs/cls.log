@@ -486,3 +486,438 @@
 2023-04-28 19:02:31.529 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
 2023-04-28 19:02:31.535 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
 2023-04-28 19:02:31.536 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.045 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#register(JobDto)
+2023-04-28 19:02:57.046 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/admin/newJob", parameters={}
+2023-04-28 19:02:57.047 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#register(JobDto)
+2023-04-28 19:02:57.048 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [JobDto(jobNumber=917525-5, dateTime=2023-04-30T11:55, jobDuration=10, numberOfCrew=7, address=Addres (truncated)...]
+2023-04-28 19:02:57.073 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.074 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing ["created"]
+2023-04-28 19:02:57.075 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.536 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:02:57.536 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:02:57.537 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:02:57.545 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.546 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:02:57.547 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.552 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.553 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:02:57.554 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.566 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.658 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:57.658 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:57.659 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:57.677 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.684 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:57.685 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.709 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:57.716 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.741 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.742 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:02:57.743 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.743 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:57.744 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:57.745 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:57.746 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:02:57.747 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:02:57.748 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:02:57.749 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.750 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:02:57.755 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.769 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.772 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.775 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:57.777 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.879 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.879 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:02:57.880 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:57.885 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:57.886 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:02:57.887 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:57.892 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:57.898 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.037 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.037 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.038 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.060 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.066 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.067 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:58.067 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.068 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:02:58.068 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:02:58.074 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.074 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.075 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.075 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:02:58.075 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.076 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.093 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.098 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.100 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.206 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.206 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.206 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.227 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.233 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.235 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.410 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.410 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.411 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.431 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.439 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.440 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.548 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.549 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.550 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.568 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.574 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.576 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.757 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.758 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.758 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.779 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.785 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.787 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:58.897 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.897 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:58.898 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:58.916 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:58.921 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:58.923 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:59.100 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.101 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:59.101 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.119 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:59.126 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:59.127 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:59.243 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.243 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:59.244 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.263 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:59.269 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:59.270 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:02:59.448 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.449 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:02:59.449 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:02:59.467 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:02:59.472 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:02:59.473 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:27.120 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:27.120 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:27.123 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:27.141 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:27.144 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:27.147 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:27.461 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:27.461 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:27.466 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:27.483 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:27.484 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:27.485 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:27.844 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:27.845 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:27.845 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:27.863 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.003 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.009 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.100 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:28.100 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:28.101 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:28.116 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.249 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.254 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.328 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.329 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:28.329 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.346 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:28.346 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.346 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:28.347 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:28.351 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.352 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.362 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.362 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:28.363 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.369 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.369 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:28.369 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.383 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.388 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.389 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.661 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:28.661 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:28.662 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:28.677 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.677 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.678 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:28.678 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:28.678 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.678 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.692 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.697 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.698 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:28.704 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.704 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:28.705 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:28.718 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:28.723 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:28.724 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.036 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.037 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.037 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.052 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:29.056 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:29.058 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.296 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.296 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.296 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.316 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:29.321 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:29.322 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.378 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.378 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.379 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.393 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:29.397 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:29.398 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.641 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.641 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.641 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.662 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:29.667 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:29.668 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.708 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.709 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.709 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.724 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:29.729 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:29.730 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:29.979 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.980 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:29.980 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:29.997 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:30.002 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:30.003 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:32.857 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:32.857 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:32.858 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:32.877 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.000 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.017 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:33.325 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:33.326 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:33.326 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:33.341 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.342 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:33.342 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.350 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.361 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.368 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.369 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:33.525 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.530 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:33.585 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.585 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:33.586 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.602 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.609 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.611 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:33.681 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.681 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:33.682 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.698 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.704 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.705 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:33.929 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.930 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:33.930 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:33.949 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:33.955 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:33.956 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.025 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.026 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.027 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.044 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.050 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.052 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.276 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.277 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.277 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.294 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.299 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.300 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.369 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.370 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.370 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.386 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.390 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.392 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.608 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.608 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.609 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.628 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.632 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.633 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.701 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.701 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.702 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.718 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.723 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.725 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:34.950 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.951 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:34.951 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:34.970 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:34.976 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:34.977 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:37.065 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#sendJobAssignments(JobAssignmentDto)
+2023-04-28 19:03:37.065 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/admin/sendJobAssignments", parameters={}
+2023-04-28 19:03:37.066 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#sendJobAssignments(JobAssignmentDto)
+2023-04-28 19:03:37.068 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [JobAssignmentDto(jobNumber=967296-6, crewMemberIds=[9])]
+2023-04-28 19:03:37.090 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [*/*]
+2023-04-28 19:03:37.091 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:40.193 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:40.193 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:40.193 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:40.219 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:40.220 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:40.222 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:40.459 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:40.460 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/job-assignments", parameters={}
+2023-04-28 19:03:40.460 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobAssignments()
+2023-04-28 19:03:40.484 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:40.485 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[JobAssignmentsInfo(id=12, jobNumber=883327-1, sendTo=Reagan Bird, status=PENDING), JobAssignmentsIn (truncated)...]
+2023-04-28 19:03:40.486 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:42.649 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:42.650 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:42.650 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:42.673 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:42.847 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:42.865 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:43.179 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:43.179 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllJobs", parameters={}
+2023-04-28 19:03:43.179 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.JobController#getAllJobs()
+2023-04-28 19:03:43.198 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.198 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:43.199 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.202 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:43.217 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:43.224 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:43.226 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:43.329 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:43.341 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:43.542 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.543 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:43.543 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.559 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:43.565 DEBUG 5236 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:43.566 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:43.874 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.875 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:43.875 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:43.894 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:43.901 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:43.902 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:44.215 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.215 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:44.216 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.232 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:44.237 DEBUG 5236 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:44.238 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:44.556 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.557 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:44.557 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.575 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:44.580 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:44.582 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:44.901 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.901 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:44.902 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:44.922 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:44.927 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:44.928 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:45.167 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.168 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:45.168 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.186 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:45.192 DEBUG 5236 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:45.193 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:45.244 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.245 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:45.245 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.263 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:45.268 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:45.269 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:45.506 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.507 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:45.507 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.524 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:45.528 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:45.530 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:45.585 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.585 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getAllCrewMembers", parameters={}
+2023-04-28 19:03:45.586 DEBUG 5236 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getAllCrewMembers()
+2023-04-28 19:03:45.602 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:45.607 DEBUG 5236 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [java.lang.StackOverflowError]
+2023-04-28 19:03:45.608 DEBUG 5236 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.327 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.328 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.328 DEBUG 5236 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.334 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.334 DEBUG 5236 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.336 DEBUG 5236 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.438 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.439 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/undefined/3", parameters={}
+2023-04-28 19:03:48.439 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.441 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.arkadiusgru.cls.model.Message>> com.arkadiusgru.cls.controller.MessageController.getMessagesBetweenUsers(java.lang.Long,java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2023-04-28 19:03:48.443  WARN 5236 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
+2023-04-28 19:03:48.444 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2023-04-28 19:03:48.447 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2023-04-28 19:03:48.447 DEBUG 5236 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.CustomErrorController#handleError()
+2023-04-28 19:03:48.451 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-04-28 19:03:48.455 DEBUG 5236 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2023-04-28 19:03:48.483 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.483 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.484 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/undefined/3", parameters={}
+2023-04-28 19:03:48.484 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.484 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.485 DEBUG 5236 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.485 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.method.HandlerMethod             : Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<java.util.List<com.arkadiusgru.cls.model.Message>> com.arkadiusgru.cls.controller.MessageController.getMessagesBetweenUsers(java.lang.Long,java.lang.Long): Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"
+2023-04-28 19:03:48.486  WARN 5236 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
+2023-04-28 19:03:48.487 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2023-04-28 19:03:48.487 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2023-04-28 19:03:48.488 DEBUG 5236 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.CustomErrorController#handleError()
+2023-04-28 19:03:48.489 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-04-28 19:03:48.489 DEBUG 5236 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2023-04-28 19:03:48.490 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.490 DEBUG 5236 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.491 DEBUG 5236 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.498 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.498 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.499 DEBUG 5236 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.504 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.505 DEBUG 5236 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.506 DEBUG 5236 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.511 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.511 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.512 DEBUG 5236 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.516 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.517 DEBUG 5236 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.518 DEBUG 5236 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.766 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.767 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/messages/1/3", parameters={}
+2023-04-28 19:03:48.768 DEBUG 5236 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.MessageController#getMessagesBetweenUsers(Long, Long)
+2023-04-28 19:03:48.776 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.777 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Message(id=6, senderId=1, receiverId=3, content=adsad, timestamp=2023-04-28T11:56:54), Message(id=6 (truncated)...]
+2023-04-28 19:03:48.779 DEBUG 5236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.818 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.819 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.819 DEBUG 5236 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.824 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.825 DEBUG 5236 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.826 DEBUG 5236 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-04-28 19:03:48.833 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.833 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/admin/getUser/admin@auth.com", parameters={}
+2023-04-28 19:03:48.834 DEBUG 5236 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.arkadiusgru.cls.controller.UserController#getUserByEmail(String)
+2023-04-28 19:03:48.839 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-04-28 19:03:48.839 DEBUG 5236 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [UserDto(id=1, email=admin@auth.com, firstName=John, lastName=Smith, role=ADMIN, phoneNumber=null, av (truncated)...]
+2023-04-28 19:03:48.840 DEBUG 5236 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
