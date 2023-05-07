@@ -8,6 +8,8 @@ import { Button } from "reactstrap";
 import { FileLock2Fill, ArrowLeft } from "react-bootstrap-icons";
 import swal from "sweetalert";
 import Snowfall from 'react-snowfall';
+import DocsUpload from "../../components/DocsUpload";
+
 
 
 const Profile = () => {
@@ -191,14 +193,16 @@ const Profile = () => {
                 </div>
                 <div className="card mt-3">
                   <ul className="list-group list-group-flush">
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <li className="list-group-item d-flex flex-wrap">
                       <span className="text-secondary"></span>
                     </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">
-                        Upladed Documents:{" "}
-                      </span>
+                    <li className="list-group-item  align-items-center flex-wrap">
+                    <DocsUpload userId={loggedUser.id} />
+                   
                     </li>
+                    <h4 className="text-secondary mt-3">
+                        Upladed Documents:{" "}
+                      </h4>
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                       <span className="text-secondary">Passport</span>
                     </li>
