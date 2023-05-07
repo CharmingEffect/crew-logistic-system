@@ -1,23 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from '../../components/Header';
-import { Stomp } from '@stomp/stompjs';
-import SockJS from 'sockjs-client';
 import { useLoggedInUser } from '../../util/useUserData';
 import MessageList from '../../components/MessageList';
 import MessageForm from '../../components/MessageForm';
+import { getAllUsers, getAllAdmins } from '../../util/useUserData';
 
 const Messages = () => {
     const [messages, setMessages] = useState([]);
     const loggedUserId = useLoggedInUser().id;
-    const selectedUserId = 3;
+    const loggedUser = useLoggedInUser();
+    const [selectedUserId, setSelectedUserId] = useState(null);
+    const [users, setUsers] = useState([]);
+    const [messagesUpdated, setMessagesUpdated] = useState(false);
+
+    useEffect(() => {
+       
+        console.log(loggedUser.role);
+        if (loggedUser.role == "ADMIN") {
+            getAllUsers().then((data) => {
+                if (loggedUser.role == "ADMIN")
+                data = data.filter((user) => user.id !== loggedUser.id);
+
+                setUsers(data);
+            });
+        } else {
+            getAllAdmins().then((data) => {
+                data = data.filter((user) => user.id !== loggedUser.id);
+                setUsers(data);
+            });
 
 
-    const fetchMessages = async (senderId, receiverId) => {
-        const response = await fetch(`/api/messages/${senderId}/${receiverId}`);
-        if (!response.ok) {
+        }
+
+    }, [getAllUsers, getAllAdmins, loggedUser]);
+
+
+
+    const fetchMessages = useCallback(async (userId1, userId2) => {
+        const response1 = await fetch(`/api/messages/${userId1}/${userId2}`);
+        const response2 = await fetch(`/api/messages/${userId2}/${userId1}`);
+    
+        if (!response1.ok || !response2.ok) {
             throw new Error('Failed to fetch messages');
         }
-        return await response.json();
+    
+        const data1 = await response1.json();
+        const data2 = await response2.json();
+    
+        return [...data1, ...data2].sort((a, b) => a.timestamp - b.timestamp);
+    }, []);
+
+    const handleSelectUser = (userId) => {
+        setSelectedUserId(userId);
     };
 
     const sendMessage = async (message) => {
@@ -34,22 +68,30 @@ const Messages = () => {
         }
         return await response.json();
     };
-
     useEffect(() => {
         if (selectedUserId) {
             fetchMessages(loggedUserId, selectedUserId).then((data) => {
+                // Remove duplicates and sort by timestamp
+                data = data
+                    .filter((message, index, self) => index === self.findIndex((m) => m.id === message.id))
+                    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+    
                 setMessages(data.map((message) => ({ ...message, loggedUserId })));
             });
         }
-    }, [loggedUserId, selectedUserId]);
+    }, [selectedUserId, loggedUserId, fetchMessages, messagesUpdated]);
+    
 
     const handleSendMessage = (content) => {
         const message = { senderId: loggedUserId, receiverId: selectedUserId, content };
         sendMessage(message).then((sentMessage) => {
-            setMessages((prevMessages) => [...prevMessages, { ...sentMessage, loggedUserId }]);
+            setMessages((prevMessages) => [
+                ...prevMessages,
+                { ...sentMessage, loggedUserId },
+            ]);
+            setMessagesUpdated((prevState) => !prevState); // Toggle the messagesUpdated state
         });
     };
-
 
     return (
         <>
@@ -64,12 +106,25 @@ const Messages = () => {
                         Messages
                     </h1>
                 </div>
-       
+
                 <div className="container-fluid">
                     <div className="main-body">
-                        <div>
-                            <div className="messaging-container">
-                                <MessageList messages={messages} loggedUserId={loggedUserId} />
+                        <div className="messagingContainer">
+                            <div>
+                                <ul className="user-list">
+                                    {users.map((user) => (
+                                        <li
+                                            key={user.id}
+                                            className={`user-item ${selectedUserId === user.id ? 'selected' : ''}`}
+                                            onClick={() => handleSelectUser(user.id)}
+                                        >
+                                            {user.firstName} {user.lastName}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="messaging">
+                                <MessageList messages={messages} />
                                 <MessageForm onSubmit={handleSendMessage} />
                             </div>
                         </div>

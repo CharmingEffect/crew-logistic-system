@@ -122,7 +122,7 @@ const Profile = () => {
             icon: "success",
             button: false,
             timer: 1000,
-          }); 
+          });
         } else {
           return Promise.reject("Failed to change password");
         }
@@ -159,12 +159,21 @@ const Profile = () => {
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center">
-                      <img
-                        src={`data:image/png;base64,${loggedUser.avatar}`}
-                        alt="avatar"
-                        className="rounded-circle"
-                        width="150"
-                      ></img>
+                      {loggedUser.avatar ? (
+                        <img
+                          src={`data:image/png;base64,${loggedUser.avatar}`}
+                          alt="avatar"
+                          className="rounded-circle"
+                          width="150"
+                        ></img>
+                      ) : (
+                        <img
+                          src="/asset/img/default_avatar.jpg"
+                          alt="default avatar"
+                          className="rounded-circle"
+                          width="150"
+                        ></img>
+                      )}
                       <div className="mt-3">
                         <h4 className="text-black">
                           {" "}
@@ -293,7 +302,7 @@ const Profile = () => {
                     </div>
                     <hr></hr>
                     {/* Password */}
-               
+
 
                     <div className="row">
                       <div className="col-sm-12">
@@ -325,55 +334,55 @@ const Profile = () => {
                     </div>
                   </div>
 
-                  
+
                 </div>
 
                 <div className="card mb-4">
                   <div className="card-body">
-                      <form method="post">
+                    <form method="post">
 
-                        <div className="form-group m-3">
-                          <input
-                            className="form-control"
-                            type="password"
-                            name="oldPassword"
-                            placeholder="Old Password"
-                            value={oldPassword}
-                            onChange={(e) => setOldPassword(e.target.value)}
-                          ></input>
-                        </div>
-                        <div className="form-group m-3">
-                          <input
-                            className="form-control"
-                            type="password"
-                            name="newPassword"
-                            placeholder="New Password"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                          ></input>
-                        </div>
-                        <div className="form-group m-3">
-                          <input
-                            className="form-control"
-                            type="password"
-                            name="confirmPassword"
-                            placeholder="Confirm New Password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                          ></input>
-                        </div>
+                      <div className="form-group m-3">
+                        <input
+                          className="form-control"
+                          type="password"
+                          name="oldPassword"
+                          placeholder="Old Password"
+                          value={oldPassword}
+                          onChange={(e) => setOldPassword(e.target.value)}
+                        ></input>
+                      </div>
+                      <div className="form-group m-3">
+                        <input
+                          className="form-control"
+                          type="password"
+                          name="newPassword"
+                          placeholder="New Password"
+                          value={newPassword}
+                          onChange={(e) => setNewPassword(e.target.value)}
+                        ></input>
+                      </div>
+                      <div className="form-group m-3">
+                        <input
+                          className="form-control"
+                          type="password"
+                          name="confirmPassword"
+                          placeholder="Confirm New Password"
+                          value={confirmPassword}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                        ></input>
+                      </div>
 
-                        <Button
-                            className="button-color"
-                            onClick={() => handleChangePassword()}
-                          >
-                            Change Password
-                          </Button>
-                    
-                      </form>
+                      <Button
+                        className="button-color"
+                        onClick={() => handleChangePassword()}
+                      >
+                        Change Password
+                      </Button>
+
+                    </form>
                   </div>
 
-                  
+
                 </div>
               </div>
             </div>

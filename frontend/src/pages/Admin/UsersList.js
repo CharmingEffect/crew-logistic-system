@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Button, ButtonGroup, Container } from "reactstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { getAllUsers } from "../../util/useUserData";
 
 // https://github.com/eugenp/tutorials/blob/master/spring-boot-modules/spring-boot-react/frontend/src/ClientList.js
 
@@ -14,9 +15,9 @@ class UsersList extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/admin/getAllUsers")
-      .then((response) => response.json())
-      .then((data) => this.setState({ users: data }));
+   getAllUsers().then((data) => {
+      this.setState({ users: data });
+    });
   }
 
   async remove(id) {
@@ -55,15 +56,6 @@ class UsersList extends Component {
       } else {
         user.enabled = "No";
       }
-
-      // this function changes the role from ADMIN to A and CREW_MEMBER to C
-      // const userList = users.map((user) => {
-      //   if (user.role === "ADMIN") {
-      //     user.role = "A";
-      //   } else if (user.role === "CREW_MEMBER") {
-      //     user.role = "C";
-      //   }
-      // });
 
       return (
         <Tr className="table-odd" key={user.id}>

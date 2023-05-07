@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FileLock2Fill, ArrowLeft } from "react-bootstrap-icons";
+import { UnlockFill, ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
 import swal from "sweetalert";
 import Snowfall from 'react-snowfall';
@@ -91,7 +91,7 @@ const RecoverAccount = () => {
         <ArrowLeft className="go-back-arrow" size={24} />
       </div>
         <div className="illustration">
-          <FileLock2Fill />
+          <UnlockFill/>
         </div>
         <p className="text-center">Recover Account</p>
         <div className="form-group">

@@ -3,6 +3,8 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import BASE_URL from "../util/baseUrl";
 import { useLocalState } from "./useLocalStorage";
+
+
 const FindUserByEmail = ({ email }) => {
   const [user, setUser] = useState({});
 
@@ -18,6 +20,18 @@ const FindUserByEmail = ({ email }) => {
   }, []);
 
   return user;
+};
+
+const getAllUsers = async () => {
+  const response = await fetch("/api/admin/getAllUsers");
+  const data = await response.json();
+  return data;
+};
+
+const getAllAdmins = async () => {
+  const response = await fetch("/api/admin/getAllAdmins");
+  const data = await response.json();
+  return data;
 };
 
 const useLoggedInUser = () => {
@@ -141,4 +155,6 @@ export {
   SystemInfo,
   MemoryStats,
   useAllCrewMembers,
+  getAllUsers,
+  getAllAdmins
 };

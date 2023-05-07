@@ -78,6 +78,23 @@ public class UserController {
 
     }
 
+        // mapping for getting only crew members
+        @GetMapping("/admin/getAllAdmins")
+        public List<User> getAllAdmins() {
+            List<User> admins = new ArrayList<>();
+            userRepository.findAll().iterator().forEachRemaining(user -> {
+                // System.out.println(user.getRole());
+    
+                if (user.getRole().toString() == "ADMIN") {
+                    user.setPassword("");
+                    admins.add(user);
+                }
+            });
+    
+            return admins;
+    
+        }
+
     // retuve single user by email address
     @GetMapping("/admin/getUser/{email}")
     public UserDto getUserByEmail(@PathVariable String email) {

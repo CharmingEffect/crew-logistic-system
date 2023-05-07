@@ -1,12 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../../components/Nav";
 import Header from "../../components/Header";
 import Widget from "../Widget";
+import { useLoggedInUser } from "../../util/useUserData";
+import JobWidget from "../../components/JobWidget";
 
 const Crew = () => {
   const [toggleState, setToggleState] = useState(1);
   const [toggleNavbarState, setToggleNavbarState] = useState(true);
+  const [jobs, setJobs] = useState([]);
+  const loggedUser = useLoggedInUser();
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -22,6 +26,16 @@ const Crew = () => {
     window.location.href = "/";
   };
 
+  useEffect(() => {
+    fetch(`/api/admin/confirmedJobs/${loggedUser.id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const lastThreeJobs = data.slice(-3);
+        setJobs(lastThreeJobs);
+      })
+      .catch((error) => console.error(error));
+  }, [loggedUser.id]);
+
   return (
     <>
       <div className="nav_bg_color" id="wrapper">
@@ -32,16 +46,37 @@ const Crew = () => {
           </div>
           <div className="wrapper wrapper-content animated fadeInRight">
             <div className="row">
-              <div className="col-lg-3">
-                <div className="widget style1 navy-bg">
-                  <Widget
-                    name="Upcoming jobs (needed logic for it)"
-                    count="0"
-                    icon_name="fa fa-briefcase fa-5x"
-                  />
-                </div>
-              </div>
+         
+            <h1 className="sophisticated-header display-5 text-black mr-4">
+              <i
+                className="fa fa-user text-black d-inline-block m-3"
+                aria-hidden="true"
+              ></i>
+              Upcoming Jobs
+            </h1>
+    
+    
             </div>
+
+            <div className="d-flex justify-content-around">
+            
+                {jobs.map(job => (
+                        <JobWidget
+                        jobNumber={job.jobNumber}
+                        jobDuration={job.jobDuration}
+                        numberOfCrew={job.numberOfCrew}
+                        address={`${job.address.addressLine1} ${job.address.addressLine2} ${job.address.city} ${job.address.postalCode}`}
+                        dateTime={job.dateTime}
+                        clientCompanyName={job.clientCompanyName}
+                        contactOnSite={job.contactOnSite}
+                        driver={job.driver}
+                        crewChief={job.crewChief}
+                        remarks={job.remarks}
+                        comment={job.comment}
+                      />
+                ))}
+                
+              </div> 
           </div>
         </div>
       </div>

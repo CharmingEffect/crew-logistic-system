@@ -1,5 +1,5 @@
 import React from "react";
-import "./JobWidget.css";
+
 
 const JobWidget = ({ jobNumber, clientCompanyName, address, contactOnSite, dateTime }) => {
   return (

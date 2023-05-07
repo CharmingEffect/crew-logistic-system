@@ -17,6 +17,26 @@ body {
   font-weight: 300;
 }
 
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  clear: both;
+}
+
+.sent {
+  background-color: #d3e1fd;
+  float: right;
+  margin-right: 10px;
+}
+
+.received {
+  background-color: #ffffff;
+  float: left;
+  margin-left: 10px;
+}
+
 .form-box {
 background-color: #00000D;
 color: white;
@@ -39,6 +59,16 @@ font-weight: bold;
   background: none; 
 }
 
+ .selected {
+  font-weight: bold;
+  background-color: #4caf50; /* Add a background color for the selected item */
+  color: white; /* Change the text color for the selected item */
+}
+
+.user-item {
+  padding: 0.5rem;
+  cursor: pointer;
+}
 
 .react-tabs__tab-list {
   border-bottom: 1px solid #aaa;
@@ -120,6 +150,22 @@ body {
 
 }
 /* Tabs */
+
+.messagingContainer {
+  display: flex;
+}
+
+.messaging {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid #ddd; /* Move border to the left */
+}
+
+.userList {
+  border-left: 1px solid #ddd;
+}
 
 
 .tab-buttons {
