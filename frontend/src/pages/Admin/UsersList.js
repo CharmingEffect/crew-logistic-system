@@ -80,6 +80,7 @@ class UsersList extends Component {
                 color="success"
                 onClick={() => this.edit(user.id)}
                 className="mx-2"
+                disabled
               >
                 Edit
               </Button>

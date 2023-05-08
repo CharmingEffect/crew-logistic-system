@@ -18,12 +18,12 @@ const DocsUpload = ({ userId }) => {
 
     const handleFileUpload = async () => {
         if (!selectedFile) {
-            alert('Please select a file to upload.');
+            swal('Error', 'Please select a file to upload.', 'error');
             return;
         }
 
         if (!description) {
-            alert('Please enter a description for the file.');
+            swal('Error', 'Please enter a description for the file.', 'error');
             return;
         }
 
@@ -51,18 +51,18 @@ const DocsUpload = ({ userId }) => {
 
     return (
         <div className="file-upload-container">
-        <input className="file-upload-input" type="file" onChange={handleFileChange} />
-        <input
-          className="file-description-input"
-          type="text"
-          placeholder="File description"
-          value={description}
-          onChange={handleDescriptionChange}
-        />
-        <button onClick={handleFileUpload} className="button-color">
-          Upload
-        </button>
-      </div>
+            <input className="file-upload-input" type="file" onChange={handleFileChange} />
+            <input
+                className="file-description-input"
+                type="text"
+                placeholder="File description"
+                value={description}
+                onChange={handleDescriptionChange}
+            />
+            <button onClick={handleFileUpload} className="button-color">
+                Upload
+            </button>
+        </div>
     );
 };
 

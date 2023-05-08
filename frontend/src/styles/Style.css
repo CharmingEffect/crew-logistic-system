@@ -57,10 +57,36 @@ body {
   transition: all 0.3s;
 }
 
+.scroll {
+
+  max-height: 700px;
+  overflow-y: scroll;
+
+}
+
 .button-color:hover {
   background-color: #003c84;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 500px;
+}
 
 .message {
   padding: 10px;

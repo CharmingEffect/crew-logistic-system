@@ -148,6 +148,7 @@ class JobsList extends Component {
                 color="success"
                 onClick={() => this.remove(job.jobNumber)}
                 className="mx-2"
+                disabled
               >
                 Edit
               </Button>

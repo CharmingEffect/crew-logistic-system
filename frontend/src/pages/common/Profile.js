@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "react-tabs/style/react-tabs.css";
 import Header from "../../components/Header";
 import { useLocalState } from "../../util/useLocalStorage";
@@ -9,7 +9,7 @@ import { FileLock2Fill, ArrowLeft } from "react-bootstrap-icons";
 import swal from "sweetalert";
 import Snowfall from 'react-snowfall';
 import DocsUpload from "../../components/DocsUpload";
-
+import Modal from "../../components/Modal";
 
 
 const Profile = () => {
@@ -25,6 +25,9 @@ const Profile = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [fileDetails, setFileDetails] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
 
   const [editMode, setEditMode] = useState(false);
@@ -140,6 +143,32 @@ const Profile = () => {
       });
   }
 
+  useEffect(() => {
+    fetch(`/api/download-docs?userId=${loggedUser.id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Failed to fetch file details');
+        }
+      })
+      .then((data) => setFileDetails(data))
+      .catch((error) => console.error(error));
+  }, [loggedUser.id]);
+
+  const viewFile = (fileName) => {
+    console.log(fileName);
+    setSelectedFile(fileName);
+    setIsModalOpen(true);
+  };
+
+
+  const closeModal = () => {
+    setSelectedFile(null);
+    setIsModalOpen(false);
+  };
+
+
   return (
     <>
       <div id="page-wrapper" className="gray-bg">
@@ -157,7 +186,7 @@ const Profile = () => {
         <div className="container-fluid">
           <div className="main-body">
             <div className="row gutters-sm">
-              <div className="col-md-4">
+              <div className="col-md-4 scroll">
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center">
@@ -196,22 +225,32 @@ const Profile = () => {
                     <li className="list-group-item d-flex flex-wrap">
                       <span className="text-secondary"></span>
                     </li>
+                    <p className="badge text-wrap button-color m-1">Here you can upload documetns such as: passport, driving licence etc</p>
                     <li className="list-group-item  align-items-center flex-wrap">
-                    <DocsUpload userId={loggedUser.id} />
-                   
+                      <DocsUpload userId={loggedUser.id} />
+
                     </li>
-                    <h4 className="text-secondary mt-3">
-                        Upladed Documents:{" "}
-                      </h4>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">Passport</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">Driving Licence</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                      <span className="text-secondary">Etc</span>
-                    </li>
+                    
+                    <p className="badge text-wrap button-color m-1">Uploaded documents</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Size</th>
+                      
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {fileDetails.map((file) => (
+                          <tr key={file.name}>
+                            <td>{file.name}</td>
+                            <td>{file.size}</td>
+                          
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    <Modal userId={loggedUser.id} />
                   </ul>
                 </div>
               </div>
