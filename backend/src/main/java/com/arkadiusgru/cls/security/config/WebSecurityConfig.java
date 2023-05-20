@@ -26,7 +26,7 @@ public class WebSecurityConfig {
 
     private final Filter jwtFilter;
 
-    // admin site has to be disabled for people from outside anyone how does not
+    // admin site has to be disabled for people from outside anyone how does notreact build folders is not allows by spring boot
     // have status as ADMIN
 
     @Bean
@@ -42,12 +42,17 @@ public class WebSecurityConfig {
         }));
 
         http.headers().frameOptions().disable();
-        
+
+        //.antMatchers("/api/auth/**", "/api/admin/**", "/api/confirm-registration", "/api/**", "/v3/api-docs/**", "/swagger-ui.html/**", "/uploads/**" , "/asset/**", "/static/**", "/public/**", "/js/**", "/static/**", "/static/index.html", "/resources/**")
 
         http.authorizeHttpRequests()
-                .antMatchers("/**")
+                .antMatchers("/api/auth/**", "/api/admin/**", "/api/confirm-registration", "/api/**", 
+                "/uploads/**" , "/asset/**", "/static/**", "/public/**", "/js/**", "/static/**", "/static/index.html", "/resources/**" ,"/" , "/dashboard-admin" ,
+                "/dashboard-crew", "/user-mngmt", "/job-mngmt", "/calendar-admin" , "/messages" ,"/profile", "/jobs", "/calendar-crew"
+                
+                )
                 .permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().authenticated(); 
 
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
