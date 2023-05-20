@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a843f836.css",
+    "main.js": "/static/js/main.8753ed55.js",
+    "static/js/787.18fed91b.chunk.js": "/static/js/787.18fed91b.chunk.js",
+    "static/media/ama-dablam-g559a466b1_1920.jpg": "/static/media/ama-dablam-g559a466b1_1920.c06923158777eb2a12ff.jpg",
+    "index.html": "/index.html",
+    "main.a843f836.css.map": "/static/css/main.a843f836.css.map",
+    "main.8753ed55.js.map": "/static/js/main.8753ed55.js.map",
+    "787.18fed91b.chunk.js.map": "/static/js/787.18fed91b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a843f836.css",
+    "static/js/main.8753ed55.js"
+  ]
+}

@@ -1,0 +1,36 @@
+.left-profile img{
+	background-color: white;
+	margin-left: 35%;
+	max-width: 5rem
+}
+.profile-title{
+	margin-left: 17% ;
+}
+.purple-bg,
+.bg-danger
+{
+	background-color: #C04334 !important;
+	color: #ffffff;
+}
+
+.nav-label{
+	font-size: medium;
+
+}
+
+.green-bg, 
+.bg-danger 
+{
+	background-color: #34A4C0 !important;
+	color: #ffffff;
+}
+
+.ash-bg,
+.bg-danger {
+	background-color:#9E6E61 !important;
+	color: #ffffff;
+}
+
+a:hover {
+	text-decoration: none !important;
+}
