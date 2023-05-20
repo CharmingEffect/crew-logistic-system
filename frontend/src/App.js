@@ -23,11 +23,9 @@ import RecoverAccount from "./Login/RecoverAccount";
 function App() {
   const [jwt, setJwt] = useLocalState("", "jwt");
   const location = useLocation();
-  // useEffect(() => {
-  //   console.log("JWT Value is: " + jwt);
-  // }, [jwt]);
 
-  // const validPaths = useValidPahts();
+
+
 
   function showNav() {
     if (location.pathname === "/" || location.pathname === "/change-password") {
@@ -37,13 +35,6 @@ function App() {
     }
   }
 
-  // function authorize() {
-  //   if (validPaths.includes(location.pathname)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   return (
     <>

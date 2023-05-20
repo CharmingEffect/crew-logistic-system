@@ -7,6 +7,7 @@ import { useState } from "react";
 import swal from "sweetalert";
 import Snowfall from 'react-snowfall';
 import { Link } from "react-router-dom";
+import {BASE_URL} from "../util/baseUrl";
 
 const Login = () => {
   const [email, setEmail] = useState("");
