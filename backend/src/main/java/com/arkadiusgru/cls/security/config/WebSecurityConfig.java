@@ -47,6 +47,7 @@ public class WebSecurityConfig {
                 .antMatchers("/api/auth/**", "/api/admin/**", "/h2-console/**", "/api/confirm-registration", "/api/**", "/ws/**", "/v3/api-docs/**", "/swagger-ui.html/**", "/uploads/**")
                 .permitAll()
                 .anyRequest().authenticated();
+                
 
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
