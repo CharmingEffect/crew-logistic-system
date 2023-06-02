@@ -161,7 +161,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Arkadiusz Grudzien - [CLICK ME](https//arkadius.one) - arkadiuszgrudzien@yahoo.com
+[Arkadiusz Grudzien](https//arkadius.one) - arkadiuszgrudzien@yahoo.com
 
 Project Link: [https://github.com/CharmingEffect/crew-logistic-system](https://github.com/CharmingEffect/crew-logistic-system)
 
