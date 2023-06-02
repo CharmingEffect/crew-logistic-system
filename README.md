@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Crew Logistic System
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://cls.arkadius.one/)
 
 The project topic is a web application called Crew Logistic System. The functionality is like already existing system such as Employee Management System. The motivation which has been pushed me to create the project is that I am part-time employee of the company. Dur-ing work at the company, I have realized what are the problems and how current system is inconvenient from the crew’s perspective. I have decided to develop a web application to solve the issues.
 The software will be designed to help the company Pinnacle Crew to manage their crew members and jobs. The project is interesting because it is a real-life project, and it is a good opportunity to learn how to develop a web application. The problem in hands is that the company Pinnacle Crew is using a SMS system to manage crew member. The jobs are events that the companies of events are organizing, and the crew members are the people that are working on the events. The admin sends jobs to specific crew members. The crew members must confirm or reject by doing specific action in the app. The usefulness of the app is that it will help the company to manage their crew members and jobs more efficiently.
@@ -146,27 +146,26 @@ To run the web app locally, the following steps need to be followed:
 4. Open the browser and go to http://localhost:3000
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- LICENSE -->
-## License
+<!-- ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+ -->
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Arkadiusz Grudzien - [@CLICK ME](https//arkadius.one) - arkadiuszgrudzien@yahoo.com
+Arkadiusz Grudzien - [CLICK ME](https//arkadius.one) - arkadiuszgrudzien@yahoo.com
 
 Project Link: [https://github.com/CharmingEffect/crew-logistic-system](https://github.com/CharmingEffect/crew-logistic-system)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -184,7 +183,7 @@ Project Link: [https://github.com/CharmingEffect/crew-logistic-system](https://g
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: https://arkadius.one/pf/cls.png
+[product-screenshot]: frontend/public/cls.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
