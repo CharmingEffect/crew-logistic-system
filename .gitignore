@@ -35,3 +35,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+push_on_shutdown.bat

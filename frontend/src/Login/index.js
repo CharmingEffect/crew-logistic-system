@@ -5,6 +5,8 @@ import { FileLock2Fill } from "react-bootstrap-icons";
 import { useLocalState } from "../util/useLocalStorage";
 import { useState } from "react";
 import swal from "sweetalert";
+import Snowfall from 'react-snowfall';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,19 +28,30 @@ const Login = () => {
       body: JSON.stringify(reqBody),
     })
       .then((response) => {
-        console.log(response.body);
+
+
         if (response.status === 200)
           return Promise.all([response.json(), response.headers]);
-        else return Promise.reject("Invalid credentials or acount not enabled"); // this is issiue need to retive isACcountEnabled from backend
+        else
+          return Promise.reject("Invalid credentials or account not enabled");
       })
       .then(([body, headers]) => {
-        //console.log(body);
+        console.log(body);
         setJwt(headers.get("authorization"));
-        //console.log("gdzue to jest" + headers.get("authorization"));
         if (body.role === "ADMIN") {
-          window.location.href = "/admin";
-        } else {
-          window.location.href = "/dashboard";
+          window.location.href = "/dashboard-admin";
+        }
+        if (body.role === "CREW_MEMBER") {
+          window.location.href = "/dashboard-crew";
+        }
+        if (body.enabled === false) {
+          swal({
+            title: "Error!",
+            text: "Your account is disabled, please contact your administrator",
+            icon: "error",
+            button: false,
+            timer: 1000,
+          });
         }
       })
       .catch((message) => {
@@ -54,10 +67,11 @@ const Login = () => {
 
   return (
     <div className="login-dark">
+       <Snowfall />
       <form method="post">
         <h2 className="sr-only text-center">Pinnacle Login</h2>
         <div className="illustration">
-          <FileLock2Fill />
+       < FileLock2Fill/>
         </div>
         <div className="form-group">
           {/* binding the data to the input from fields */}
@@ -91,7 +105,7 @@ const Login = () => {
         </div>
         <a href="#" className="forgot">
           <br></br>
-          Forgot your email or password?
+          <Link to="/change-password" >Forgot your password?</Link>
         </a>
       </form>
     </div>

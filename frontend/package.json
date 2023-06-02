@@ -1,27 +1,43 @@
 {
-  "name": "frontend",
+  "name": "cls-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080/",
+  "proxyX": "http://10.5.0.5:8080",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.10.17",
+    "@stomp/stompjs": "^7.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "browser-image-compression": "^2.0.2",
+    "jwt-decode": "^3.1.2",
+    "open": "^8.4.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.6.9",
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-icons": "^1.10.2",
-    "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
+    "react-modal": "^3.16.1",
     "react-redux": "^8.0.5",
+    "react-responsive-list": "^0.0.4",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "react-snowfall": "^1.2.1",
+    "react-super-responsive-table": "^5.2.1",
+    "react-tabs": "^6.0.0",
+    "reactstrap": "^9.1.5",
+    "socket.io-client": "^4.6.1",
+    "sockjs-client": "^1.6.1",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -47,5 +63,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-unused-imports": "^2.0.0"
   }
 }

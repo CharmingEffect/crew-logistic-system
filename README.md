@@ -1,4 +1,6 @@
-## Crew Logisitc System
+## Crew Logisitc System (this file will be eddited at the end of the project)
+
+In forntend to be able to open the app in docker please chnage the proxy in package.json file to: "proxy": "http://10.5.0.5:8080",
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

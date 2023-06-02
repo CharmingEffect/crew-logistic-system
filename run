@@ -1,14 +1,21 @@
-#!/bin/bash
-# Run all required tools to start the CLS project.
+#bin\bash
 
-echo "Running the CLS project"
+#Automated script to run the application
 
-#Running the frontend
+PORT=3000
 
-cd frontend
-start cmd.exe "/K npm install && npm start"
+if lsof -i :$PORT >/dev/null 2>&1; then
+    echo "Killing Node.js processes on port $PORT"
+    # Get the PIDs of all Node.js processes on port 3000
+    PIDS=$(lsof -t -i :$PORT -c node)
+    # Kill all the processes
+    sudo kill $PIDS
+else
+    echo "No Node.js processes are running on port $PORT"
+fi
 
-#Running Spring Boot
+gnome-terminal -e "bash -c 'cd frontend && npm install && npm start; exec bash'"
 
-cd ../backend
-mvn clean compile exec:java
+cd backend
+
+mvn clean spring-boot:run
